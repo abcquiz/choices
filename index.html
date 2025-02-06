@@ -105,6 +105,16 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
 
     <script>
+        // Fonction pour charger un script de manière asynchrone
+        function loadScript(url) {
+            return new Promise((resolve, reject) => {
+                const script = document.createElement('script');
+                script.src = url;
+                script.onload = resolve;
+                script.onerror = reject;
+                document.head.appendChild(script);
+            });
+        }
         // Configuration globale
         const dataBaseUrl = 'https://raw.githubusercontent.com/abcquiz/choices/refs/heads/main/examples';
         const usercodes = ['CODE123', 'ADMIN456', 'TEST789']; // Codes d'accès autorisés
@@ -134,13 +144,13 @@
             }
 
             try {
-                // Chargement de la configuration
-                const configResponse = await fetch(`${dataBaseUrl}/${quizcode}/config.js`);
-                quizConfig = await configResponse.json();
+                // On charge d'abord les scripts
+                await loadScript(`${dataBaseUrl}/${quizcode}/config.js`);
+                await loadScript(`${dataBaseUrl}/${quizcode}/questions.js`);
 
-                // Chargement des questions
-                const questionsResponse = await fetch(`${dataBaseUrl}/${quizcode}/questions.js`);
-                questions = await questionsResponse.json();
+                // Maintenant on peut accéder aux variables globales
+                quizConfig = config;
+                questions = window.questions;
 
                 // Organisation des questions en groupes
                 organizeQuestionGroups();

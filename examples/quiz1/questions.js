@@ -1,4 +1,4 @@
-[
+const questions = [
     {
         "groupId": "histoire",
         "content": {
@@ -99,4 +99,4 @@
             { "text": "Elle date du XVIe siècle", "correct": true }
         ]
     }
-]
+];
