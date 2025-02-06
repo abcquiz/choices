@@ -105,19 +105,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
 
     <script>
-        // Fonction pour charger un script de manière asynchrone
-        function loadScript(url) {
-            return new Promise((resolve, reject) => {
-                const script = document.createElement('script');
-                script.src = url;
-                script.onload = resolve;
-                script.onerror = reject;
-                document.head.appendChild(script);
-            });
-        }
         // Configuration globale
         const dataBaseUrl = 'https://raw.githubusercontent.com/abcquiz/choices/refs/heads/main/examples';
-        const usercodes = ['CODE123', 'ADMIN456', 'TEST789']; // Codes d'accès autorisés
+        const usercodes = ['test', 'CODE123', 'ADMIN456', 'TEST789']; // Codes d'accès autorisés
 
         let quizConfig = null;
         let questions = null;
@@ -144,13 +134,39 @@
             }
 
             try {
-                // On charge d'abord les scripts
-                await loadScript(`${dataBaseUrl}/${quizcode}/config.js`);
-                await loadScript(`${dataBaseUrl}/${quizcode}/questions.js`);
+                // Chargement de la configuration
+                console.log("debug: loading external js file:", `${dataBaseUrl}/${quizcode}/config.js`);
+                const configResponse = await fetch(`${dataBaseUrl}/${quizcode}/config.js`);
+                const configText = await configResponse.text();
+                console.log("debug: config text:", configText);
+                const configMatch = configText.match(/config\s*=\s*({[\s\S]*});/);
+                if (!configMatch) throw new Error("Format de config.js invalide");
 
-                // Maintenant on peut accéder aux variables globales
-                quizConfig = config;
-                questions = window.questions;
+                // On nettoie le JSON avant de le parser
+                let configJson = configMatch[1]
+                    .replace(/\/\/.*/g, '') // Supprime les commentaires sur une ligne
+                    .replace(/\/\*[\s\S]*?\*\//g, '') // Supprime les commentaires multi-lignes
+                    .replace(/(['"])?([a-zA-Z0-9_]+)(['"])?\s*:/g, '"$2": ') // Assure que les clés sont entre guillemets doubles
+                    .replace(/'/g, '"') // Remplace les guillemets simples par des guillemets doubles
+                    .replace(/,(\s*[}\]])/g, '$1'); // Supprime les virgules trailing
+
+                quizConfig = JSON.parse(configJson);
+
+                // Chargement des questions
+                const questionsResponse = await fetch(`${dataBaseUrl}/${quizcode}/questions.js`);
+                const questionsText = await questionsResponse.text();
+                const questionsMatch = questionsText.match(/questions\s*=\s*(\[[\s\S]*\]);/);
+                if (!questionsMatch) throw new Error("Format de questions.js invalide");
+
+                // Même nettoyage pour les questions
+                let questionsJson = questionsMatch[1]
+                    .replace(/\/\/.*/g, '')
+                    .replace(/\/\*[\s\S]*?\*\//g, '')
+                    .replace(/(['"])?([a-zA-Z0-9_]+)(['"])?\s*:/g, '"$2": ')
+                    .replace(/'/g, '"')
+                    .replace(/,(\s*[}\]])/g, '$1');
+
+                questions = JSON.parse(questionsJson);
 
                 // Organisation des questions en groupes
                 organizeQuestionGroups();
