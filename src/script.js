@@ -1,5 +1,5 @@
 // Configuration globale
-const dataBaseUrl = 'https://raw.githubusercontent.com/abcquiz/choices/refs/heads/main/examples';
+const dataBaseUrl = 'https://raw.githubusercontent.com/abcquiz/choices/refs/heads/main/src/examples';
 const usercodes = ['test', 'CODE123', 'ADMIN456', 'TEST789']; // Codes d'accès autorisés
 
 let quizConfig = null;

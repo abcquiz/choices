@@ -1,23 +1,41 @@
-{$DOMAIN} {
+{
+    # Configuration globale
+    admin off
+    auto_https off # Désactive la gestion automatique HTTPS pour localhost
+}
+
+(common) {
     root * /usr/share/caddy
     encode gzip
     file_server
-    
-    # Activation automatique de HTTPS
-    tls internal  # En local
-    # tls you@example.com  # En production, décommentez cette ligne et commentez la précédente
 
-    # Configuration de sécurité basique
+    # Headers de sécurité communs avec permissions de stockage
     header {
-        # Enable HSTS
-        Strict-Transport-Security "max-age=31536000; includeSubDomains"
-        # Disable FLoC tracking
-        Permissions-Policy "interest-cohort=()"
-        # Enable XSS filter
+        Access-Control-Allow-Origin *
+        Access-Control-Allow-Methods "GET, POST, PUT, DELETE, OPTIONS"
+        Access-Control-Allow-Headers "DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization"
+        Access-Control-Expose-Headers "Content-Length,Content-Range"
+        # Headers critiques pour le stockage local
+        Cross-Origin-Opener-Policy "same-origin"
+        Cross-Origin-Embedder-Policy "require-corp"
+        Cross-Origin-Resource-Policy "cross-origin"
+        # Sécurité générale
         X-XSS-Protection "1; mode=block"
-        # Prevent MIME type sniffing
         X-Content-Type-Options "nosniff"
-        # Référer policy
-        Referrer-Policy "strict-origin-when-cross-origin"
+        Referrer-Policy "no-referrer-when-downgrade"
+        Permissions-Policy "interest-cohort=(),storage-access=*,clipboard-write=*"
+    }
+}
+
+# Configuration pour localhost (HTTP)
+:80 {
+    import common
+}
+
+# Configuration pour le domaine en production (si nécessaire)
+{$DOMAIN} {
+    import common
+    tls {
+        protocols tls1.2 tls1.3
     }
 }

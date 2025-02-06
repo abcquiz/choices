@@ -12,7 +12,7 @@ services:
       - caddy_data:/data
       - caddy_config:/config
     environment:
-      - DOMAIN=localhost
+      - DOMAIN=quiz.hachim.fr
       - PORT=${PORT:-80}
       - SSL_PORT=${SSL_PORT:-443} # À changer en production avec votre nom de domaine
     restart: unless-stopped
