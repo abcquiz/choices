@@ -135,12 +135,14 @@
 
             try {
                 // Chargement de la configuration
-                console.log("debug: loading external js file:", `${dataBaseUrl}/${quizcode}/config.js`);
-                const configResponse = await fetch(`${dataBaseUrl}/${quizcode}/config.js`);
+                const configUrl = `${dataBaseUrl}/${quizcode}/config.js`;
+                console.log("debug: configUrl=", configUrl);
+                const configResponse = await fetch(configUrl);
                 const configText = await configResponse.text();
-                console.log("debug: config text:", configText);
+                console.log("debug: config text:\n", configText);
                 const configMatch = configText.match(/config\s*=\s*({[\s\S]*});/);
                 if (!configMatch) throw new Error("Format de config.js invalide");
+                console.log("debug: config match:OK");
 
                 // On nettoie le JSON avant de le parser
                 let configJson = configMatch[1]
@@ -149,25 +151,34 @@
                     .replace(/(['"])?([a-zA-Z0-9_]+)(['"])?\s*:/g, '"$2": ') // Assure que les clés sont entre guillemets doubles
                     .replace(/'/g, '"') // Remplace les guillemets simples par des guillemets doubles
                     .replace(/,(\s*[}\]])/g, '$1'); // Supprime les virgules trailing
+                console.log("debug: config text after cleaning:", questionsJson);
 
                 quizConfig = JSON.parse(configJson);
-
+                console.log("debug: config object:\n", quizConfig);
                 // Chargement des questions
-                const questionsResponse = await fetch(`${dataBaseUrl}/${quizcode}/questions.js`);
+                const questionsUrl = `${dataBaseUrl}/${quizcode}/questions.js`;
+                console.log("debug: questions url:", questionsUrl);
+                const questionsResponse = await fetch(questionsUrl);
                 const questionsText = await questionsResponse.text();
+                console.log("debug: question text:\n", questionsText);
                 const questionsMatch = questionsText.match(/questions\s*=\s*(\[[\s\S]*\]);/);
                 if (!questionsMatch) throw new Error("Format de questions.js invalide");
+                console.log("debug: questions match:OK");
 
-                // Même nettoyage pour les questions
+                // Nettoyage amélioré pour les questions
                 let questionsJson = questionsMatch[1]
-                    .replace(/\/\/.*/g, '')
-                    .replace(/\/\*[\s\S]*?\*\//g, '')
-                    .replace(/(['"])?([a-zA-Z0-9_]+)(['"])?\s*:/g, '"$2": ')
-                    .replace(/'/g, '"')
-                    .replace(/,(\s*[}\]])/g, '$1');
+                    .replace(/\/\/.*/g, '')  // Supprime les commentaires sur une ligne
+                    .replace(/\/\*[\s\S]*?\*\//g, '')  // Supprime les commentaires multi-lignes
+                    .replace(/(['"])?([a-zA-Z0-9_]+)(['"])?\s*:/g, '"$2": ')  // Assure que les clés sont entre guillemets doubles
+                    .replace(/'/g, '"')  // Remplace les guillemets simples par des guillemets doubles
+                    .replace(/,(\s*[}\]])/g, '$1')  // Supprime les virgules trailing
+                    .replace(/\n/g, '')  // Supprime les sauts de ligne
+                    .replace(/\s+/g, ' ');  // Normalise les espaces multiples
+
+                console.log("debug: questions text after cleaning:", questionsJson);
 
                 questions = JSON.parse(questionsJson);
-
+                console.log("debug: question object:\n", questions);
                 // Organisation des questions en groupes
                 organizeQuestionGroups();
 
