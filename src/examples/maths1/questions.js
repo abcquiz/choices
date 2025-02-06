@@ -11,8 +11,7 @@ const questions = [
             { "text": "77,52", "correct": false },
             { "text": "78,42", "correct": false },
             { "text": "77,42", "correct": false }
-        ],
-        "timer": 60
+        ]
     },
     {
         "groupId": "mathematiques_decimaux",
@@ -27,7 +26,7 @@ const questions = [
             { "text": "34,5", "correct": false },
             { "text": "3450", "correct": false }
         ],
-        "timer": 45
+        "timer": 450
     },
     {
         "groupId": "mathematiques_decimaux",
@@ -41,7 +40,7 @@ const questions = [
             { "text": "4,85 > 4,9", "correct": false },
             { "text": "4,85 = 4,9", "correct": false }
         ],
-        "timer": 30
+        "timer": 300
     },
     {
         "groupId": "mathematiques_decimaux",
@@ -56,7 +55,7 @@ const questions = [
             { "text": "32,99", "correct": false },
             { "text": "33,99", "correct": false }
         ],
-        "timer": 60
+        "timer": 600
     },
     {
         "groupId": "mathematiques_decimaux",
@@ -71,7 +70,7 @@ const questions = [
             { "text": "567,80", "correct": false },
             { "text": "5678", "correct": false }
         ],
-        "timer": 45
+        "timer": 450
     },
     {
         "groupId": "mathematiques_decimaux",
@@ -86,7 +85,7 @@ const questions = [
             { "text": "5,06 < 5,066 < 5,6 < 5,56", "correct": false },
             { "text": "5,066 < 5,06 < 5,6 < 5,56", "correct": false }
         ],
-        "timer": 90
+        "timer": 900
     },
     {
         "groupId": "mathematiques_decimaux",
@@ -101,6 +100,6 @@ const questions = [
             { "text": "456,7", "correct": false },
             { "text": "45,670", "correct": false }
         ],
-        "timer": 45
+        "timer": 450
     }
 ];

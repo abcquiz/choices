@@ -20,6 +20,13 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
+document.getElementById('loginForm').addEventListener('keypress', function (event) {
+    if (event.key === 'Enter') {
+        event.preventDefault();
+        startQuiz();
+    }
+});
+
 // Configuration globale
 const dataBaseUrl = 'https://raw.githubusercontent.com/abcquiz/choices/refs/heads/main/src/examples';
 const usercodes = ['test', 'CODE123', 'ADMIN456', 'TEST789']; // Codes d'accès autorisés

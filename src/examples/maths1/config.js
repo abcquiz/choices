@@ -1,6 +1,6 @@
 const config = {
     "title": "Quiz de Maths- 6ème",
-    "duration": 1800,
+    "duration": 1800000,
     "showAnswers": true,
     "showFeedbackAfterEachQuestion": false,
     "minScore": 60,
