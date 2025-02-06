@@ -1,7 +1,7 @@
 {
     # Configuration globale
     admin off
-    auto_https off # Désactive la gestion automatique HTTPS pour localhost
+    auto_https off
 }
 
 (common) {
@@ -9,18 +9,22 @@
     encode gzip
     file_server
 
-    # Headers de sécurité communs avec permissions de stockage
+    # Headers de sécurité avec permissions étendues pour les content scripts
     header {
+        # CORS et méthodes
         Access-Control-Allow-Origin *
         Access-Control-Allow-Methods "GET, POST, PUT, DELETE, OPTIONS"
         Access-Control-Allow-Headers "DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization"
         Access-Control-Expose-Headers "Content-Length,Content-Range"
-        # Headers critiques pour le stockage local
+        
+        # Headers critiques pour le stockage et les content scripts
         Cross-Origin-Opener-Policy "same-origin"
-        Cross-Origin-Embedder-Policy "require-corp"
+        Cross-Origin-Embedder-Policy "credentialless"
         Cross-Origin-Resource-Policy "cross-origin"
-        # Sécurité générale
-        X-XSS-Protection "1; mode=block"
+        Content-Security-Policy "default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: *; script-src 'self' 'unsafe-inline' 'unsafe-eval' blob: *;"
+        
+        # Sécurité générale plus permissive pour le développement
+        X-XSS-Protection "0"
         X-Content-Type-Options "nosniff"
         Referrer-Policy "no-referrer-when-downgrade"
         Permissions-Policy "interest-cohort=(),storage-access=*,clipboard-write=*"
@@ -30,6 +34,11 @@
 # Configuration pour localhost (HTTP)
 :80 {
     import common
+    # Permettre les requêtes OPTIONS pour CORS
+    @options {
+        method OPTIONS
+    }
+    respond @options 204
 }
 
 # Configuration pour le domaine en production (si nécessaire)
