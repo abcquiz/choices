@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  web:
+    image: caddy:2-alpine
+    ports:
+      - "${PORT:-80}:80"
+      - "${SSL_PORT:-443}:443"
+    volumes:
+      - ./src:/usr/share/caddy # Dossier contenant vos fichiers statiques
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - caddy_data:/data
+      - caddy_config:/config
+    environment:
+      - DOMAIN=localhost
+      - PORT=${PORT:-80}
+      - SSL_PORT=${SSL_PORT:-443} # À changer en production avec votre nom de domaine
+    restart: unless-stopped
+    networks:
+      - web
+
+volumes:
+  caddy_data:
+  caddy_config:
+
+
+networks:
+  web:
+    driver: bridge

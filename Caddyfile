@@ -1,0 +1,23 @@
+{$DOMAIN} {
+    root * /usr/share/caddy
+    encode gzip
+    file_server
+    
+    # Activation automatique de HTTPS
+    tls internal  # En local
+    # tls you@example.com  # En production, décommentez cette ligne et commentez la précédente
+
+    # Configuration de sécurité basique
+    header {
+        # Enable HSTS
+        Strict-Transport-Security "max-age=31536000; includeSubDomains"
+        # Disable FLoC tracking
+        Permissions-Policy "interest-cohort=()"
+        # Enable XSS filter
+        X-XSS-Protection "1; mode=block"
+        # Prevent MIME type sniffing
+        X-Content-Type-Options "nosniff"
+        # Référer policy
+        Referrer-Policy "strict-origin-when-cross-origin"
+    }
+}
