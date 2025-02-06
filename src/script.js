@@ -1,5 +1,27 @@
+document.addEventListener('DOMContentLoaded', function () {
+    // Vérifier si nous sommes en local
+    const isLocalhost = window.location.hostname === 'localhost';
+
+    // Ne vérifier HTTPS que si nous ne sommes pas en local
+    if (!isLocalhost && window.location.protocol !== 'https:') {
+        console.warn('Redirection vers HTTPS...');
+        window.location.href = 'https://' + window.location.host + window.location.pathname;
+        return;
+    }
+
+    // Vérifier l'accès au stockage
+    try {
+        localStorage.setItem('test', 'test');
+        localStorage.removeItem('test');
+        console.log('Accès au stockage local confirmé');
+    } catch (e) {
+        console.error('Erreur d\'accès au stockage local:', e);
+        alert('Votre navigateur bloque l\'accès au stockage local. Veuillez vérifier vos paramètres de confidentialité.');
+    }
+});
+
 // Configuration globale
-const dataBaseUrl = 'https://raw.githubusercontent.com/abcquiz/choices/refs/heads/main/src/examples';
+const dataBaseUrl = 'https://github.com/abcquiz/choices/tree/main/src/examples';
 const usercodes = ['test', 'CODE123', 'ADMIN456', 'TEST789']; // Codes d'accès autorisés
 
 let quizConfig = null;
