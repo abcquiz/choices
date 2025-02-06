@@ -305,11 +305,12 @@ function submitQuiz() {
 
     let totalScore = 0;
     const detailedResults = [];
-    let globalQuestionIndex = 0;
+    let baseIndex = 0;
 
-    questionGroups.forEach(group => {
-        group.forEach(question => {
-            const selectedAnswers = $(`input[name="question${globalQuestionIndex}"]:checked`).map(function () {
+    questionGroups.forEach((group, groupIndex) => {
+        group.forEach((question, questionIndex) => {
+            const globalIndex = calculateBaseIndex(groupIndex) + questionIndex;
+            const selectedAnswers = $(`input[name="question${globalIndex}"]:checked`).map(function () {
                 return parseInt($(this).val());
             }).get();
 
@@ -324,8 +325,6 @@ function submitQuiz() {
                     selectedAnswers: selectedAnswers.map(idx => question.choices[idx].text)
                 });
             }
-
-            globalQuestionIndex++;
         });
     });
 
