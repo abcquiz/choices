@@ -151,7 +151,7 @@
                     .replace(/(['"])?([a-zA-Z0-9_]+)(['"])?\s*:/g, '"$2": ') // Assure que les clés sont entre guillemets doubles
                     .replace(/'/g, '"') // Remplace les guillemets simples par des guillemets doubles
                     .replace(/,(\s*[}\]])/g, '$1'); // Supprime les virgules trailing
-                console.log("debug: config text after cleaning:", questionsJson);
+                console.log("debug: config text after cleaning:", configJson);
 
                 quizConfig = JSON.parse(configJson);
                 console.log("debug: config object:\n", quizConfig);
@@ -175,7 +175,7 @@
                     .replace(/\n/g, '')  // Supprime les sauts de ligne
                     .replace(/\s+/g, ' ');  // Normalise les espaces multiples
 
-                console.log("debug: questions text after cleaning:", questionsJson);
+                console.log("debug: questions text after cleaning:\n", questionsJson);
 
                 questions = JSON.parse(questionsJson);
                 console.log("debug: question object:\n", questions);
