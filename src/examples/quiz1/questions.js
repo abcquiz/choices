@@ -76,7 +76,7 @@ const questions = [
         "content": {
             "type": "image",
             "text": "Identifiez ce monument célèbre :",
-            "url": "/api/placeholder/800/600"
+            "url": "https:/api.example.com/placeholder/800/600"
         },
         "choices": [
             { "text": "La Tour Eiffel", "correct": true },

@@ -4,10 +4,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy"
-        content="default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: *;">
-    <meta http-equiv="Cross-Origin-Opener-Policy" content="same-origin">
-    <meta http-equiv="Cross-Origin-Embedder-Policy" content="credentialless">
+
+    <!-- Security Headers de base -->
+    <meta http-equiv="Content-Security-Policy" content="
+        default-src 'self' chrome-extension:;
+        script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdnjs.cloudflare.com chrome-extension: blob:;
+        style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com;
+        img-src 'self' data: https: blob:;
+        font-src 'self' https:;
+        connect-src 'self' https: chrome-extension: *;
+        frame-src 'self' chrome-extension:;
+        object-src 'none';
+        base-uri 'self';
+        form-action 'self';
+        worker-src 'self' blob:;
+        child-src 'self' blob:;
+        media-src 'self' blob:;
+    ">
+
+    <!-- Cross-Origin Policies minimales -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+
+    <!-- Referrer Policy -->
+    <meta http-equiv="Referrer-Policy" content="no-referrer-when-downgrade">
+
     <title>Quiz Application</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="styles.css" rel="stylesheet">
