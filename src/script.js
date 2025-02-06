@@ -283,19 +283,49 @@ function startQuestionTimer(duration, globalIndex) {
 
 // Navigation entre les groupes de questions
 function showPreviousQuestion() {
+    saveCurrentAnswers();
     if (currentGroupIndex > 0) {
         currentGroupIndex--;
         displayCurrentQuestionGroup();
+        loadSavedAnswers();
         updateProgress();
     }
 }
 
 function showNextQuestion() {
+    saveCurrentAnswers();
     if (currentGroupIndex < questionGroups.length - 1) {
         currentGroupIndex++;
         displayCurrentQuestionGroup();
+        loadSavedAnswers();
         updateProgress();
     }
+}
+
+function saveCurrentAnswers() {
+    const currentGroup = questionGroups[currentGroupIndex];
+    const baseIndex = calculateBaseIndex(currentGroupIndex);
+
+    currentGroup.forEach((question, questionIndex) => {
+        const globalIndex = baseIndex + questionIndex;
+        const answers = $(`input[name="question${globalIndex}"]:checked`).map(function () {
+            return parseInt($(this).val());
+        }).get();
+        userAnswers[globalIndex] = answers;
+    });
+}
+
+function loadSavedAnswers() {
+    const currentGroup = questionGroups[currentGroupIndex];
+    const baseIndex = calculateBaseIndex(currentGroupIndex);
+
+    currentGroup.forEach((question, questionIndex) => {
+        const globalIndex = baseIndex + questionIndex;
+        const savedAnswers = userAnswers[globalIndex] || [];
+        savedAnswers.forEach(answer => {
+            $(`#choice${globalIndex}_${answer}`).prop('checked', true);
+        });
+    });
 }
 
 // Soumission du quiz
@@ -303,16 +333,15 @@ function submitQuiz() {
     clearInterval(quizTimer);
     if (questionTimer) clearInterval(questionTimer);
 
+    saveCurrentAnswers(); // Sauvegarder les réponses de la dernière page
+
     let totalScore = 0;
     const detailedResults = [];
-    let baseIndex = 0;
 
     questionGroups.forEach((group, groupIndex) => {
         group.forEach((question, questionIndex) => {
             const globalIndex = calculateBaseIndex(groupIndex) + questionIndex;
-            const selectedAnswers = $(`input[name="question${globalIndex}"]:checked`).map(function () {
-                return parseInt($(this).val());
-            }).get();
+            const selectedAnswers = userAnswers[globalIndex] || [];
 
             const score = calculateQuestionScore(question, selectedAnswers);
             totalScore += score;
