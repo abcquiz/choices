@@ -9,6 +9,7 @@ let questionGroups = [];
 let userAnswers = {};
 let quizTimer = null;
 let questionTimer = null;
+let totalQuestionCount = 0;
 
 // Fonction de démarrage du quiz
 async function startQuiz() {
@@ -122,6 +123,9 @@ function organizeQuestionGroups() {
     if (currentGroup.length > 0) {
         questionGroups.push(currentGroup);
     }
+
+    // Calculer le nombre total de questions
+    totalQuestionCount = questionGroups.reduce((sum, group) => sum + group.length, 0);
 }
 
 // Initialisation de l'interface du quiz
@@ -134,18 +138,31 @@ function initializeQuizInterface() {
     updateProgress();
 }
 
+// Calcul de l'index de base pour un groupe
+function calculateBaseIndex(groupIndex) {
+    let baseIndex = 0;
+    for (let i = 0; i < groupIndex; i++) {
+        baseIndex += questionGroups[i].length;
+    }
+    return baseIndex;
+}
+
 // Affichage du groupe de questions actuel
 function displayCurrentQuestionGroup() {
     const currentGroup = questionGroups[currentGroupIndex];
     const container = $('#questionsContainer');
     container.empty();
 
-    currentGroup.forEach((question, index) => {
-        const questionHtml = createQuestionHtml(question, index);
+    // Calculer l'index de base pour ce groupe
+    const baseIndex = calculateBaseIndex(currentGroupIndex);
+
+    currentGroup.forEach((question, groupQuestionIndex) => {
+        const globalIndex = baseIndex + groupQuestionIndex;
+        const questionHtml = createQuestionHtml(question, globalIndex);
         container.append(questionHtml);
 
         if (question.timer) {
-            startQuestionTimer(question.timer, index);
+            startQuestionTimer(question.timer, globalIndex);
         }
     });
 
@@ -153,7 +170,7 @@ function displayCurrentQuestionGroup() {
 }
 
 // Création du HTML pour une question
-function createQuestionHtml(question, index) {
+function createQuestionHtml(question, globalIndex) {
     let mediaHtml = '';
     if (question.content.type === 'image') {
         mediaHtml = `<img src="${question.content.url}" alt="Question media" class="media-content">`;
@@ -166,23 +183,23 @@ function createQuestionHtml(question, index) {
     let choicesHtml = question.choices.map((choice, choiceIndex) => `
         <div class="form-check">
             <input class="form-check-input" type="${question.choices.length > 1 ? 'checkbox' : 'radio'}"
-                   name="question${index}" value="${choiceIndex}" id="choice${index}_${choiceIndex}">
-            <label class="form-check-label" for="choice${index}_${choiceIndex}">
+                   name="question${globalIndex}" value="${choiceIndex}" id="choice${globalIndex}_${choiceIndex}">
+            <label class="form-check-label" for="choice${globalIndex}_${choiceIndex}">
                 ${choice.text}
             </label>
         </div>
     `).join('');
 
     return `
-        <div class="card mb-4 question" data-question-index="${index}">
+        <div class="card mb-4 question" data-question-index="${globalIndex}">
             <div class="card-body">
-                <h5 class="card-title">Question ${index + 1}</h5>
+                <h5 class="card-title">Question ${globalIndex + 1}</h5>
                 <p class="card-text">${question.content.text}</p>
                 ${mediaHtml}
                 <div class="choices mt-3">
                     ${choicesHtml}
                 </div>
-                ${question.timer ? `<div class="question-timer mt-2">Temps restant: <span id="questionTimer${index}">--:--</span></div>` : ''}
+                ${question.timer ? `<div class="question-timer mt-2">Temps restant: <span id="questionTimer${globalIndex}">--:--</span></div>` : ''}
             </div>
         </div>
     `;
@@ -223,17 +240,17 @@ function startGlobalTimer() {
 }
 
 // Démarrage du chrono pour une question
-function startQuestionTimer(duration, questionIndex) {
+function startQuestionTimer(duration, globalIndex) {
     let timeLeft = duration;
 
     function updateTimer() {
         const minutes = Math.floor(timeLeft / 60);
         const seconds = timeLeft % 60;
-        $(`#questionTimer${questionIndex}`).text(`${minutes}:${seconds.toString().padStart(2, '0')}`);
+        $(`#questionTimer${globalIndex}`).text(`${minutes}:${seconds.toString().padStart(2, '0')}`);
 
         if (timeLeft === 0) {
             clearInterval(questionTimer);
-            $(`input[name="question${questionIndex}"]`).prop('disabled', true);
+            $(`input[name="question${globalIndex}"]`).prop('disabled', true);
         }
         timeLeft--;
     }
@@ -264,13 +281,13 @@ function submitQuiz() {
     clearInterval(quizTimer);
     if (questionTimer) clearInterval(questionTimer);
 
-    // Calcul du score
     let totalScore = 0;
     const detailedResults = [];
+    let globalQuestionIndex = 0;
 
     questionGroups.forEach(group => {
-        group.forEach((question, index) => {
-            const selectedAnswers = $(`input[name="question${index}"]:checked`).map(function () {
+        group.forEach(question => {
+            const selectedAnswers = $(`input[name="question${globalQuestionIndex}"]:checked`).map(function () {
                 return parseInt($(this).val());
             }).get();
 
@@ -285,6 +302,8 @@ function submitQuiz() {
                     selectedAnswers: selectedAnswers.map(idx => question.choices[idx].text)
                 });
             }
+
+            globalQuestionIndex++;
         });
     });
 
@@ -316,7 +335,7 @@ function displayResults(totalScore, detailedResults) {
     $('#quizContainer').hide();
     $('#resultsContainer').show();
 
-    const finalScore = (totalScore / questions.length * 100).toFixed(2);
+    const finalScore = (totalScore / totalQuestionCount * 100).toFixed(2);
     $('#finalScore').text(finalScore);
 
     if (quizConfig.showAnswers) {
@@ -326,7 +345,7 @@ function displayResults(totalScore, detailedResults) {
                     <h6 class="card-title">${result.question}</h6>
                     <p>Score: ${(result.score * 100).toFixed(2)}%</p>
                     <p>Réponses correctes: ${result.correctAnswers.join(', ')}</p>
-                    <p>Vos réponses: ${result.selectedAnswers.join(', ')}</p>
+                    <p>Vos réponses: ${result.selectedAnswers.length > 0 ? result.selectedAnswers.join(', ') : 'Aucune réponse'}</p>
                 </div>
             </div>
         `).join('');
