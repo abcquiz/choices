@@ -11,7 +11,8 @@ const questions = [
             { "text": "Décembre", "correct": false },
             { "text": "Mars", "correct": false }
         ],
-        "timer": 15
+        "timer": 15,
+        "feedback": "feeback1"
     },
     {
         "groupId": "mathematiques",
@@ -39,7 +40,8 @@ const questions = [
             { "text": "Rouge", "correct": false },
             { "text": "Vert", "correct": false }
         ],
-        "timer": 10
+        "timer": 10,
+        "feedback": "feeback3"
     },
     {
         "groupId": "mathematiques",
@@ -53,7 +55,8 @@ const questions = [
             { "text": "4", "correct": false },
             { "text": "6", "correct": false }
         ],
-        "timer": 10
+        "timer": 10,
+        "feedback": "feeback4"
     },
     {
         "groupId": "logique",
@@ -67,7 +70,8 @@ const questions = [
             { "text": "Mercredi", "correct": false },
             { "text": "Dimanche", "correct": false }
         ],
-        "timer": 15
+        "timer": 15,
+        "feedback": "feeback5"
     },
     {
         "groupId": "culture_generale",
@@ -137,6 +141,7 @@ const questions = [
             { "text": "Vendredi", "correct": false },
             { "text": "Samedi", "correct": false }
         ],
-        "timer": 15
+        "timer": 15,
+        "feedback": "feeback dernière question"
     }
 ];

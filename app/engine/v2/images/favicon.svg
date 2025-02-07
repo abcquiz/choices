@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+    <!-- Fond circulaire -->
+    <circle cx="50" cy="50" r="45" fill="#6366f1" />
+
+    <!-- Lettre Q stylisée -->
+    <!-- Cercle extérieur du Q -->
+    <path d="M35 50 
+           A 15 15 0 1 1 65 50
+           A 15 15 0 1 1 35 50"
+        stroke="white"
+        stroke-width="8"
+        stroke-linecap="round"
+        fill="none" />
+
+    <!-- Queue du Q -->
+    <path d="M60 55 L72 67"
+        stroke="white"
+        stroke-width="8"
+        stroke-linecap="round"
+        fill="none" />
+
+    <!-- Point décoratif -->
+    <circle cx="50" cy="50" r="4" fill="white" />
+</svg>

@@ -1,0 +1,29 @@
+.question-group {
+    display: none;
+}
+
+.question-group.active {
+    display: block;
+}
+
+.timer {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.progress {
+    height: 25px;
+}
+
+.media-content {
+    max-width: 100%;
+    margin: 15px 0;
+}
+
+.media-content img {
+    max-width: 100%;
+}
+
+.media-content iframe {
+    max-width: 100%;
+}
