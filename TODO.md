@@ -6,7 +6,7 @@
 - [ ] Dans le résultat final, afficher : le nom, le quiz, la note, le md5 (avec code du quiz comme salt) "note, nom, quiz, date", la date
 - [ ] Page x/n - Question  i/z
 - [ ] afficher les chrono en h m s
-- [ ] ajouter un feedback d'explication de la réponse
+- [ ] ajouter un feedback d'explication de la réponse, bonne ou mauvaise afin que l'élève comprenne c'est ok ou pas ok
 - [ ] Ajouter un message global d'appréciation du résultat, style : très bien, bravo
 - [ ] Ajouter une entrée topic
 - [ ] Ajouter un message global par topic
