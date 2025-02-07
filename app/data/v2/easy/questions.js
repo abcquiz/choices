@@ -16,7 +16,7 @@ const questions = [
         "feedback": "feeback1"
     },
     {
-        "groupId": "mathematiques",
+        "groupId": "mathematiques2",
         "topic": "topic 2",
         "content": {
             "type": "text",
@@ -63,7 +63,7 @@ const questions = [
         "feedback": "feeback4"
     },
     {
-        "groupId": "logique",
+        "groupId": "logique3",
         "topic": "topic 2",
         "content": {
             "type": "text",
@@ -79,7 +79,7 @@ const questions = [
         "feedback": "feeback5"
     },
     {
-        "groupId": "culture_generale",
+        "groupId": "culture_generale2",
         "content": {
             "type": "text",
             "text": "Quelle est la capitale de la France ?",
@@ -108,7 +108,7 @@ const questions = [
         "timer": 10
     },
     {
-        "groupId": "mathematiques",
+        "groupId": "mathematiques2",
         "topic": "topic 1",
         "content": {
             "type": "text",
@@ -123,7 +123,7 @@ const questions = [
         "timer": 10
     },
     {
-        "groupId": "culture_generale",
+        "groupId": "culture_generale3",
         "topic": "topic 3",
         "content": {
             "type": "text",
@@ -138,7 +138,7 @@ const questions = [
         "timer": 15
     },
     {
-        "groupId": "logique",
+        "groupId": "logique2",
         "topic": "topic 2",
         "content": {
             "type": "text",
