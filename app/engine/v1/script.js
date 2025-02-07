@@ -28,7 +28,7 @@ document.getElementById('loginForm').addEventListener('keypress', function (even
 });
 
 // Configuration globale
-const dataBaseUrl = 'examples';
+const dataBaseUrl = 'https://raw.githubusercontent.com/abcquiz/choices/refs/heads/main/app/data/v1';
 const usercodes = ['test', 'CODE123', 'ADMIN456', 'TEST789']; // Codes d'accès autorisés
 
 let quizConfig = null;
