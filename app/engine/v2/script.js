@@ -1,5 +1,5 @@
 // Version du quiz à afficher sur la page de login
-const QUIZ_VERSION = "2.1.0-2025-02-07 16:10";
+const QUIZ_VERSION = "2.1.0-2025-02-07 19:59";
 document.addEventListener('DOMContentLoaded', function () {
     // Ajout de la version dans le footer du formulaire de login
     const loginForm = document.getElementById('loginForm');
@@ -205,8 +205,14 @@ function organizeQuestionGroups() {
         groupMap.get(groupId).push(question);
     });
 
-    // Convertir le Map en tableau de groupes
-    questionGroups = Array.from(groupMap.values());
+    let groupedQuestions = Array.from(groupMap.values());
+ // Si le paramètre est true, mélanger l'ordre des groupes
+  ///if (shuffleQuestionGroups) {
+    groupedQuestions = shuffleArray(groupedQuestions);
+  //}
+
+    // Mettre à jour les variables globales (ou les variables concernées)
+    questionGroups = groupedQuestions;
 
     // Calculer le nombre total de questions
     totalQuestionCount = questions.length;
@@ -379,7 +385,7 @@ function updateProgress() {
     console.log("Mise à jour progression:", currentGroupIndex + 1, "sur", questionGroups.length);
     const progress = ((currentGroupIndex + 1) / questionGroups.length) * 100;
     $('#progressBar').css('width', `${progress}%`);
-    $('#progressText').text(`Groupe ${currentGroupIndex + 1}/${questionGroups.length}`);
+    $('#progressText').text(`Page ${currentGroupIndex + 1}/${questionGroups.length}`);
 }
 
 // Démarrage du chrono global
