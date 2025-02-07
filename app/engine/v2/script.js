@@ -27,7 +27,7 @@ document.getElementById('loginForm').addEventListener('keypress', function (even
     }
 });
 
-// Ajouter les écouteurs d'événements pour la vérification de la visibilité:14h49
+// Ajouter les écouteurs d'événements pour la vérification de la visibilité:15h13
 $(document).ready(function () {
     $(window).on('scroll resize', throttle(checkQuestionVisibility, 250));
 });
@@ -133,6 +133,21 @@ async function startQuiz() {
         alert('Erreur lors du chargement du quiz. Veuillez vérifier le code du quiz.');
         console.error(error);
     }
+
+    try {
+        // Après le chargement des questions
+        console.log("Questions chargées:", questions);
+
+        // Organisation des questions en groupes
+        organizeQuestionGroups();
+        console.log("Groupes organisés:", questionGroups);
+
+        // Initialisation de l'interface
+        initializeQuizInterface();
+    } catch (error) {
+        alert('Erreur lors du chargement du quiz. Veuillez vérifier le code du quiz.');
+        console.error(error);
+    }
 }
 // Fonction simple de throttle
 function throttle(func, limit) {
@@ -170,41 +185,24 @@ function formatTimeRemaining(seconds) {
 
 // Organisation des questions en groupes
 function organizeQuestionGroups() {
-    questionGroups = [];
-    let currentGroup = [];
-    let currentGroupId = null;
+    // Utiliser un Map pour regrouper les questions
+    const groupMap = new Map();
 
     questions.forEach(question => {
-        if (!question.groupId && currentGroup.length > 0) {
-            // Question sans groupe après un groupe existant
-            questionGroups.push(currentGroup);
-            currentGroup = [question];
-            currentGroupId = null;
-        } else if (!question.groupId) {
-            // Question sans groupe et pas de groupe en cours
-            questionGroups.push([question]);
-        } else if (question.groupId !== currentGroupId) {
-            // Nouvelle question avec un groupId différent
-            if (currentGroup.length > 0) {
-                questionGroups.push(currentGroup);
-            }
-            currentGroup = [question];
-            currentGroupId = question.groupId;
-        } else {
-            // Question du même groupe
-            currentGroup.push(question);
+        const groupId = question.groupId || `single_${questions.indexOf(question)}`;
+        if (!groupMap.has(groupId)) {
+            groupMap.set(groupId, []);
         }
+        groupMap.get(groupId).push(question);
     });
 
-    // N'oublions pas le dernier groupe
-    if (currentGroup.length > 0) {
-        questionGroups.push(currentGroup);
-    }
+    // Convertir le Map en tableau de groupes
+    questionGroups = Array.from(groupMap.values());
 
     // Calculer le nombre total de questions
-    totalQuestionCount = questionGroups.reduce((sum, group) => sum + group.length, 0);
+    totalQuestionCount = questions.length;
 
-    console.log('Groupes organisés:', questionGroups); // Pour le débogage
+    console.log("Questions regroupées:", questionGroups);
 }
 
 // Initialisation de l'interface du quiz
@@ -260,24 +258,45 @@ function calculateTopicScores(questionGroups, userAnswers) {
 
 // Affichage du groupe de questions actuel
 function displayCurrentQuestionGroup() {
+    console.log("Affichage du groupe:", currentGroupIndex);
+    console.log("Groupe actuel:", questionGroups[currentGroupIndex]);
+
     const currentGroup = questionGroups[currentGroupIndex];
     const container = $('#questionsContainer');
     container.empty();
 
-    // Calculer l'index de base pour ce groupe
-    const baseIndex = calculateBaseIndex(currentGroupIndex);
+    // Nettoyer les anciens timers
+    if (questionTimers) {
+        Object.values(questionTimers).forEach(timer => {
+            if (timer.interval) {
+                clearInterval(timer.interval);
+            }
+        });
+    }
+    questionTimers = {};
 
-    currentGroup.forEach((question, groupQuestionIndex) => {
-        const globalIndex = baseIndex + groupQuestionIndex;
-        const questionHtml = createQuestionHtml(question, globalIndex);
-        container.append(questionHtml);
+    // Si le groupe est valide
+    if (currentGroup && Array.isArray(currentGroup)) {
+        const baseIndex = calculateBaseIndex(currentGroupIndex);
+        console.log("Base index pour ce groupe:", baseIndex);
 
-        if (question.timer) {
-            startQuestionTimer(question.timer, globalIndex);
-        }
-    });
+        currentGroup.forEach((question, groupQuestionIndex) => {
+            const globalIndex = baseIndex + groupQuestionIndex;
+            console.log("Création question:", globalIndex, question);
+
+            const questionHtml = createQuestionHtml(question, globalIndex);
+            container.append(questionHtml);
+
+            if (question.timer) {
+                startQuestionTimer(question.timer, globalIndex);
+            }
+        });
+    } else {
+        console.error("Groupe invalide:", currentGroup);
+    }
 
     updateNavigationButtons();
+    setTimeout(checkQuestionVisibility, 100);
 }
 
 // Création du HTML pour une question
@@ -325,9 +344,10 @@ function updateNavigationButtons() {
 
 // Mise à jour de la barre de progression
 function updateProgress() {
+    console.log("Mise à jour progression:", currentGroupIndex + 1, "sur", questionGroups.length);
     const progress = ((currentGroupIndex + 1) / questionGroups.length) * 100;
     $('#progressBar').css('width', `${progress}%`);
-    $('#progressText').text(`Question ${currentGroupIndex + 1}/${questionGroups.length}`);
+    $('#progressText').text(`Groupe ${currentGroupIndex + 1}/${questionGroups.length}`);
 }
 
 // Démarrage du chrono global

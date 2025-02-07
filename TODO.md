@@ -16,3 +16,4 @@
 - [ ] avoir une config qui permet d'afficher ou pas le bouton "précédent" (ex showPreviousQuestionButton=true/false)
 - [ ] Afficher la version du quiz et sa date release
 - [ ] Ajouter un loading
+- [ ] tests pour l'affichage aléatoire de questions ou groupes de questions
