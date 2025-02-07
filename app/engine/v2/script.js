@@ -1,4 +1,13 @@
+// Version du quiz à afficher sur la page de login
+const QUIZ_VERSION = "2.1.0-2025-02-07 15:49";
 document.addEventListener('DOMContentLoaded', function () {
+    // Ajout de la version dans le footer du formulaire de login
+    const loginForm = document.getElementById('loginForm');
+    const versionDiv = document.createElement('div');
+    versionDiv.className = 'text-center mt-3 text-muted small';
+    versionDiv.innerHTML = `Version ${QUIZ_VERSION}`;
+    loginForm.appendChild(versionDiv);
+
     // Vérifier si nous sommes en local
     const isLocalhost = window.location.hostname === 'localhost';
 
@@ -310,11 +319,25 @@ function createQuestionHtml(question, globalIndex) {
         mediaHtml = `<audio controls src="${question.content.url}" class="media-content"></audio>`;
     }
 
-    let choicesHtml = question.choices.map((choice, choiceIndex) => `
+    // Préparation des choix avec leurs indices pour le shuffle
+    let choices = question.choices.map((choice, idx) => ({
+        ...choice,
+        originalIndex: idx // Garder l'index original pour la valeur
+    }));
+
+    // Mélanger les choix si l'option est activée
+    if (quizConfig.shuffleChoices) {
+        choices = shuffleArray(choices);
+    }
+
+    let choicesHtml = choices.map(choice => `
         <div class="form-check">
-            <input class="form-check-input" type="${question.choices.length > 1 ? 'checkbox' : 'radio'}"
-                   name="question${globalIndex}" value="${choiceIndex}" id="choice${globalIndex}_${choiceIndex}">
-            <label class="form-check-label" for="choice${globalIndex}_${choiceIndex}">
+            <input class="form-check-input" 
+                   type="${question.choices.length > 1 ? 'checkbox' : 'radio'}"
+                   name="question${globalIndex}" 
+                   value="${choice.originalIndex}" 
+                   id="choice${globalIndex}_${choice.originalIndex}">
+            <label class="form-check-label" for="choice${globalIndex}_${choice.originalIndex}">
                 ${choice.text}
             </label>
         </div>
@@ -333,6 +356,15 @@ function createQuestionHtml(question, globalIndex) {
             </div>
         </div>
     `;
+}
+
+// Fonction utilitaire pour mélanger un tableau
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
 }
 
 // Mise à jour des boutons de navigation
@@ -697,7 +729,7 @@ function displayResults(totalScore, detailedResults, topicAverages) {
                                 <p>Score: ${(result.score * 100).toFixed(2)}% (${(result.score * 20).toFixed(2)}/20)</p>
                                 <p>Réponses correctes: ${result.correctAnswers.join(', ')}</p>
                                 <p>Vos réponses: ${result.selectedAnswers.length > 0 ? result.selectedAnswers.join(', ') : 'Aucune réponse'}</p>
-                                ${result.feedback ? `
+                                ${(quizConfig.showFeedbackAfterEachQuestion && result.feedback) ? `
                                     <div class="feedback mt-3">
                                         <strong>Feedback:</strong> ${result.feedback}
                                     </div>
