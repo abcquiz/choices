@@ -27,7 +27,7 @@ document.getElementById('loginForm').addEventListener('keypress', function (even
     }
 });
 
-// Ajouter les écouteurs d'événements pour la vérification de la visibilité:14h40
+// Ajouter les écouteurs d'événements pour la vérification de la visibilité:14h49
 $(document).ready(function () {
     $(window).on('scroll resize', throttle(checkQuestionVisibility, 250));
 });
@@ -459,14 +459,14 @@ function submitQuiz() {
     clearInterval(quizTimer);
     if (questionTimer) clearInterval(questionTimer);
 
-    saveCurrentAnswers();
+    saveCurrentAnswers(); // Sauvegarder les réponses de la dernière page
 
     let totalScore = 0;
     const detailedResults = [];
     const topicScores = {};
     const topicQuestionCounts = {};
 
-    // Parcourir toutes les questions
+    // Parcourir toutes les questions pour calculer les scores
     questionGroups.forEach((group, groupIndex) => {
         group.forEach((question, questionIndex) => {
             const globalIndex = calculateBaseIndex(groupIndex) + questionIndex;
@@ -475,7 +475,7 @@ function submitQuiz() {
 
             totalScore += score;
 
-            // Gestion des scores par topic
+            // Calculer les scores par topic
             if (question.topic) {
                 if (!topicScores[question.topic]) {
                     topicScores[question.topic] = 0;
@@ -485,26 +485,28 @@ function submitQuiz() {
                 topicQuestionCounts[question.topic]++;
             }
 
-            if (quizConfig.showAnswers) {
-                detailedResults.push({
-                    question: question.content.text,
-                    score: score,
-                    correctAnswers: question.choices.filter(choice => choice.correct).map(choice => choice.text),
-                    selectedAnswers: selectedAnswers.map(idx => question.choices[idx].text),
-                    feedback: question.feedback,
-                    topic: question.topic
-                });
-            }
+            // Ajouter les résultats détaillés
+            detailedResults.push({
+                question: question.content.text,
+                score: score,
+                correctAnswers: question.choices.filter(choice => choice.correct).map(choice => choice.text),
+                selectedAnswers: selectedAnswers.map(idx => question.choices[idx].text),
+                feedback: question.feedback,
+                topic: question.topic
+            });
         });
     });
 
-    // Calcul des moyennes par topic
+    // Calculer les moyennes par topic
     const topicAverages = {};
     for (const topic in topicScores) {
         topicAverages[topic] = (topicScores[topic] / topicQuestionCounts[topic] * 100).toFixed(2);
     }
 
-    console.log('Topic Averages:', topicAverages); // Pour le débogage
+    // Log pour le débogage
+    console.log('Topic scores:', topicScores);
+    console.log('Topic counts:', topicQuestionCounts);
+    console.log('Topic averages:', topicAverages);
 
     displayResults(totalScore, detailedResults, topicAverages);
 }
@@ -604,12 +606,12 @@ function displayResults(totalScore, detailedResults, topicAverages) {
                     <div class="topic-scores mt-3">`;
 
         for (const [topic, score] of Object.entries(topicAverages)) {
-            const scoreOn20 = (score * 20 / 100).toFixed(2);
+            const topicScoreOn20 = (parseFloat(score) * 20 / 100).toFixed(2);
             resultsHtml += `
                 <div class="topic-score mb-3">
                     <div class="d-flex justify-content-between mb-1">
                         <strong>${topic}</strong>
-                        <span>${score}% (${scoreOn20}/20)</span>
+                        <span>${score}% (${topicScoreOn20}/20)</span>
                     </div>
                     <div class="progress">
                         <div class="progress-bar" 
@@ -630,7 +632,7 @@ function displayResults(totalScore, detailedResults, topicAverages) {
             </div>`;
     }
 
-    // Ajout des résultats détaillés (inchangé)
+    // Ajout des résultats détaillés
     if (quizConfig.showAnswers) {
         resultsHtml += `
             <div class="card mb-4">

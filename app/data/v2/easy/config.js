@@ -1,6 +1,6 @@
 const config = {
     "title": "Quiz Easy",
-    "duration": 1800,
+    "duration": 1800000,
     "showAnswers": true,
     "showFeedbackAfterEachQuestion": true,
     "minScore": 60,
