@@ -146,6 +146,28 @@ function throttle(func, limit) {
     }
 }
 
+// Fonction pour formater le temps restant
+function formatTimeRemaining(seconds) {
+    if (seconds < 0) return "0s";
+
+    const hours = Math.floor(seconds / 3600);
+    seconds = seconds % 3600;
+    const minutes = Math.floor(seconds / 60);
+    seconds = seconds % 60;
+
+    let timeString = '';
+
+    if (hours > 0) {
+        timeString += `${hours}h `;
+    }
+    if (minutes > 0 || hours > 0) {
+        timeString += `${minutes.toString().padStart(2, '0')}m `;
+    }
+    timeString += `${seconds.toString().padStart(2, '0')}s`;
+
+    return timeString;
+}
+
 // Organisation des questions en groupes
 function organizeQuestionGroups() {
     questionGroups = [];
@@ -300,12 +322,11 @@ function updateProgress() {
 
 // Démarrage du chrono global
 function startGlobalTimer() {
-    let timeLeft = quizConfig.duration;
+    let timeLeft = quizConfig.duration; // La durée est déjà en secondes dans le fichier config
 
     function updateTimer() {
-        const minutes = Math.floor(timeLeft / 60);
-        const seconds = timeLeft % 60;
-        $('#timer').text(`${minutes}:${seconds.toString().padStart(2, '0')}`);
+        const formattedTime = formatTimeRemaining(timeLeft);
+        $('#timer').text(formattedTime);
 
         if (timeLeft === 0) {
             clearInterval(quizTimer);

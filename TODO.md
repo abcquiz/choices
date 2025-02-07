@@ -14,3 +14,5 @@
 - [ ] Reprendre en cas de refresh pour éviter les triches ou les pb navigateurs : enregistrement dans le stockage local du navigateur
 - [ ] Le chrono d'une question commence uniquement à partir du moment où la question est affichée à l'écran, pas avant
 - [ ] avoir une config qui permet d'afficher ou pas le bouton "précédent" (ex showPreviousQuestionButton=true/false)
+- [ ] Afficher la version du quiz et sa date release
+- [ ] Ajouter un loading
