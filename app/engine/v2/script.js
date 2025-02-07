@@ -1,5 +1,5 @@
 // Version du quiz à afficher sur la page de login
-const QUIZ_VERSION = "2.1.0-2025-02-07 19:59";
+const QUIZ_VERSION = "2.1.0-2025-02-07 20:18";
 document.addEventListener('DOMContentLoaded', function () {
     // Ajout de la version dans le footer du formulaire de login
     const loginForm = document.getElementById('loginForm');
@@ -131,7 +131,7 @@ async function startQuiz() {
         }
 
         // Organisation des questions en groupes
-        organizeQuestionGroups();
+        organizeQuestionGroups(quizConfig.shuffleQuestionGroups);
 
         // Initialisation de l'interface
         initializeQuizInterface();
@@ -193,7 +193,7 @@ function formatTimeRemaining(seconds) {
 }
 
 // Organisation des questions en groupes
-function organizeQuestionGroups() {
+function organizeQuestionGroups(shuffleQuestionGroups) {
     // Utiliser un Map pour regrouper les questions
     const groupMap = new Map();
 
@@ -207,9 +207,9 @@ function organizeQuestionGroups() {
 
     let groupedQuestions = Array.from(groupMap.values());
  // Si le paramètre est true, mélanger l'ordre des groupes
-  ///if (shuffleQuestionGroups) {
+  if (shuffleQuestionGroups) {
     groupedQuestions = shuffleArray(groupedQuestions);
-  //}
+  }
 
     // Mettre à jour les variables globales (ou les variables concernées)
     questionGroups = groupedQuestions;
