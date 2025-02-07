@@ -27,9 +27,9 @@ document.getElementById('loginForm').addEventListener('keypress', function (even
     }
 });
 
-// Ajouter les écouteurs d'événements pour la vérification de la visibilité
+// Ajouter les écouteurs d'événements pour la vérification de la visibilité:14h40
 $(document).ready(function () {
-    $(window).on('scroll resize', _.throttle(checkQuestionVisibility, 250));
+    $(window).on('scroll resize', throttle(checkQuestionVisibility, 250));
 });
 
 // Configuration globale
@@ -132,6 +132,17 @@ async function startQuiz() {
     } catch (error) {
         alert('Erreur lors du chargement du quiz. Veuillez vérifier le code du quiz.');
         console.error(error);
+    }
+}
+// Fonction simple de throttle
+function throttle(func, limit) {
+    let inThrottle;
+    return function (...args) {
+        if (!inThrottle) {
+            func.apply(this, args);
+            inThrottle = true;
+            setTimeout(() => inThrottle = false, limit);
+        }
     }
 }
 
@@ -308,7 +319,6 @@ function startGlobalTimer() {
 }
 
 // Démarrage du chrono pour une question
-// Fonction pour démarrer le timer d'une question
 function startQuestionTimer(duration, globalIndex) {
     // Si un timer existe déjà pour cette question, on le nettoie
     if (questionTimers[globalIndex]) {
@@ -406,17 +416,6 @@ function displayCurrentQuestionGroup() {
 
     // Vérifier la visibilité des questions après leur affichage
     setTimeout(checkQuestionVisibility, 100);
-}
-
-// Navigation entre les groupes de questions
-function showPreviousQuestion() {
-    saveCurrentAnswers();
-    if (currentGroupIndex > 0) {
-        currentGroupIndex--;
-        displayCurrentQuestionGroup();
-        loadSavedAnswers();
-        updateProgress();
-    }
 }
 
 function showNextQuestion() {
