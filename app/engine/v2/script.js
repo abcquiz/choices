@@ -172,29 +172,39 @@ function formatTimeRemaining(seconds) {
 function organizeQuestionGroups() {
     questionGroups = [];
     let currentGroup = [];
+    let currentGroupId = null;
 
     questions.forEach(question => {
         if (!question.groupId && currentGroup.length > 0) {
+            // Question sans groupe après un groupe existant
             questionGroups.push(currentGroup);
             currentGroup = [question];
+            currentGroupId = null;
         } else if (!question.groupId) {
+            // Question sans groupe et pas de groupe en cours
             questionGroups.push([question]);
-        } else {
-            if (currentGroup.length > 0 && currentGroup[0].groupId !== question.groupId) {
+        } else if (question.groupId !== currentGroupId) {
+            // Nouvelle question avec un groupId différent
+            if (currentGroup.length > 0) {
                 questionGroups.push(currentGroup);
-                currentGroup = [question];
-            } else {
-                currentGroup.push(question);
             }
+            currentGroup = [question];
+            currentGroupId = question.groupId;
+        } else {
+            // Question du même groupe
+            currentGroup.push(question);
         }
     });
 
+    // N'oublions pas le dernier groupe
     if (currentGroup.length > 0) {
         questionGroups.push(currentGroup);
     }
 
     // Calculer le nombre total de questions
     totalQuestionCount = questionGroups.reduce((sum, group) => sum + group.length, 0);
+
+    console.log('Groupes organisés:', questionGroups); // Pour le débogage
 }
 
 // Initialisation de l'interface du quiz
