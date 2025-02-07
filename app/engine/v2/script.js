@@ -1,5 +1,5 @@
 // Version du quiz à afficher sur la page de login
-const QUIZ_VERSION = "2.1.0-2025-02-07 20:18";
+const QUIZ_VERSION = "2.1.0-2025-02-07 22:00";
 document.addEventListener('DOMContentLoaded', function () {
     // Ajout de la version dans le footer du formulaire de login
     const loginForm = document.getElementById('loginForm');
@@ -43,7 +43,7 @@ $(document).ready(function () {
 
 // Configuration globale
 const dataBaseUrl = 'https://raw.githubusercontent.com/abcquiz/choices/refs/heads/main/app/data/v2';
-const usercodes = ['test', 'CODE123', 'ADMIN456', 'TEST789']; // Codes d'accès autorisés
+const usercodes = ['','test', 'CODE123', 'ADMIN456', 'TEST789']; // Codes d'accès autorisés
 
 let quizConfig = null;
 let questions = null;
@@ -143,20 +143,20 @@ async function startQuiz() {
         console.error(error);
     }
 
-    try {
-        // Après le chargement des questions
-        console.log("Questions chargées:", questions);
+    // try {
+    //     // Après le chargement des questions
+    //     console.log("Questions chargées:", questions);
 
-        // Organisation des questions en groupes
-        organizeQuestionGroups();
-        console.log("Groupes organisés:", questionGroups);
+    //     // Organisation des questions en groupes
+    //     organizeQuestionGroups();
+    //     console.log("Groupes organisés:", questionGroups);
 
-        // Initialisation de l'interface
-        initializeQuizInterface();
-    } catch (error) {
-        alert('Erreur lors du chargement du quiz. Veuillez vérifier le code du quiz.');
-        console.error(error);
-    }
+    //     // Initialisation de l'interface
+    //     initializeQuizInterface();
+    // } catch (error) {
+    //     alert('Erreur lors du chargement du quiz. Veuillez vérifier le code du quiz.');
+    //     console.error(error);
+    // }
 }
 // Fonction simple de throttle
 function throttle(func, limit) {

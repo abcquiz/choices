@@ -6,6 +6,7 @@
 - [ ] avoir une config qui permet d'afficher ou pas le bouton "précédent" (ex showPreviousQuestionButton=true/false)
 - [ ] Ajouter un loading
 - [ ] tests pour l'affichage aléatoire de questions ou groupes de questions
+- [ ] shuffleQuestions n'est pas utiliser : l'utiliser ou le supprimer
 - [x] remplace "Groupe x/n" par "Page x/n"
 - [x] Pouvoir lancer le quiz en appuyant sur entrée (en plus du bouton)
 - [x] Dans le résultat final, afficher : le nom, le quiz, la note, le md5 (avec code du quiz comme salt) "note, nom, quiz, date", la date
