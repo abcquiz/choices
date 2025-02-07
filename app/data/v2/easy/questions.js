@@ -1,6 +1,7 @@
 const questions = [
     {
         "groupId": "culture_generale",
+        "topic": "topic 1",
         "content": {
             "type": "text",
             "text": "Quel est le premier mois de l'année ?",
@@ -16,6 +17,7 @@ const questions = [
     },
     {
         "groupId": "mathematiques",
+        "topic": "topic 2",
         "content": {
             "type": "text",
             "text": "Combien font 2 + 2 ?",
@@ -30,6 +32,7 @@ const questions = [
     },
     {
         "groupId": "culture_generale",
+        "topic": "topic 1",
         "content": {
             "type": "text",
             "text": "Quelle est la couleur du ciel par beau temps ?",
@@ -45,6 +48,7 @@ const questions = [
     },
     {
         "groupId": "mathematiques",
+        "topic": "topic 1",
         "content": {
             "type": "text",
             "text": "Combien de doigts avons-nous sur une main ?",
@@ -60,6 +64,7 @@ const questions = [
     },
     {
         "groupId": "logique",
+        "topic": "topic 2",
         "content": {
             "type": "text",
             "text": "Si aujourd'hui c'est lundi, quel jour sera demain ?",
@@ -89,6 +94,7 @@ const questions = [
     },
     {
         "groupId": "logique",
+        "topic": "topic 3",
         "content": {
             "type": "text",
             "text": "Quel animal fait 'miaou' ?",
@@ -103,6 +109,7 @@ const questions = [
     },
     {
         "groupId": "mathematiques",
+        "topic": "topic 1",
         "content": {
             "type": "text",
             "text": "Quel chiffre vient après 1 ?",
@@ -117,6 +124,7 @@ const questions = [
     },
     {
         "groupId": "culture_generale",
+        "topic": "topic 3",
         "content": {
             "type": "text",
             "text": "Quelle couleur obtient-on en mélangeant bleu et jaune ?",
@@ -131,6 +139,7 @@ const questions = [
     },
     {
         "groupId": "logique",
+        "topic": "topic 2",
         "content": {
             "type": "text",
             "text": "Complétez la suite : Lundi, Mardi, Mercredi, ...",
