@@ -13,6 +13,7 @@
 
 .progress {
     height: 25px;
+    background-color: #e9ecef;
 }
 
 .media-content {
@@ -26,4 +27,38 @@
 
 .media-content iframe {
     max-width: 100%;
+}
+
+/* Nouveaux styles pour les topics et feedbacks */
+.topic-scores {
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border-radius: 0.5rem;
+}
+
+.topic-score {
+    margin-bottom: 1rem;
+}
+
+.topic-score:last-child {
+    margin-bottom: 0;
+}
+
+.feedback {
+    background-color: #f8f9fa;
+    border-left: 4px solid #007bff;
+    padding: 1rem;
+    margin-top: 1rem;
+}
+
+.topic-tag {
+    color: #6c757d;
+    font-size: 0.9rem;
+}
+
+.progress-bar {
+    background-color: #007bff;
+    transition: width 0.6s ease;
+    line-height: 25px;
+    /* Pour aligner le texte verticalement avec la nouvelle hauteur */
 }

@@ -376,7 +376,10 @@ function submitQuiz() {
 
     let totalScore = 0;
     const detailedResults = [];
+    const topicScores = {};
+    const topicQuestionCounts = {};
 
+    // Parcourir toutes les questions pour calculer les scores
     questionGroups.forEach((group, groupIndex) => {
         group.forEach((question, questionIndex) => {
             const globalIndex = calculateBaseIndex(groupIndex) + questionIndex;
@@ -385,18 +388,37 @@ function submitQuiz() {
             const score = calculateQuestionScore(question, selectedAnswers);
             totalScore += score;
 
+            // Calculer les scores par topic
+            if (question.topic) {
+                if (!topicScores[question.topic]) {
+                    topicScores[question.topic] = 0;
+                    topicQuestionCounts[question.topic] = 0;
+                }
+                topicScores[question.topic] += score;
+                topicQuestionCounts[question.topic]++;
+            }
+
+            // Ajouter les résultats détaillés si activé
             if (quizConfig.showAnswers) {
                 detailedResults.push({
                     question: question.content.text,
                     score: score,
                     correctAnswers: question.choices.filter(choice => choice.correct).map(choice => choice.text),
-                    selectedAnswers: selectedAnswers.map(idx => question.choices[idx].text)
+                    selectedAnswers: selectedAnswers.map(idx => question.choices[idx].text),
+                    feedback: question.feedback || null, // Inclure le feedback s'il existe
+                    topic: question.topic || null // Inclure le topic s'il existe
                 });
             }
         });
     });
 
-    displayResults(totalScore, detailedResults);
+    // Calculer les moyennes par topic
+    const topicAverages = {};
+    for (const topic in topicScores) {
+        topicAverages[topic] = (topicScores[topic] / topicQuestionCounts[topic] * 100).toFixed(2);
+    }
+
+    displayResults(totalScore, detailedResults, topicAverages);
 }
 
 // Calcul du score pour une question
@@ -420,49 +442,72 @@ function calculateQuestionScore(question, selectedAnswers) {
 }
 
 // Affichage des résultats
-function displayResults(totalScore, detailedResults) {
+function displayResults(totalScore, detailedResults, topicAverages) {
     $('#quizContainer').hide();
     $('#resultsContainer').show();
 
     const finalScore = (totalScore / totalQuestionCount * 100).toFixed(2);
-    $('#finalScore').text(finalScore);
 
-    // Calcul et affichage des scores par topic
-    const topicScores = calculateTopicScores(questionGroups, userAnswers);
+    // Créer le HTML pour la section des scores
+    let resultsHtml = `
+        <h2 class="text-center mb-4">Résultats</h2>
+        <div class="card mb-4">
+            <div class="card-body">
+                <h3 class="text-center mb-4">Note finale: <span id="finalScore">${finalScore}</span>/100</h3>
+    `;
 
-    let topicScoresHtml = '<div class="card mb-4"><div class="card-body"><h5 class="card-title">Scores par thème</h5>';
-    for (const [topic, score] of Object.entries(topicScores)) {
-        topicScoresHtml += `
-            <div class="topic-score">
-                <strong>${topic}:</strong> ${score}%
-                <div class="progress">
-                    <div class="progress-bar" role="progressbar" 
-                         style="width: ${score}%" 
-                         aria-valuenow="${score}" 
-                         aria-valuemin="0" 
-                         aria-valuemax="100">
+    // Ajouter la section des scores par topic s'il y en a
+    if (Object.keys(topicAverages).length > 0) {
+        resultsHtml += `
+            <div class="topic-scores mb-4">
+                <h4>Scores par thème :</h4>
+                ${Object.entries(topicAverages).map(([topic, score]) => `
+                    <div class="topic-score mb-3">
+                        <div class="d-flex justify-content-between align-items-center mb-1">
+                            <strong>${topic}</strong>
+                            <span>${score}%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" 
+                                style="width: ${score}%" 
+                                aria-valuenow="${score}" 
+                                aria-valuemin="0" 
+                                aria-valuemax="100">
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>`;
-    }
-    topicScoresHtml += '</div></div>';
-
-    // Affichage des résultats détaillés si activé
-    if (quizConfig.showAnswers) {
-        const detailedHtml = detailedResults.map(result => `
-            <div class="card mb-3">
-                <div class="card-body">
-                    <h6 class="card-title">${result.question}</h6>
-                    <p>Score: ${(result.score * 100).toFixed(2)}%</p>
-                    <p>Réponses correctes: ${result.correctAnswers.join(', ')}</p>
-                    <p>Vos réponses: ${result.selectedAnswers.length > 0 ? result.selectedAnswers.join(', ') : 'Aucune réponse'}</p>
-                    ${result.feedback ? `<p class="feedback"><em>Feedback: ${result.feedback}</em></p>` : ''}
-                </div>
+                `).join('')}
             </div>
-        `).join('');
-
-        $('#detailedResults').html(topicScoresHtml + detailedHtml);
-    } else {
-        $('#detailedResults').html(topicScoresHtml);
+        `;
     }
+
+    resultsHtml += '</div></div>';
+
+    // Ajouter les résultats détaillés si activé
+    if (quizConfig.showAnswers && detailedResults.length > 0) {
+        resultsHtml += `
+            <div class="detailed-results">
+                <h4 class="mb-3">Détail des réponses</h4>
+                ${detailedResults.map(result => `
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title">${result.question}</h5>
+                            ${result.topic ? `<div class="topic-tag mb-2"><em>Thème: ${result.topic}</em></div>` : ''}
+                            <p>Score: ${(result.score * 100).toFixed(2)}%</p>
+                            <p>Réponses correctes: ${result.correctAnswers.join(', ')}</p>
+                            <p>Vos réponses: ${result.selectedAnswers.length > 0 ? result.selectedAnswers.join(', ') : 'Aucune réponse'}</p>
+                            ${result.feedback ? `
+                                <div class="feedback mt-3 p-2 bg-light rounded">
+                                    <strong>Feedback:</strong> ${result.feedback}
+                                </div>
+                            ` : ''}
+                        </div>
+                    </div>
+                `).join('')}
+            </div>
+        `;
+    }
+
+    // Mettre à jour le conteneur des résultats
+    $('#resultsContainer').html(resultsHtml);
 }
