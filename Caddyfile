@@ -4,7 +4,7 @@
 }
 
 (common) {
-    root * /usr/share/caddy
+    root * /usr/share/caddy/engine/v2
     encode gzip
     file_server
 

@@ -372,23 +372,23 @@ function submitQuiz() {
     clearInterval(quizTimer);
     if (questionTimer) clearInterval(questionTimer);
 
-    saveCurrentAnswers(); // Sauvegarder les réponses de la dernière page
+    saveCurrentAnswers();
 
     let totalScore = 0;
     const detailedResults = [];
     const topicScores = {};
     const topicQuestionCounts = {};
 
-    // Parcourir toutes les questions pour calculer les scores
+    // Parcourir toutes les questions
     questionGroups.forEach((group, groupIndex) => {
         group.forEach((question, questionIndex) => {
             const globalIndex = calculateBaseIndex(groupIndex) + questionIndex;
             const selectedAnswers = userAnswers[globalIndex] || [];
-
             const score = calculateQuestionScore(question, selectedAnswers);
+
             totalScore += score;
 
-            // Calculer les scores par topic
+            // Gestion des scores par topic
             if (question.topic) {
                 if (!topicScores[question.topic]) {
                     topicScores[question.topic] = 0;
@@ -398,25 +398,26 @@ function submitQuiz() {
                 topicQuestionCounts[question.topic]++;
             }
 
-            // Ajouter les résultats détaillés si activé
             if (quizConfig.showAnswers) {
                 detailedResults.push({
                     question: question.content.text,
                     score: score,
                     correctAnswers: question.choices.filter(choice => choice.correct).map(choice => choice.text),
                     selectedAnswers: selectedAnswers.map(idx => question.choices[idx].text),
-                    feedback: question.feedback || null, // Inclure le feedback s'il existe
-                    topic: question.topic || null // Inclure le topic s'il existe
+                    feedback: question.feedback,
+                    topic: question.topic
                 });
             }
         });
     });
 
-    // Calculer les moyennes par topic
+    // Calcul des moyennes par topic
     const topicAverages = {};
     for (const topic in topicScores) {
         topicAverages[topic] = (topicScores[topic] / topicQuestionCounts[topic] * 100).toFixed(2);
     }
+
+    console.log('Topic Averages:', topicAverages); // Pour le débogage
 
     displayResults(totalScore, detailedResults, topicAverages);
 }
@@ -448,66 +449,75 @@ function displayResults(totalScore, detailedResults, topicAverages) {
 
     const finalScore = (totalScore / totalQuestionCount * 100).toFixed(2);
 
-    // Créer le HTML pour la section des scores
+    // Construction du HTML des résultats
     let resultsHtml = `
         <h2 class="text-center mb-4">Résultats</h2>
         <div class="card mb-4">
             <div class="card-body">
-                <h3 class="text-center mb-4">Note finale: <span id="finalScore">${finalScore}</span>/100</h3>
-    `;
+                <h3 class="text-center">Note finale: ${finalScore}/100</h3>
+            </div>
+        </div>`;
 
-    // Ajouter la section des scores par topic s'il y en a
+    // Ajout des scores par topic
     if (Object.keys(topicAverages).length > 0) {
         resultsHtml += `
-            <div class="topic-scores mb-4">
-                <h4>Scores par thème :</h4>
-                ${Object.entries(topicAverages).map(([topic, score]) => `
-                    <div class="topic-score mb-3">
-                        <div class="d-flex justify-content-between align-items-center mb-1">
-                            <strong>${topic}</strong>
-                            <span>${score}%</span>
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h4>Scores par thème</h4>
+                    <div class="topic-scores mt-3">`;
+
+        for (const [topic, score] of Object.entries(topicAverages)) {
+            resultsHtml += `
+                <div class="topic-score mb-3">
+                    <div class="d-flex justify-content-between mb-1">
+                        <strong>${topic}</strong>
+                        <span>${score}%</span>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar" 
+                             role="progressbar" 
+                             style="width: ${score}%"
+                             aria-valuenow="${score}" 
+                             aria-valuemin="0" 
+                             aria-valuemax="100">
+                            ${score}%
                         </div>
-                        <div class="progress">
-                            <div class="progress-bar" role="progressbar" 
-                                style="width: ${score}%" 
-                                aria-valuenow="${score}" 
-                                aria-valuemin="0" 
-                                aria-valuemax="100">
+                    </div>
+                </div>`;
+        }
+
+        resultsHtml += `
+                    </div>
+                </div>
+            </div>`;
+    }
+
+    // Ajout des résultats détaillés
+    if (quizConfig.showAnswers) {
+        resultsHtml += `
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h4>Détail des réponses</h4>
+                    ${detailedResults.map(result => `
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <h5>${result.question}</h5>
+                                ${result.topic ? `<div class="text-muted mb-2">Thème: ${result.topic}</div>` : ''}
+                                <p>Score: ${(result.score * 100).toFixed(2)}%</p>
+                                <p>Réponses correctes: ${result.correctAnswers.join(', ')}</p>
+                                <p>Vos réponses: ${result.selectedAnswers.length > 0 ? result.selectedAnswers.join(', ') : 'Aucune réponse'}</p>
+                                ${result.feedback ? `
+                                    <div class="feedback mt-3">
+                                        <strong>Feedback:</strong> ${result.feedback}
+                                    </div>
+                                ` : ''}
                             </div>
                         </div>
-                    </div>
-                `).join('')}
-            </div>
-        `;
+                    `).join('')}
+                </div>
+            </div>`;
     }
 
-    resultsHtml += '</div></div>';
-
-    // Ajouter les résultats détaillés si activé
-    if (quizConfig.showAnswers && detailedResults.length > 0) {
-        resultsHtml += `
-            <div class="detailed-results">
-                <h4 class="mb-3">Détail des réponses</h4>
-                ${detailedResults.map(result => `
-                    <div class="card mb-3">
-                        <div class="card-body">
-                            <h5 class="card-title">${result.question}</h5>
-                            ${result.topic ? `<div class="topic-tag mb-2"><em>Thème: ${result.topic}</em></div>` : ''}
-                            <p>Score: ${(result.score * 100).toFixed(2)}%</p>
-                            <p>Réponses correctes: ${result.correctAnswers.join(', ')}</p>
-                            <p>Vos réponses: ${result.selectedAnswers.length > 0 ? result.selectedAnswers.join(', ') : 'Aucune réponse'}</p>
-                            ${result.feedback ? `
-                                <div class="feedback mt-3 p-2 bg-light rounded">
-                                    <strong>Feedback:</strong> ${result.feedback}
-                                </div>
-                            ` : ''}
-                        </div>
-                    </div>
-                `).join('')}
-            </div>
-        `;
-    }
-
-    // Mettre à jour le conteneur des résultats
+    // Mise à jour du conteneur de résultats
     $('#resultsContainer').html(resultsHtml);
 }
