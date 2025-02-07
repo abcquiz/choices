@@ -2,7 +2,7 @@ const config = {
     "title": "Quiz Easy",
     "duration": 1800,
     "showAnswers": true,
-    "showFeedbackAfterEachQuestion": false,
+    "showFeedbackAfterEachQuestion": true,
     "minScore": 60,
     "shuffleQuestions": true,
     "shuffleChoices": true,
