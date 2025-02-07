@@ -7,7 +7,7 @@ services:
       - "${PORT:-80}:80"
       - "${SSL_PORT:-443}:443"
     volumes:
-      - ./src:/usr/share/caddy # Dossier contenant vos fichiers statiques
+      - ./app:/usr/share/caddy # Dossier contenant vos fichiers statiques
       - ./Caddyfile:/etc/caddy/Caddyfile
       - caddy_data:/data
       - caddy_config:/config

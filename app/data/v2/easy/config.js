@@ -6,6 +6,7 @@ const config = {
     "minScore": 60,
     "shuffleQuestions": true,
     "shuffleChoices": true,
+    "shuffleQuestionGroups": true,
     "theme": {
         "primary": "#007bff",
         "secondary": "#6c757d",

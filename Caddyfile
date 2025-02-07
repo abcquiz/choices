@@ -1,46 +1,32 @@
 {
-    admin off
-    auto_https off
+    # Options globales (tu peux activer le debug si besoin en décommentant la ligne suivante)
+    # debug
 }
 
-(common) {
+# Bloc production – remplace "mondomaine.com" par ton domaine
+mondomaine.com {
+    root * /usr/share/caddy
+    file_server
+
+    # Ajout des headers CORS pour la compatibilité avec les navigateurs et extensions Chrome
+    header {
+        # Permettre l'accès depuis n'importe quelle origine
+        Access-Control-Allow-Origin *
+        # Méthodes HTTP autorisées
+        Access-Control-Allow-Methods "GET, POST, OPTIONS"
+        # Headers autorisés
+        Access-Control-Allow-Headers "Content-Type, Authorization"
+    }
+}
+
+# Bloc local – accès via localhost
+localhost {
     root * /usr/share/caddy/engine/v2
-    encode gzip
     file_server
 
     header {
-        # CORS avec configuration optimisée
-        Access-Control-Allow-Origin "*"
-        Access-Control-Allow-Methods "GET, POST, PUT, DELETE, OPTIONS"
-        Access-Control-Allow-Headers "*"
-        Access-Control-Expose-Headers "*"
-        Access-Control-Allow-Credentials "true"
-        Access-Control-Max-Age "7200"
-        
-        # Headers Cross-Origin modifiés pour permettre le stockage
-        Cross-Origin-Opener-Policy "same-origin-allow-popups"
-        Cross-Origin-Embedder-Policy "unsafe-none"
-        Cross-Origin-Resource-Policy "cross-origin"
-        
-        # CSP optimisée pour le stockage et les extensions Chrome
-        Content-Security-Policy "default-src 'self' chrome-extension: * 'unsafe-inline' 'unsafe-eval'; script-src 'self' chrome-extension: * 'unsafe-inline' 'unsafe-eval'; connect-src 'self' chrome-extension: * ws: wss: blob:; img-src 'self' data: blob: chrome-extension: *; style-src 'self' 'unsafe-inline' *; frame-src 'self' chrome-extension: *; worker-src 'self' blob:; frame-ancestors 'self' chrome-extension:; form-action 'self'; media-src 'self' blob:; font-src 'self' data: *; object-src 'none'"
-        
-        # Headers de sécurité supplémentaires
-        X-Content-Type-Options "nosniff"
-        Referrer-Policy "no-referrer-when-downgrade"
-        Permissions-Policy "accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=(), interest-cohort=(), storage-access=*, clipboard-write=*"
-        
-        # Retirer les headers par défaut
-        -Server
-        -X-Powered-By
+        Access-Control-Allow-Origin *
+        Access-Control-Allow-Methods "GET, POST, OPTIONS"
+        Access-Control-Allow-Headers "Content-Type, Authorization"
     }
-}
-
-:80 {
-    import common
-    
-    @options {
-        method OPTIONS
-    }
-    respond @options 204
 }
