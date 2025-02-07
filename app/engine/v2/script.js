@@ -1,5 +1,5 @@
 // Version du quiz à afficher sur la page de login
-const QUIZ_VERSION = "2.1.0-2025-02-07 15:49";
+const QUIZ_VERSION = "2.1.0-2025-02-07 16:10";
 document.addEventListener('DOMContentLoaded', function () {
     // Ajout de la version dans le footer du formulaire de login
     const loginForm = document.getElementById('loginForm');
@@ -542,14 +542,16 @@ function submitQuiz() {
     clearInterval(quizTimer);
     if (questionTimer) clearInterval(questionTimer);
 
-    saveCurrentAnswers(); // Sauvegarder les réponses de la dernière page
+    saveCurrentAnswers();
 
     let totalScore = 0;
     const detailedResults = [];
-    const topicScores = {};
-    const topicQuestionCounts = {};
 
-    // Parcourir toutes les questions pour calculer les scores
+    // Réinitialisation des structures pour les scores par topic
+    const topicScores = new Map();       // Somme des scores par topic
+    const topicQuestionCounts = new Map(); // Nombre de questions par topic
+
+    // Premier passage : calcul des scores et comptage
     questionGroups.forEach((group, groupIndex) => {
         group.forEach((question, questionIndex) => {
             const globalIndex = calculateBaseIndex(groupIndex) + questionIndex;
@@ -558,17 +560,21 @@ function submitQuiz() {
 
             totalScore += score;
 
-            // Calculer les scores par topic
+            // Si la question a un topic, on accumule son score
             if (question.topic) {
-                if (!topicScores[question.topic]) {
-                    topicScores[question.topic] = 0;
-                    topicQuestionCounts[question.topic] = 0;
-                }
-                topicScores[question.topic] += score;
-                topicQuestionCounts[question.topic]++;
+                // Mise à jour du score total pour ce topic
+                topicScores.set(
+                    question.topic,
+                    (topicScores.get(question.topic) || 0) + score
+                );
+
+                // Mise à jour du compte de questions pour ce topic
+                topicQuestionCounts.set(
+                    question.topic,
+                    (topicQuestionCounts.get(question.topic) || 0) + 1
+                );
             }
 
-            // Ajouter les résultats détaillés
             detailedResults.push({
                 question: question.content.text,
                 score: score,
@@ -580,15 +586,20 @@ function submitQuiz() {
         });
     });
 
-    // Calculer les moyennes par topic
+    // Deuxième passage : calcul des moyennes par topic
     const topicAverages = {};
-    for (const topic in topicScores) {
-        topicAverages[topic] = (topicScores[topic] / topicQuestionCounts[topic] * 100).toFixed(2);
-    }
+    topicScores.forEach((totalScore, topic) => {
+        const questionCount = topicQuestionCounts.get(topic);
+        if (questionCount > 0) {
+            // Calcul du pourcentage sur 100 pour ce topic
+            const averageScore = (totalScore / questionCount) * 100;
+            topicAverages[topic] = Number(averageScore.toFixed(2));
+        }
+    });
 
-    // Log pour le débogage
-    console.log('Topic scores:', topicScores);
-    console.log('Topic counts:', topicQuestionCounts);
+    // Log de debug pour vérifier les calculs
+    console.log('Topic question counts:', Object.fromEntries(topicQuestionCounts));
+    console.log('Topic total scores:', Object.fromEntries(topicScores));
     console.log('Topic averages:', topicAverages);
 
     displayResults(totalScore, detailedResults, topicAverages);
