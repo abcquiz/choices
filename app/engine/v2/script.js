@@ -27,6 +27,11 @@ document.getElementById('loginForm').addEventListener('keypress', function (even
     }
 });
 
+// Ajouter les écouteurs d'événements pour la vérification de la visibilité
+$(document).ready(function () {
+    $(window).on('scroll resize', _.throttle(checkQuestionVisibility, 250));
+});
+
 // Configuration globale
 const dataBaseUrl = 'https://raw.githubusercontent.com/abcquiz/choices/refs/heads/main/app/data/v2';
 const usercodes = ['test', 'CODE123', 'ADMIN456', 'TEST789']; // Codes d'accès autorisés
@@ -39,6 +44,8 @@ let userAnswers = {};
 let quizTimer = null;
 let questionTimer = null;
 let totalQuestionCount = 0;
+// Stockage des timers par question
+let questionTimers = {};
 
 // Fonction de démarrage du quiz
 async function startQuiz() {
@@ -301,23 +308,104 @@ function startGlobalTimer() {
 }
 
 // Démarrage du chrono pour une question
+// Fonction pour démarrer le timer d'une question
 function startQuestionTimer(duration, globalIndex) {
+    // Si un timer existe déjà pour cette question, on le nettoie
+    if (questionTimers[globalIndex]) {
+        clearInterval(questionTimers[globalIndex].interval);
+    }
+
     let timeLeft = duration;
+    const timerElement = $(`#questionTimer${globalIndex}`);
+
+    // Créer l'objet timer pour cette question
+    questionTimers[globalIndex] = {
+        duration: duration,
+        timeLeft: timeLeft,
+        started: false,
+        interval: null
+    };
 
     function updateTimer() {
         const minutes = Math.floor(timeLeft / 60);
         const seconds = timeLeft % 60;
-        $(`#questionTimer${globalIndex}`).text(`${minutes}:${seconds.toString().padStart(2, '0')}`);
+        timerElement.text(`${minutes}:${seconds.toString().padStart(2, '0')}`);
 
         if (timeLeft === 0) {
-            clearInterval(questionTimer);
+            clearInterval(questionTimers[globalIndex].interval);
             $(`input[name="question${globalIndex}"]`).prop('disabled', true);
         }
         timeLeft--;
     }
 
+    // On initialise l'affichage sans démarrer le timer
     updateTimer();
-    questionTimer = setInterval(updateTimer, 1000);
+}
+
+// Fonction pour vérifier la visibilité et démarrer les timers si nécessaire
+function checkQuestionVisibility() {
+    const windowHeight = $(window).height();
+    const scrollTop = $(window).scrollTop();
+
+    $('.question').each(function () {
+        const questionElement = $(this);
+        const questionIndex = questionElement.data('question-index');
+        const questionTimer = questionTimers[questionIndex];
+
+        // Vérifier si la question a un timer configuré mais pas encore démarré
+        if (questionTimer && !questionTimer.started) {
+            const elementTop = questionElement.offset().top;
+            const elementBottom = elementTop + questionElement.height();
+
+            // Vérifier si l'élément est visible dans la fenêtre
+            if (elementTop < (scrollTop + windowHeight) && elementBottom > scrollTop) {
+                // Démarrer le timer
+                questionTimer.started = true;
+                questionTimer.interval = setInterval(() => {
+                    if (questionTimer.timeLeft > 0) {
+                        questionTimer.timeLeft--;
+                        const minutes = Math.floor(questionTimer.timeLeft / 60);
+                        const seconds = questionTimer.timeLeft % 60;
+                        $(`#questionTimer${questionIndex}`).text(
+                            `${minutes}:${seconds.toString().padStart(2, '0')}`
+                        );
+
+                        if (questionTimer.timeLeft === 0) {
+                            clearInterval(questionTimer.interval);
+                            $(`input[name="question${questionIndex}"]`).prop('disabled', true);
+                        }
+                    }
+                }, 1000);
+            }
+        }
+    });
+}
+
+// Modification de la fonction displayCurrentQuestionGroup
+function displayCurrentQuestionGroup() {
+    const currentGroup = questionGroups[currentGroupIndex];
+    const container = $('#questionsContainer');
+    container.empty();
+
+    // Nettoyer les anciens timers
+    questionTimers = {};
+
+    const baseIndex = calculateBaseIndex(currentGroupIndex);
+
+    currentGroup.forEach((question, groupQuestionIndex) => {
+        const globalIndex = baseIndex + groupQuestionIndex;
+        const questionHtml = createQuestionHtml(question, globalIndex);
+        container.append(questionHtml);
+
+        if (question.timer) {
+            startQuestionTimer(question.timer, globalIndex);
+        }
+    });
+
+    updateNavigationButtons();
+
+    // Vérifier la visibilité des questions après leur affichage
+    setTimeout(checkQuestionVisibility, 100);
 }
 
 // Navigation entre les groupes de questions

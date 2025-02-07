@@ -128,6 +128,31 @@ async function startQuiz() {
     }
 }
 
+// Fonction pour formater le temps restant
+function formatTimeRemaining(seconds) {
+    const days = Math.floor(seconds / (24 * 3600));
+    seconds = seconds % (24 * 3600);
+    const hours = Math.floor(seconds / 3600);
+    seconds = seconds % 3600;
+    const minutes = Math.floor(seconds / 60);
+    seconds = seconds % 60;
+
+    let timeString = '';
+
+    if (days > 0) {
+        timeString += `${days}j `;
+    }
+    if (hours > 0 || days > 0) {
+        timeString += `${hours}h `;
+    }
+    if (minutes > 0 || hours > 0 || days > 0) {
+        timeString += `${minutes}m `;
+    }
+    timeString += `${seconds}s`;
+
+    return timeString;
+}
+
 // Organisation des questions en groupes
 function organizeQuestionGroups() {
     questionGroups = [];
@@ -248,14 +273,13 @@ function updateProgress() {
     $('#progressText').text(`Question ${currentGroupIndex + 1}/${questionGroups.length}`);
 }
 
-// Démarrage du chrono global
+// Fonction de démarrage du chrono global mise à jour
 function startGlobalTimer() {
     let timeLeft = quizConfig.duration;
 
     function updateTimer() {
-        const minutes = Math.floor(timeLeft / 60);
-        const seconds = timeLeft % 60;
-        $('#timer').text(`${minutes}:${seconds.toString().padStart(2, '0')}`);
+        const formattedTime = formatTimeRemaining(timeLeft);
+        $('#timer').text(formattedTime);
 
         if (timeLeft === 0) {
             clearInterval(quizTimer);
