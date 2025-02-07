@@ -447,14 +447,64 @@ function displayResults(totalScore, detailedResults, topicAverages) {
     $('#quizContainer').hide();
     $('#resultsContainer').show();
 
-    const finalScore = (totalScore / totalQuestionCount * 100).toFixed(2);
+    // Calcul des scores
+    const scoreOn100 = (totalScore / totalQuestionCount * 100).toFixed(2);
+    const scoreOn20 = (scoreOn100 * 20 / 100).toFixed(2);
+
+    // Récupération des informations du quiz
+    const username = $('#username').val();
+    const quizTitle = quizConfig.title;
+    const currentDate = new Date().toLocaleDateString('fr-FR', {
+        day: '2-digit',
+        month: '2-digit',
+        year: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit'
+    });
+
+    // Création de l'objet de données pour le QR Code
+    const qrData = {
+        username: username,
+        quizTitle: quizTitle,
+        date: currentDate,
+        scoreOn100: scoreOn100,
+        scoreOn20: scoreOn20,
+        topicScores: topicAverages
+    };
+
+    // Encodage des données pour le QR Code
+    const qrCodeData = encodeURIComponent(JSON.stringify(qrData));
+    const qrCodeUrl = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${qrCodeData}`;
 
     // Construction du HTML des résultats
     let resultsHtml = `
         <h2 class="text-center mb-4">Résultats</h2>
         <div class="card mb-4">
             <div class="card-body">
-                <h3 class="text-center">Note finale: ${finalScore}/100</h3>
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="mb-3">
+                            <strong>Nom :</strong> ${username}
+                        </div>
+                        <div class="mb-3">
+                            <strong>Quiz :</strong> ${quizTitle}
+                        </div>
+                        <div class="mb-3">
+                            <strong>Date :</strong> ${currentDate}
+                        </div>
+                        <div class="mb-3">
+                            <strong>Note :</strong> 
+                            <ul class="list-unstyled">
+                                <li>Sur 100 : ${scoreOn100}/100</li>
+                                <li>Sur 20 : ${scoreOn20}/20</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <img src="${qrCodeUrl}" alt="QR Code des résultats" class="img-fluid">
+                        <div class="mt-2 small text-muted">Scanner pour voir les détails</div>
+                    </div>
+                </div>
             </div>
         </div>`;
 
@@ -467,11 +517,12 @@ function displayResults(totalScore, detailedResults, topicAverages) {
                     <div class="topic-scores mt-3">`;
 
         for (const [topic, score] of Object.entries(topicAverages)) {
+            const scoreOn20 = (score * 20 / 100).toFixed(2);
             resultsHtml += `
                 <div class="topic-score mb-3">
                     <div class="d-flex justify-content-between mb-1">
                         <strong>${topic}</strong>
-                        <span>${score}%</span>
+                        <span>${score}% (${scoreOn20}/20)</span>
                     </div>
                     <div class="progress">
                         <div class="progress-bar" 
@@ -492,7 +543,7 @@ function displayResults(totalScore, detailedResults, topicAverages) {
             </div>`;
     }
 
-    // Ajout des résultats détaillés
+    // Ajout des résultats détaillés (inchangé)
     if (quizConfig.showAnswers) {
         resultsHtml += `
             <div class="card mb-4">
@@ -503,7 +554,7 @@ function displayResults(totalScore, detailedResults, topicAverages) {
                             <div class="card-body">
                                 <h5>${result.question}</h5>
                                 ${result.topic ? `<div class="text-muted mb-2">Thème: ${result.topic}</div>` : ''}
-                                <p>Score: ${(result.score * 100).toFixed(2)}%</p>
+                                <p>Score: ${(result.score * 100).toFixed(2)}% (${(result.score * 20).toFixed(2)}/20)</p>
                                 <p>Réponses correctes: ${result.correctAnswers.join(', ')}</p>
                                 <p>Vos réponses: ${result.selectedAnswers.length > 0 ? result.selectedAnswers.join(', ') : 'Aucune réponse'}</p>
                                 ${result.feedback ? `

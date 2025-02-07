@@ -6,12 +6,9 @@
 - [ ] Dans le résultat final, afficher : le nom, le quiz, la note, le md5 (avec code du quiz comme salt) "note, nom, quiz, date", la date
 - [ ] Page x/n - Question  i/z
 - [ ] afficher les chrono en h m s
-- [ ] ajouter un feedback d'explication de la réponse, bonne ou mauvaise afin que l'élève comprenne c'est ok ou pas ok
-- [ ] Ajouter un message global d'appréciation du résultat, style : très bien, bravo
-- [ ] Ajouter une entrée topic
-- [ ] Ajouter un message global par topic
-- [ ] dans la note finale, montrer les points par topic
+- [x] ajouter un feedback d'explication de la réponse, bonne ou mauvaise afin que l'élève comprenne c'est ok ou pas ok
+- [x] Ajouter une entrée topic
+- [x] dans la note finale, montrer les points par topic
 - [ ] Traduire la note sur 20
 - [ ] generer un QR code pour le message (ex json ou texte) de la note
-- [ ] Ajouter soit des étoiles, ou un graphique (% completion/reussite) dans la boite de la note : ça permet aussi de rendre difficile la falsification de la note, et ça peut aussi etre encourageant/motivant pour certaines personnes (emogy)
 - [ ] Reprendre en cas de refresh pour éviter les triches ou les pb navigateurs : enregistrement dans le stockage local du navigateur
