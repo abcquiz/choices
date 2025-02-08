@@ -89,20 +89,24 @@ async function startQuiz() {
         }
 
         // Vérification des dates de démarrage
-        const now = new Date();
-        const locale = quizConfig.locale || 'fr-FR'; // Utilise fr-FR par défaut si non spécifié
+        const locale = quizConfig.locale || 'fr-FR';
+        const timezone = quizConfig.timezone || 'Europe/Paris';
+        
+        // Obtenir la date actuelle dans le timezone du quiz
+        const now = new Date().toLocaleString('en-US', { timeZone: timezone });
+        const nowDate = new Date(now);
+        console.log('Date actuelle dans le timezone du quiz:', nowDate);
 
-        // Fonction pour convertir une date de la config dans un fuseau horaire spécifique
-        function getDateInTimezone(dateConfig) {
-            if (!dateConfig || !dateConfig.datetime || !dateConfig.timezone) return null;
-            
-            // Créer une date dans le fuseau horaire spécifié
+        // Fonction pour convertir une date de la config dans le fuseau horaire du quiz
+        function getDateInTimezone(dateStr) {
+            if (!dateStr) return null;
             try {
-                return new Date(new Date(dateConfig.datetime).toLocaleString(locale, {
-                    timeZone: dateConfig.timezone
-                }));
+            //Note : On utilise 'en-US' pour les conversions intermédiaires car c'est un format 
+            //que JavaScript peut parser de manière fiable, mais le formatage final pour l'affichage utilise toujours la locale configurée.
+                const date = new Date(dateStr).toLocaleString('en-US', { timeZone: timezone });
+                return new Date(date);
             } catch (e) {
-                console.error('Erreur de timezone:', e);
+                console.error('Erreur de parsing de date:', e);
                 return null;
             }
         }
@@ -110,14 +114,16 @@ async function startQuiz() {
         // Si une date de début est définie, vérifier qu'elle n'est pas dans le futur
         if (quizConfig.startDate) {
             const startDate = getDateInTimezone(quizConfig.startDate);
-            if (startDate && startDate > now) {
+            console.log('Date de début configurée dans le timezone du quiz:', startDate);
+            
+            if (startDate && startDate > nowDate) {
                 const formattedDate = startDate.toLocaleString(locale, {
                     day: '2-digit',
                     month: '2-digit',
                     year: 'numeric',
                     hour: '2-digit',
                     minute: '2-digit',
-                    timeZone: quizConfig.startDate.timezone,
+                    timeZone: timezone,
                     timeZoneName: 'short'
                 });
                 alert(`Le quiz ne peut pas commencer avant le ${formattedDate}`);
@@ -128,14 +134,16 @@ async function startQuiz() {
         // Si une date de fin est définie, vérifier qu'elle n'est pas dépassée
         if (quizConfig.endDate) {
             const endDate = getDateInTimezone(quizConfig.endDate);
-            if (endDate && endDate < now) {
+            console.log('Date de fin configurée dans le timezone du quiz:', endDate);
+            
+            if (endDate && endDate < nowDate) {
                 const formattedDate = endDate.toLocaleString(locale, {
                     day: '2-digit',
                     month: '2-digit',
                     year: 'numeric',
                     hour: '2-digit',
                     minute: '2-digit',
-                    timeZone: quizConfig.endDate.timezone,
+                    timeZone: timezone,
                     timeZoneName: 'short'
                 });
                 alert(`La date de démarrage du quiz est expirée depuis le ${formattedDate}`);
