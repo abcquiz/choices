@@ -2,14 +2,9 @@
     "title": "Quiz Easy",
     "duration": 1800000,
     "locale": "fr-FR",
-    "startDate": {
-        "datetime": "2025-02-10T08:00:00",
-        "timezone": "Europe/Paris"
-    },
-    "endDate": {
-        "datetime": "2025-07-15T18:00:00",
-        "timezone": "Europe/Paris"
-    },
+    "timezone": "Europe/Paris",
+    "startDate": "2025-02-10T08:00:00",
+    "endDate": "2025-07-15T18:00:00",
     "showAnswers": true,
     "showFeedbackAfterEachQuestion": false,
     "showPreviousButton": true,
