@@ -75,8 +75,9 @@ async function startQuiz() {
     }
 
     try {
+        const timestamp = new Date().getTime();
         // Chargement de la configuration
-        const configUrl = `${dataBaseUrl}/${quizcode}/config.json`;
+        const configUrl = `${dataBaseUrl}/${quizcode}/config.json?t=${timestamp}`;
         console.log("debug: configUrl=", configUrl);
         const configResponse = await fetch(configUrl);
         const configText = await configResponse.text();
@@ -154,7 +155,7 @@ async function startQuiz() {
         }
 
         // Chargement des questions
-        const questionsUrl = `${dataBaseUrl}/${quizcode}/questions.json`;
+        const questionsUrl = `${dataBaseUrl}/${quizcode}/questions.json?t=${timestamp}`;
         console.log("debug: questions url:", questionsUrl);
         const questionsResponse = await fetch(questionsUrl);
         const questionsText = await questionsResponse.text();

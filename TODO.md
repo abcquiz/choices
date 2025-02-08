@@ -3,8 +3,8 @@
 ## MVP
 - [ ] pouvoir definir le baseUrl dans les query params: si renseigné, alors ça écrase le baseUrl qui est en dur dans le code
 - [ ] Ajouter un loading
-- [ ] forcer le nettoyage du cache des quiz et config
-- [ ] ameliorer l'affichage des alert
+- [x] forcer le nettoyage du cache des quiz et config
+- [x] ameliorer l'affichage des alert
 - [x] - avoir deux configs shouldStartAfter, shouldStartBefore, optionnelles
 - [x] - pouvoir charger des json (au lieu de js)
 - [x] - avoir une config qui permet d'afficher ou pas le bouton "précédent"
