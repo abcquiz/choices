@@ -1,5 +1,5 @@
 // Version du quiz à afficher sur la page de login
-const QUIZ_VERSION = "2.1.0-2025-02-08 13:23";
+const QUIZ_VERSION = "2.1.0-2025-02-08 16:23";
 document.addEventListener('DOMContentLoaded', function () {
     // Ajout de la version dans le footer du formulaire de login
     const loginForm = document.getElementById('loginForm');
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
         console.log('Accès au stockage local confirmé');
     } catch (e) {
         console.error('Erreur d\'accès au stockage local:', e);
-        alert('Votre navigateur bloque l\'accès au stockage local. Veuillez vérifier vos paramètres de confidentialité.');
+        window.toast.show('error','Votre navigateur bloque l\'accès au stockage local.', 'Veuillez vérifier vos paramètres de confidentialité.');
     }
 });
 
@@ -39,11 +39,13 @@ document.getElementById('loginForm').addEventListener('keypress', function (even
 // Ajouter les écouteurs d'événements pour la vérification de la visibilité:15h13
 $(document).ready(function () {
     $(window).on('scroll resize', throttle(checkQuestionVisibility, 250));
+    //generation de code users : remplacer xxx par le code que vous voulez
+    //console.log("code:", CryptoJS.SHA256("xxx").toString(CryptoJS.enc.Hex));
 });
 
 // Configuration globale
 const dataBaseUrl = 'https://raw.githubusercontent.com/abcquiz/choices/refs/heads/main/app/data/v2';
-const usercodes = ['','test', 'CODE123', 'ADMIN456', 'TEST789']; // Codes d'accès autorisés
+const usercodes = ['e5e53c784d5d49de1cabb6e904bf3380026aadcb9769775a268dd304dd9aa2df','bbdb859e6bdfc45f8c37bb1ce8e89498b4326b7686439c926b5353789da5db16', '2fc6607da8bdf7c26d9d8c5697a36935d78c3b4da11b69a72db7852946b179d8', '93823a76576ab3b5030a2b5daca4bf3efff77fee70991d90bc1ef356e8bc4906']; // Codes d'accès autorisés
 
 let quizConfig = null;
 let questions = null;
@@ -63,18 +65,38 @@ async function startQuiz() {
     const quizcode = $('#quizcode').val();
 
     if (!username || !usercode || !quizcode) {
-        alert('Veuillez remplir tous les champs');
+        //alert('Veuillez remplir tous les champs');
+        window.toast.show('error', 'Champs manquants', 'Veuillez remplir tous les champs');
+
         return;
     }
 
-    if (!usercodes.includes(usercode)) {
-        alert('Code d\'accès invalide');
+    if (!usercodes.includes(CryptoJS.SHA256(usercode).toString(CryptoJS.enc.Hex))) {
+        window.toast.show('error','Code d\'accès invalide','Veuillez remplir votre code');
         return;
     }
 
     try {
+        // Ajout d'un loader dans le DOM s'il n'existe pas déjà
+        if (!$('#quizLoader').length) {
+            $('body').append(`
+                <div id="quizLoader" class="position-fixed top-0 start-0 w-100 h-100 d-none bg-white bg-opacity-75" style="z-index: 1050;">
+                    <div class="position-absolute top-50 start-50 translate-middle text-center">
+                        <div class="spinner-border text-primary mb-3" role="status">
+                            <span class="visually-hidden">Chargement...</span>
+                        </div>
+                        <div>Chargement du quiz en cours...</div>
+                    </div>
+                </div>
+            `);
+        }
+        
+        // Afficher le loader
+        $('#quizLoader').removeClass('d-none');
+
+        const timestamp = new Date().getTime();
         // Chargement de la configuration
-        const configUrl = `${dataBaseUrl}/${quizcode}/config.json`;
+        const configUrl = `${dataBaseUrl}/${quizcode}/config.json?t=${timestamp}`;
         console.log("debug: configUrl=", configUrl);
         const configResponse = await fetch(configUrl);
         const configText = await configResponse.text();
@@ -126,7 +148,9 @@ async function startQuiz() {
                     timeZone: timezone,
                     timeZoneName: 'short'
                 });
-                alert(`Le quiz ne peut pas commencer avant le ${formattedDate}`);
+                window.toast.show('error',`Le quiz ne peut pas commencer avant le ${formattedDate}`,'Veuillez recommencer plus tard');
+                // Cacher le loader en cas d'erreur
+                $('#quizLoader').addClass('d-none');
                 return;
             }
         }
@@ -146,13 +170,15 @@ async function startQuiz() {
                     timeZone: timezone,
                     timeZoneName: 'short'
                 });
-                alert(`La date de démarrage du quiz est expirée depuis le ${formattedDate}`);
+                window.toast.show('error',`La date de démarrage du quiz est expirée.`,`depuis le ${formattedDate}`);
+                // Cacher le loader en cas d'erreur
+                $('#quizLoader').addClass('d-none');
                 return;
             }
         }
 
         // Chargement des questions
-        const questionsUrl = `${dataBaseUrl}/${quizcode}/questions.json`;
+        const questionsUrl = `${dataBaseUrl}/${quizcode}/questions.json?t=${timestamp}`;
         console.log("debug: questions url:", questionsUrl);
         const questionsResponse = await fetch(questionsUrl);
         const questionsText = await questionsResponse.text();
@@ -175,8 +201,12 @@ async function startQuiz() {
 
         // Démarrage du chrono global
         startGlobalTimer();
+        // Cacher le loader une fois tout chargé
+        $('#quizLoader').addClass('d-none');
     } catch (error) {
-        alert('Erreur lors du chargement du quiz. Veuillez vérifier le code du quiz.');
+        // Cacher le loader en cas d'erreur
+        $('#quizLoader').addClass('d-none');
+        window.toast.show('error','Erreur lors du chargement du quiz.', 'Veuillez vérifier le code du quiz.');
         console.error(error);
     }
 

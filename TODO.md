@@ -2,8 +2,10 @@
 
 ## MVP
 - [ ] pouvoir definir le baseUrl dans les query params: si renseigné, alors ça écrase le baseUrl qui est en dur dans le code
-- [ ] Ajouter un loading
-
+- [x] le code doit pouvoir etre comparé à un md5 du query param au lieu de l'avoir en dur
+- [x] Ajouter un loading
+- [x] forcer le nettoyage du cache des quiz et config
+- [x] ameliorer l'affichage des alert
 - [x] - avoir deux configs shouldStartAfter, shouldStartBefore, optionnelles
 - [x] - pouvoir charger des json (au lieu de js)
 - [x] - avoir une config qui permet d'afficher ou pas le bouton "précédent"
@@ -37,3 +39,8 @@
 - [ ] avoir un fichier appconfig.json pour définir les parametres par défaut comme:
     - timezone par defaut : Europe/Paris
     - quiz baseUrl
+- [ ] multi lange
+- [ ] app android
+- [ ] app ios
+- [ ] étudier la nécessiter de passer en react js pour la version web
+- [ ] test config appareil utilisateur : résolution, navigateur, device en fonction de ce qui est spécifié comme (optionnel) userDeviceRequirements: brower, deviceType:phone, tablette, minWidth, min height
