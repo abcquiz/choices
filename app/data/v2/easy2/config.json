@@ -1,9 +1,9 @@
-const config = {
+{
     "title": "Quiz Easy",
     "duration": 1800000,
     "locale": "fr-FR",
     "startDate": {
-        "datetime": "2025-02-10T08:00:00",
+        "datetime": "2025-02-08T13:15:00",
         "timezone": "Europe/Paris"
     },
     "endDate": {
@@ -17,7 +17,6 @@ const config = {
     "shuffleQuestions": true,
     "shuffleChoices": true,
     "shuffleQuestionGroups": true,
-    "shuffleQuestions": true,
     "theme": {
         "primary": "#007bff",
         "secondary": "#6c757d",
@@ -32,4 +31,4 @@ const config = {
         "version": "1.0",
         "lastUpdated": "2025-02-06"
     }
-};
+}

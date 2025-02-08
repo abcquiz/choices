@@ -1,4 +1,4 @@
-const questions = [
+[
     {
         "groupId": "culture_generale",
         "topic": "topic 1",
@@ -153,4 +153,4 @@ const questions = [
         "timer": 15,
         "feedback": "feeback dernière question"
     }
-];
+]
