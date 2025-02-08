@@ -27,6 +27,8 @@ document.addEventListener('DOMContentLoaded', function () {
         console.error('Erreur d\'accès au stockage local:', e);
         window.toast.show('error','Votre navigateur bloque l\'accès au stockage local.', 'Veuillez vérifier vos paramètres de confidentialité.');
     }
+
+    initializeFormWithUrlParams();
 });
 
 document.getElementById('loginForm').addEventListener('keypress', function (event) {
@@ -44,7 +46,7 @@ $(document).ready(function () {
 });
 
 // Configuration globale
-const dataBaseUrl = 'https://raw.githubusercontent.com/abcquiz/choices/refs/heads/main/app/data/v2';
+const dataBaseUrl = getUrlParameter('bu') || 'https://raw.githubusercontent.com/abcquiz/choices/refs/heads/main/app/data/v2';
 const usercodes = ['e5e53c784d5d49de1cabb6e904bf3380026aadcb9769775a268dd304dd9aa2df','bbdb859e6bdfc45f8c37bb1ce8e89498b4326b7686439c926b5353789da5db16', '2fc6607da8bdf7c26d9d8c5697a36935d78c3b4da11b69a72db7852946b179d8', '93823a76576ab3b5030a2b5daca4bf3efff77fee70991d90bc1ef356e8bc4906']; // Codes d'accès autorisés
 
 let quizConfig = null;
@@ -100,6 +102,7 @@ async function startQuiz() {
         console.log("debug: configUrl=", configUrl);
         const configResponse = await fetch(configUrl);
         const configText = await configResponse.text();
+        //const configText = await fetchWithCacheControl(configUrl);
         console.log("debug: config text:\n", configText);
         //ici on part du principe que le text json fourni est sensé être propre
         try {
@@ -182,6 +185,7 @@ async function startQuiz() {
         console.log("debug: questions url:", questionsUrl);
         const questionsResponse = await fetch(questionsUrl);
         const questionsText = await questionsResponse.text();
+        //const questionsText = await fetchWithCacheControl(questionsUrl);
         console.log("debug: question text:\n", questionsText);
 
         try {
@@ -225,6 +229,60 @@ async function startQuiz() {
     //     console.error(error);
     // }
 }
+
+// Fonction pour initialiser les champs du formulaire avec les paramètres d'URL
+function initializeFormWithUrlParams() {
+    const params = new URLSearchParams(window.location.search);
+    
+    // Gestion du code quiz
+    const quizcodeInput = document.getElementById('quizcode');
+    if (params.get('qn')) {
+        quizcodeInput.value = params.get('qn');
+        quizcodeInput.setAttribute('readonly', true);
+        quizcodeInput.classList.add('bg-gray-100');
+    }
+    
+    // Gestion du nom d'utilisateur
+    const usernameInput = document.getElementById('username');
+    if (params.get('u')) {
+        usernameInput.value = params.get('u');
+        usernameInput.setAttribute('readonly', true);
+        usernameInput.classList.add('bg-gray-100');
+    }
+}
+
+// Fonction pour obtenir les paramètres d'URL
+function getUrlParameter(name) {
+    const params = new URLSearchParams(window.location.search);
+    return params.get(name);
+}
+
+// Fonction utilitaire pour charger les fichiers avec contrôle du cache
+async function fetchWithCacheControl(url) {
+    const timestamp = new Date().getTime();
+    const separator = url.includes('?') ? '&' : '?';
+    const urlWithCache = `${url}${separator}tcache=${timestamp}`;
+    
+    const options = {
+        headers: {
+            'Cache-Control': 'no-cache, no-store, must-revalidate',
+            'Pragma': 'no-cache',
+            'Expires': '0'
+        }
+    };
+
+    try {
+        const response = await fetch(urlWithCache, options);
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return await response.text();
+    } catch (error) {
+        console.error(`Erreur lors du chargement de ${url}:`, error);
+        throw error;
+    }
+}
+
 // Fonction simple de throttle
 function throttle(func, limit) {
     let inThrottle;
@@ -454,7 +512,8 @@ function updateNavigationButtons() {
     // 1. showPreviousButton est activé dans la config (false) ou n'est pas défini (false)
     // 2. On n'est pas sur le premier groupe de questions
     const showPreviousButton = quizConfig && quizConfig.showPreviousButton === true;
-    $('#prevBtn').toggle(showPreviousButton && currentGroupIndex > 0);
+    //$('#prevBtn').toggle(showPreviousButton && currentGroupIndex > 0);
+    $('#prevBtn').toggle(false);//desactivation permanente du bouton "précédent"
     $('#nextBtn').toggle(currentGroupIndex < questionGroups.length - 1);
     $('#submitBtn').toggle(currentGroupIndex === questionGroups.length - 1);
 }
