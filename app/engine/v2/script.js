@@ -1,5 +1,5 @@
 // Version du quiz à afficher sur la page de login
-const QUIZ_VERSION = "2.1.0-2025-02-08 11:41";
+const QUIZ_VERSION = "2.1.0-2025-02-08 13:00";
 document.addEventListener('DOMContentLoaded', function () {
     // Ajout de la version dans le footer du formulaire de login
     const loginForm = document.getElementById('loginForm');
@@ -94,6 +94,62 @@ async function startQuiz() {
 
         quizConfig = JSON.parse(configJson);
         console.log("debug: config object:\n", quizConfig);
+
+        // Vérification des dates de démarrage
+        const now = new Date();
+        const locale = quizConfig.locale || 'fr-FR'; // Utilise fr-FR par défaut si non spécifié
+
+        // Fonction pour convertir une date de la config dans un fuseau horaire spécifique
+        function getDateInTimezone(dateConfig) {
+            if (!dateConfig || !dateConfig.datetime || !dateConfig.timezone) return null;
+            
+            // Créer une date dans le fuseau horaire spécifié
+            try {
+                return new Date(new Date(dateConfig.datetime).toLocaleString(locale, {
+                    timeZone: dateConfig.timezone
+                }));
+            } catch (e) {
+                console.error('Erreur de timezone:', e);
+                return null;
+            }
+        }
+
+        // Si une date de début est définie, vérifier qu'elle n'est pas dans le futur
+        if (quizConfig.startDate) {
+            const startDate = getDateInTimezone(quizConfig.startDate);
+            if (startDate && startDate > now) {
+                const formattedDate = startDate.toLocaleString(locale, {
+                    day: '2-digit',
+                    month: '2-digit',
+                    year: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit',
+                    timeZone: quizConfig.startDate.timezone,
+                    timeZoneName: 'short'
+                });
+                alert(`Le quiz ne peut pas commencer avant le ${formattedDate}`);
+                return;
+            }
+        }
+
+        // Si une date de fin est définie, vérifier qu'elle n'est pas dépassée
+        if (quizConfig.endDate) {
+            const endDate = getDateInTimezone(quizConfig.endDate);
+            if (endDate && endDate < now) {
+                const formattedDate = endDate.toLocaleString(locale, {
+                    day: '2-digit',
+                    month: '2-digit',
+                    year: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit',
+                    timeZone: quizConfig.endDate.timezone,
+                    timeZoneName: 'short'
+                });
+                alert(`La date de démarrage du quiz est expirée depuis le ${formattedDate}`);
+                return;
+            }
+        }
+
         // Chargement des questions
         const questionsUrl = `${dataBaseUrl}/${quizcode}/questions.js`;
         console.log("debug: questions url:", questionsUrl);
