@@ -1,12 +1,12 @@
 # TODO
 
 ## MVP
-- [ ] Ne pas avoir à saisir le nom, code et quiz si les infos sont données dans l'url (query params)
-- [ ] - avoir une config qui permet d'afficher ou pas le bouton "précédent" (ex showPreviousQuestionButton=true/false)
+- [ ] - avoir deux configs shouldStartAfter, shouldStartBefore, optionnelles
 - [ ] pouvoir definir le baseUrl dans les query params: si renseigné, alors ça écrase le baseUrl qui est en dur dans le code
 - [ ] Ajouter un loading
 - [ ] - pouvoir charger des json (au lieu de js)
-- [ ] - avoir deux configs shouldStartAfter, shouldStartBefore, optionnelles
+
+- [x] - avoir une config qui permet d'afficher ou pas le bouton "précédent"
 - [x] tests pour l'affichage aléatoire de questions ou groupes de questions
 - [x] shuffleQuestions: sera très pratique pour les cas d'un ou plusieurs groupes avec bcp de questions (surtout très pertinent si un seul group dans le quiz)
 - [x] remplace "Groupe x/n" par "Page x/n"
@@ -31,3 +31,6 @@
 - [ ] pouvoir gerer des fichiers (url) de type csv (le json doit rester le format final, après transformation de tout autre format): donc étape csvReader -> csvToJson
 - [ ] controle des accès : vérifier les infos, "user/code/quiz"  : s'elle correspondent à une entreé en bdd, alors accepter. sinon réfuser. aussi vérifier si les dates (optionnelles) "debut/fin" du quiz "user/code/quiz" pour afficher un message du style : le quiz ne peut pas commencer avant "debut", ou quiz expirée depuis "fin"
 - [ ] pouvoir avoir des niveaux de config propores à chaque question ou groupe de questions: à définir. ex "commonGroupText", "override:{shuffleQuestions:true,xxx:yy}"
+- [ ] Ne pas avoir à saisir le nom, code et quiz si les infos sont données dans l'url (query params) => utile??
+- script de minification du js, et obstrucation
+- ping a des periodes aléatoirs pour envoyer des stats à un serveur : pour connaitre qui utlise le quiz

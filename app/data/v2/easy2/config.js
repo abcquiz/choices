@@ -3,7 +3,7 @@ const config = {
     "duration": 1800000,
     "locale": "fr-FR",
     "startDate": {
-        "datetime": "2025-02-10T08:00:00",
+        "datetime": "2025-02-08T13:15:00",
         "timezone": "Europe/Paris"
     },
     "endDate": {
