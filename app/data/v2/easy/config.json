@@ -1,4 +1,4 @@
-const config = {
+{
     "title": "Quiz Easy",
     "duration": 1800000,
     "locale": "fr-FR",
@@ -17,7 +17,6 @@ const config = {
     "shuffleQuestions": true,
     "shuffleChoices": true,
     "shuffleQuestionGroups": true,
-    "shuffleQuestions": true,
     "theme": {
         "primary": "#007bff",
         "secondary": "#6c757d",

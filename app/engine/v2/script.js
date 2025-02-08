@@ -74,26 +74,19 @@ async function startQuiz() {
 
     try {
         // Chargement de la configuration
-        const configUrl = `${dataBaseUrl}/${quizcode}/config.js`;
+        const configUrl = `${dataBaseUrl}/${quizcode}/config.json`;
         console.log("debug: configUrl=", configUrl);
         const configResponse = await fetch(configUrl);
         const configText = await configResponse.text();
         console.log("debug: config text:\n", configText);
-        const configMatch = configText.match(/config\s*=\s*({[\s\S]*});/);
-        if (!configMatch) throw new Error("Format de config.js invalide");
-        console.log("debug: config match:OK");
-
-        // On nettoie le JSON avant de le parser
-        let configJson = configMatch[1]
-            .replace(/\/\/.*/g, '') // Supprime les commentaires sur une ligne
-            .replace(/\/\*[\s\S]*?\*\//g, '') // Supprime les commentaires multi-lignes
-            .replace(/(['"])?([a-zA-Z0-9_]+)(['"])?\s*:/g, '"$2": ') // Assure que les clés sont entre guillemets doubles
-            .replace(/'/g, '"') // Remplace les guillemets simples par des guillemets doubles
-            .replace(/,(\s*[}\]])/g, '$1'); // Supprime les virgules trailing
-        console.log("debug: config text after cleaning:", configJson);
-
-        quizConfig = JSON.parse(configJson);
-        console.log("debug: config object:\n", quizConfig);
+        //ici on part du principe que le text json fourni est sensé être propre
+        try {
+            quizConfig = JSON.parse(configText);
+            console.log("debug: config object:\n", quizConfig);
+        } catch (e) {
+            console.error("Erreur parsing config:", e);
+            throw new Error("Format de config.js invalide");
+        }
 
         // Vérification des dates de démarrage
         const now = new Date();
@@ -151,39 +144,19 @@ async function startQuiz() {
         }
 
         // Chargement des questions
-        const questionsUrl = `${dataBaseUrl}/${quizcode}/questions.js`;
+        const questionsUrl = `${dataBaseUrl}/${quizcode}/questions.json`;
         console.log("debug: questions url:", questionsUrl);
         const questionsResponse = await fetch(questionsUrl);
         const questionsText = await questionsResponse.text();
         console.log("debug: question text:\n", questionsText);
-        const questionsMatch = questionsText.match(/questions\s*=\s*(\[[\s\S]*\]);/);
-        if (!questionsMatch) throw new Error("Format de questions.js invalide");
-        console.log("debug: questions match:OK");
-
-        // Nettoyage amélioré
-        let questionsJson = questionsMatch[1]
-            .replace(/\/\/.*/g, '')  // Supprime les commentaires sur une ligne
-            .replace(/\/\*[\s\S]*?\*\//g, '')  // Supprime les commentaires multi-lignes
-            .replace(/([{,]\s*)([a-zA-Z0-9_$]+)\s*:/g, '$1"$2":')  // Met des guillemets autour des clés d'objet
-            .replace(/:\s*'([^']*?)'/g, ':"$1"')  // Convertit les guillemets simples en doubles pour les valeurs
-            .replace(/:\s*"([^"]*?)"/g, ':"$1"')  // Normalise les espaces autour des chaînes
-            .replace(/,(\s*[}\]])/g, '$1')  // Supprime les virgules trailing
-            .replace(/[\n\r\t]/g, '')  // Supprime les sauts de ligne et tabulations
-            .replace(/\s+/g, ' ')  // Normalise les espaces multiples
-            .replace(/"url":"https:[^"]*(?=\s*})/g, '"url":"https://example.com"') // Corrige les URLs mal formées
-            .trim();
 
         try {
-            questions = JSON.parse(questionsJson);
+            //questionsText est sensé être propre
+            questions = JSON.parse(questionsText);
             console.log("debug: question object:\n", questions);
         } catch (e) {
             console.error("Erreur de parsing JSON:", e);
             console.log("Position de l'erreur:", e.position);
-            if (e.position) {
-                const start = Math.max(0, e.position - 50);
-                const end = Math.min(questionsJson.length, e.position + 50);
-                console.log("Contexte:", questionsJson.substring(start, end));
-            }
         }
 
         // Organisation des questions en groupes
