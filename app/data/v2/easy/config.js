@@ -3,6 +3,7 @@ const config = {
     "duration": 1800000,
     "showAnswers": true,
     "showFeedbackAfterEachQuestion": false,
+    "showPreviousButton": true,
     "minScore": 60,
     "shuffleQuestions": true,
     "shuffleChoices": true,
