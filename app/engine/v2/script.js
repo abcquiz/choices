@@ -1,5 +1,5 @@
 // Version du quiz à afficher sur la page de login
-const QUIZ_VERSION = "2.1.0-2025-02-07 22:00";
+const QUIZ_VERSION = "2.1.0-2025-02-08 11:41";
 document.addEventListener('DOMContentLoaded', function () {
     // Ajout de la version dans le footer du formulaire de login
     const loginForm = document.getElementById('loginForm');
@@ -383,7 +383,11 @@ function shuffleArray(array) {
 
 // Mise à jour des boutons de navigation
 function updateNavigationButtons() {
-    $('#prevBtn').toggle(currentGroupIndex > 0);
+    // Affiche le bouton "Précédent" uniquement si :
+    // 1. showPreviousButton est activé dans la config (false) ou n'est pas défini (false)
+    // 2. On n'est pas sur le premier groupe de questions
+    const showPreviousButton = quizConfig && quizConfig.showPreviousButton === true;
+    $('#prevBtn').toggle(showPreviousButton && currentGroupIndex > 0);
     $('#nextBtn').toggle(currentGroupIndex < questionGroups.length - 1);
     $('#submitBtn').toggle(currentGroupIndex === questionGroups.length - 1);
 }
