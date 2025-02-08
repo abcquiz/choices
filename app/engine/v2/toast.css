@@ -1,0 +1,72 @@
+/* toast.css */
+.toast {
+    max-width: 350px;
+    margin-bottom: 1rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transform: translateX(100%);
+    transition: all 0.3s ease-in-out;
+    opacity: 0;
+}
+
+.toast.show {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.toast-header {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.toast-body {
+    padding: 0.75rem 1rem;
+    color: #666;
+}
+
+.toast-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+}
+
+.toast-close {
+    margin-left: auto;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1;
+    color: #999;
+    cursor: pointer;
+    padding: 0 0.5rem;
+}
+
+.toast-close:hover {
+    color: #666;
+}
+
+/* Types de toast */
+.toast-success {
+    border-left: 4px solid #28a745;
+}
+.toast-success .toast-icon {
+    color: #28a745;
+}
+
+.toast-error {
+    border-left: 4px solid #dc3545;
+}
+.toast-error .toast-icon {
+    color: #dc3545;
+}
+
+.toast-info {
+    border-left: 4px solid #17a2b8;
+}
+.toast-info .toast-icon {
+    color: #17a2b8;
+}

@@ -63,7 +63,9 @@ async function startQuiz() {
     const quizcode = $('#quizcode').val();
 
     if (!username || !usercode || !quizcode) {
-        alert('Veuillez remplir tous les champs');
+        //alert('Veuillez remplir tous les champs');
+        window.toast.show('error', 'Champs manquants', 'Veuillez remplir tous les champs');
+
         return;
     }
 
