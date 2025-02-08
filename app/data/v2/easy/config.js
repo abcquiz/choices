@@ -7,6 +7,7 @@ const config = {
     "shuffleQuestions": true,
     "shuffleChoices": true,
     "shuffleQuestionGroups": true,
+    "shuffleQuestions": true,
     "theme": {
         "primary": "#007bff",
         "secondary": "#6c757d",
