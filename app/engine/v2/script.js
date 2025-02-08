@@ -39,11 +39,13 @@ document.getElementById('loginForm').addEventListener('keypress', function (even
 // Ajouter les écouteurs d'événements pour la vérification de la visibilité:15h13
 $(document).ready(function () {
     $(window).on('scroll resize', throttle(checkQuestionVisibility, 250));
+    //generation de code users : remplacer xxx par le code que vous voulez
+    //console.log("code:", CryptoJS.SHA256("xxx").toString(CryptoJS.enc.Hex));
 });
 
 // Configuration globale
 const dataBaseUrl = 'https://raw.githubusercontent.com/abcquiz/choices/refs/heads/main/app/data/v2';
-const usercodes = ['','test', 'CODE123', 'ADMIN456', 'TEST789']; // Codes d'accès autorisés
+const usercodes = ['e5e53c784d5d49de1cabb6e904bf3380026aadcb9769775a268dd304dd9aa2df','bbdb859e6bdfc45f8c37bb1ce8e89498b4326b7686439c926b5353789da5db16', '2fc6607da8bdf7c26d9d8c5697a36935d78c3b4da11b69a72db7852946b179d8', '93823a76576ab3b5030a2b5daca4bf3efff77fee70991d90bc1ef356e8bc4906']; // Codes d'accès autorisés
 
 let quizConfig = null;
 let questions = null;
@@ -69,7 +71,7 @@ async function startQuiz() {
         return;
     }
 
-    if (!usercodes.includes(usercode)) {
+    if (!usercodes.includes(CryptoJS.SHA256(usercode).toString(CryptoJS.enc.Hex))) {
         window.toast.show('error','Code d\'accès invalide','Veuillez remplir votre code');
         return;
     }

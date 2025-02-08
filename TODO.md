@@ -2,6 +2,7 @@
 
 ## MVP
 - [ ] pouvoir definir le baseUrl dans les query params: si renseigné, alors ça écrase le baseUrl qui est en dur dans le code
+- [x] le code doit pouvoir etre comparé à un md5 du query param au lieu de l'avoir en dur
 - [x] Ajouter un loading
 - [x] forcer le nettoyage du cache des quiz et config
 - [x] ameliorer l'affichage des alert
