@@ -147,6 +147,8 @@ async function startQuiz() {
                     timeZoneName: 'short'
                 });
                 window.toast.show('error',`Le quiz ne peut pas commencer avant le ${formattedDate}`,'Veuillez recommencer plus tard');
+                // Cacher le loader en cas d'erreur
+                $('#quizLoader').addClass('d-none');
                 return;
             }
         }
@@ -167,6 +169,8 @@ async function startQuiz() {
                     timeZoneName: 'short'
                 });
                 window.toast.show('error',`La date de démarrage du quiz est expirée.`,`depuis le ${formattedDate}`);
+                // Cacher le loader en cas d'erreur
+                $('#quizLoader').addClass('d-none');
                 return;
             }
         }
