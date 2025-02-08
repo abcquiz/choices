@@ -1,5 +1,5 @@
 // Version du quiz à afficher sur la page de login
-const QUIZ_VERSION = "2.1.0-2025-02-08 13:23";
+const QUIZ_VERSION = "2.1.0-2025-02-08 16:23";
 document.addEventListener('DOMContentLoaded', function () {
     // Ajout de la version dans le footer du formulaire de login
     const loginForm = document.getElementById('loginForm');
@@ -75,6 +75,23 @@ async function startQuiz() {
     }
 
     try {
+        // Ajout d'un loader dans le DOM s'il n'existe pas déjà
+        if (!$('#quizLoader').length) {
+            $('body').append(`
+                <div id="quizLoader" class="position-fixed top-0 start-0 w-100 h-100 d-none bg-white bg-opacity-75" style="z-index: 1050;">
+                    <div class="position-absolute top-50 start-50 translate-middle text-center">
+                        <div class="spinner-border text-primary mb-3" role="status">
+                            <span class="visually-hidden">Chargement...</span>
+                        </div>
+                        <div>Chargement du quiz en cours...</div>
+                    </div>
+                </div>
+            `);
+        }
+        
+        // Afficher le loader
+        $('#quizLoader').removeClass('d-none');
+
         const timestamp = new Date().getTime();
         // Chargement de la configuration
         const configUrl = `${dataBaseUrl}/${quizcode}/config.json?t=${timestamp}`;
@@ -178,7 +195,11 @@ async function startQuiz() {
 
         // Démarrage du chrono global
         startGlobalTimer();
+        // Cacher le loader une fois tout chargé
+        $('#quizLoader').addClass('d-none');
     } catch (error) {
+        // Cacher le loader en cas d'erreur
+        $('#quizLoader').addClass('d-none');
         window.toast.show('error','Erreur lors du chargement du quiz.', 'Veuillez vérifier le code du quiz.');
         console.error(error);
     }
