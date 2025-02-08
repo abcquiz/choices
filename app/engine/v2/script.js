@@ -131,7 +131,7 @@ async function startQuiz() {
         }
 
         // Organisation des questions en groupes
-        organizeQuestionGroups(quizConfig.shuffleQuestionGroups);
+        organizeQuestionGroups(quizConfig.shuffleQuestionGroups,quizConfig.shuffleQuestions);
 
         // Initialisation de l'interface
         initializeQuizInterface();
@@ -193,23 +193,31 @@ function formatTimeRemaining(seconds) {
 }
 
 // Organisation des questions en groupes
-function organizeQuestionGroups(shuffleQuestionGroups) {
+function organizeQuestionGroups(shuffleQuestionGroups,shuffleQuestions) {
     // Utiliser un Map pour regrouper les questions
     const groupMap = new Map();
 
-    questions.forEach(question => {
-        const groupId = question.groupId || `single_${questions.indexOf(question)}`;
+    // Utiliser l'index dans la boucle pour générer un id unique si nécessaire
+    questions.forEach((question, index) => {
+        const groupId = question.groupId || `single_${index}`;
         if (!groupMap.has(groupId)) {
             groupMap.set(groupId, []);
         }
         groupMap.get(groupId).push(question);
     });
 
+    // Récupérer les groupes sous forme de tableau
     let groupedQuestions = Array.from(groupMap.values());
- // Si le paramètre est true, mélanger l'ordre des groupes
-  if (shuffleQuestionGroups) {
-    groupedQuestions = shuffleArray(groupedQuestions);
-  }
+
+    // Si le paramètre shuffleQuestions est true, mélanger l'ordre des questions dans chaque groupe
+    if (shuffleQuestions) {
+        groupedQuestions = groupedQuestions.map(group => shuffleArray(group));
+    }
+
+    // Si le paramètre shuffleQuestionGroups est true, mélanger l'ordre des groupes
+    if (shuffleQuestionGroups) {
+        groupedQuestions = shuffleArray(groupedQuestions);
+    }
 
     // Mettre à jour les variables globales (ou les variables concernées)
     questionGroups = groupedQuestions;
