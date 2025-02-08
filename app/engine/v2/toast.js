@@ -2,18 +2,19 @@
 class ToastAlert {
     constructor() {
         this.createContainer();
+        this.createOverlay();
     }
 
     createContainer() {
         this.container = document.createElement('div');
         this.container.id = 'toast-container';
-        this.container.style.cssText = `
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 9999;
-        `;
         document.body.appendChild(this.container);
+    }
+
+    createOverlay() {
+        this.overlay = document.createElement('div');
+        this.overlay.id = 'toast-overlay';
+        document.body.appendChild(this.overlay);
     }
 
     show(type, title, message) {
@@ -32,6 +33,7 @@ class ToastAlert {
         `;
 
         this.container.appendChild(toast);
+        this.overlay.classList.add('show');
 
         // Ajouter la classe pour l'animation d'entrée
         setTimeout(() => toast.classList.add('show'), 10);
@@ -46,7 +48,12 @@ class ToastAlert {
 
     close(toast) {
         toast.classList.remove('show');
-        setTimeout(() => toast.remove(), 300);
+        setTimeout(() => {
+            toast.remove();
+            if (this.container.children.length === 0) {
+                this.overlay.classList.remove('show');
+            }
+        }, 300);
     }
 
     getIcon(type) {
