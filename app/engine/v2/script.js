@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
         console.log('Accès au stockage local confirmé');
     } catch (e) {
         console.error('Erreur d\'accès au stockage local:', e);
-        alert('Votre navigateur bloque l\'accès au stockage local. Veuillez vérifier vos paramètres de confidentialité.');
+        window.toast.show('error','Votre navigateur bloque l\'accès au stockage local.', 'Veuillez vérifier vos paramètres de confidentialité.');
     }
 });
 
@@ -70,7 +70,7 @@ async function startQuiz() {
     }
 
     if (!usercodes.includes(usercode)) {
-        alert('Code d\'accès invalide');
+        window.toast.show('error','Code d\'accès invalide','Veuillez remplir votre code');
         return;
     }
 
@@ -128,7 +128,7 @@ async function startQuiz() {
                     timeZone: timezone,
                     timeZoneName: 'short'
                 });
-                alert(`Le quiz ne peut pas commencer avant le ${formattedDate}`);
+                window.toast.show('error',`Le quiz ne peut pas commencer avant le ${formattedDate}`,'Veuillez recommencer plus tard');
                 return;
             }
         }
@@ -148,7 +148,7 @@ async function startQuiz() {
                     timeZone: timezone,
                     timeZoneName: 'short'
                 });
-                alert(`La date de démarrage du quiz est expirée depuis le ${formattedDate}`);
+                window.toast.show('error',`La date de démarrage du quiz est expirée.`,`depuis le ${formattedDate}`);
                 return;
             }
         }
@@ -178,7 +178,7 @@ async function startQuiz() {
         // Démarrage du chrono global
         startGlobalTimer();
     } catch (error) {
-        alert('Erreur lors du chargement du quiz. Veuillez vérifier le code du quiz.');
+        window.toast.show('error','Erreur lors du chargement du quiz.', 'Veuillez vérifier le code du quiz.');
         console.error(error);
     }
 
