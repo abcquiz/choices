@@ -181,7 +181,8 @@ async function startQuiz() {
         }
 
         // Chargement des questions
-        const questionsUrl = `${dataBaseUrl}/${quizcode}/questions.json?t=${timestamp}`;
+        const finalQuizcode = quizConfig.parent || quizcode;
+        const questionsUrl = `${dataBaseUrl}/${finalQuizcode}/questions.json?t=${timestamp}`;
         console.log("debug: questions url:", questionsUrl);
         const questionsResponse = await fetch(questionsUrl);
         const questionsText = await questionsResponse.text();
