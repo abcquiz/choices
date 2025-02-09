@@ -339,8 +339,8 @@ function initializeIntroductionInterface() {
                 <div class="col-md-6">
                     <h5 class="mb-3">Timing</h5>
                     <ul class="list-unstyled">
-                        <li><strong>Durée totale :</strong> ${formatTimeRemaining(quizConfig.duration/1000)}</li>
-                        <li><strong>Temps par question :</strong> ${formatTimeRemaining(quizConfig.questionsTimer)}</li>
+                        <li><strong>Durée totale :</strong> ${formatTimeRemaining(quizConfig.duration)}</li>
+                        ${quizConfig.enableTimer ? `<li><strong>Temps par question :</strong> ${formatTimeRemaining(quizConfig.questionsTimer)}</li>` : ''}
                         <li><strong>Date de début :</strong> ${new Date(quizConfig.startDate).toLocaleString(quizConfig.locale, dateFormatOptions)}</li>
                         <li><strong>Date de fin :</strong> ${new Date(quizConfig.endDate).toLocaleString(quizConfig.locale, dateFormatOptions)}</li>
                     </ul>
