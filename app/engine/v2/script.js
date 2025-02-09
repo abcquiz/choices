@@ -872,7 +872,7 @@ function displayResults(totalScore, detailedResults, topicAverages) {
                 </div>
             </div>`;
     }
-
+<!-- -->
     // Ajout des résultats détaillés
     if (quizConfig.showAnswers) {
         resultsHtml += `
@@ -884,7 +884,7 @@ function displayResults(totalScore, detailedResults, topicAverages) {
                             <div class="card-body">
                                 <h5>${result.question}</h5>
                                 ${result.topic ? `<div class="text-muted mb-2">Thème: ${result.topic}</div>` : ''}
-                                <p>Score: ${(result.score * 100).toFixed(2)}% (${(result.score * 20).toFixed(2)}/20)</p>
+                                <p>Score: ${(result.score * 100).toFixed(2)}%</p>
                                 <p>Réponses correctes: ${result.correctAnswers.join(', ')}</p>
                                 <p>Vos réponses: ${result.selectedAnswers.length > 0 ? result.selectedAnswers.join(', ') : 'Aucune réponse'}</p>
                                 ${(quizConfig.showFeedbackAfterEachQuestion && result.feedback) ? `

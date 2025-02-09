@@ -4,8 +4,8 @@
 - [x] ne pas du tout afficher le bouton précédent, le masquer définitivement en v2
 - [ ] virer tous les console.log
 - [ ] avoir un texte de présentation du quiz dans la config
-- [ ] avoir un config sur config.json de questionsTimer si on veut un meme timer pour toutes les questions
-- [ ] avoir une config sur config.json enableTimer : si off, alors aucun timer ne sera affiché ni pris en compte
+- [x] avoir un config sur config.json de questionsTimer si on veut un meme timer pour toutes les questions
+- [x] avoir une config sur config.json enableTimer : si off, alors aucun timer ne sera affiché ni pris en compte sur les questions
 - [x] pouvoir créer un quiz avec juste un fichier config.json avec champ parentQuiz, pour heriter automatiquement des questions du parents, mais avec ses propres parametres
 - [x] pouvoir definir le baseUrl dans les query params: si renseigné, alors ça écrase le baseUrl qui est en dur dans le code
 - [x] le code doit pouvoir etre comparé à un md5 du query param au lieu de l'avoir en dur
