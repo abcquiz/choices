@@ -552,7 +552,9 @@ function startQuestionTimer(duration, globalIndex) {
     if (questionTimers[globalIndex]) {
         clearInterval(questionTimers[globalIndex].interval);
     }
-
+    if(!quizConfig.enableTimer) {
+        return;
+    }
     let timeLeft = duration;
     const timerElement = $(`#questionTimer${globalIndex}`);
 
