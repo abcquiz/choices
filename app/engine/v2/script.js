@@ -555,7 +555,7 @@ function startQuestionTimer(duration, globalIndex) {
     if(!quizConfig.enableTimer) {
         return;
     }
-    let timeLeft = duration;
+    let timeLeft = quizConfig.questionsTimer || duration;
     const timerElement = $(`#questionTimer${globalIndex}`);
 
     // Créer l'objet timer pour cette question
