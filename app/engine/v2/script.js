@@ -27,6 +27,8 @@ document.addEventListener('DOMContentLoaded', function () {
         console.error('Erreur d\'accès au stockage local:', e);
         window.toast.show('error','Votre navigateur bloque l\'accès au stockage local.', 'Veuillez vérifier vos paramètres de confidentialité.');
     }
+
+    initializeFormWithUrlParams();
 });
 
 document.getElementById('loginForm').addEventListener('keypress', function (event) {
@@ -44,7 +46,7 @@ $(document).ready(function () {
 });
 
 // Configuration globale
-const dataBaseUrl = 'https://raw.githubusercontent.com/abcquiz/choices/refs/heads/main/app/data/v2';
+const dataBaseUrl = getUrlParameter('bu') || 'https://raw.githubusercontent.com/abcquiz/choices/refs/heads/main/app/data/v2';
 const usercodes = ['e5e53c784d5d49de1cabb6e904bf3380026aadcb9769775a268dd304dd9aa2df','bbdb859e6bdfc45f8c37bb1ce8e89498b4326b7686439c926b5353789da5db16', '2fc6607da8bdf7c26d9d8c5697a36935d78c3b4da11b69a72db7852946b179d8', '93823a76576ab3b5030a2b5daca4bf3efff77fee70991d90bc1ef356e8bc4906']; // Codes d'accès autorisés
 
 let quizConfig = null;
@@ -100,6 +102,7 @@ async function startQuiz() {
         console.log("debug: configUrl=", configUrl);
         const configResponse = await fetch(configUrl);
         const configText = await configResponse.text();
+        //const configText = await fetchWithCacheControl(configUrl);
         console.log("debug: config text:\n", configText);
         //ici on part du principe que le text json fourni est sensé être propre
         try {
@@ -178,10 +181,12 @@ async function startQuiz() {
         }
 
         // Chargement des questions
-        const questionsUrl = `${dataBaseUrl}/${quizcode}/questions.json?t=${timestamp}`;
+        const finalQuizcode = quizConfig.parent || quizcode;
+        const questionsUrl = `${dataBaseUrl}/${finalQuizcode}/questions.json?t=${timestamp}`;
         console.log("debug: questions url:", questionsUrl);
         const questionsResponse = await fetch(questionsUrl);
         const questionsText = await questionsResponse.text();
+        //const questionsText = await fetchWithCacheControl(questionsUrl);
         console.log("debug: question text:\n", questionsText);
 
         try {
@@ -196,12 +201,15 @@ async function startQuiz() {
         // Organisation des questions en groupes
         organizeQuestionGroups(quizConfig.shuffleQuestionGroups,quizConfig.shuffleQuestions);
 
-        // Initialisation de l'interface
-        initializeQuizInterface();
+        // // Initialisation de l'interface
+        // initializeQuizInterface();
 
-        // Démarrage du chrono global
-        startGlobalTimer();
-        // Cacher le loader une fois tout chargé
+        // // Démarrage du chrono global
+        // startGlobalTimer();
+        // // Cacher le loader une fois tout chargé
+        // $('#quizLoader').addClass('d-none');
+        // Initialiser l'interface d'introduction au lieu de l'interface du quiz
+        initializeIntroductionInterface();
         $('#quizLoader').addClass('d-none');
     } catch (error) {
         // Cacher le loader en cas d'erreur
@@ -225,6 +233,60 @@ async function startQuiz() {
     //     console.error(error);
     // }
 }
+
+// Fonction pour initialiser les champs du formulaire avec les paramètres d'URL
+function initializeFormWithUrlParams() {
+    const params = new URLSearchParams(window.location.search);
+    
+    // Gestion du code quiz
+    const quizcodeInput = document.getElementById('quizcode');
+    if (params.get('qn')) {
+        quizcodeInput.value = params.get('qn');
+        quizcodeInput.setAttribute('readonly', true);
+        quizcodeInput.classList.add('bg-gray-100');
+    }
+    
+    // Gestion du nom d'utilisateur
+    const usernameInput = document.getElementById('username');
+    if (params.get('u')) {
+        usernameInput.value = params.get('u');
+        usernameInput.setAttribute('readonly', true);
+        usernameInput.classList.add('bg-gray-100');
+    }
+}
+
+// Fonction pour obtenir les paramètres d'URL
+function getUrlParameter(name) {
+    const params = new URLSearchParams(window.location.search);
+    return params.get(name);
+}
+
+// Fonction utilitaire pour charger les fichiers avec contrôle du cache
+async function fetchWithCacheControl(url) {
+    const timestamp = new Date().getTime();
+    const separator = url.includes('?') ? '&' : '?';
+    const urlWithCache = `${url}${separator}tcache=${timestamp}`;
+    
+    const options = {
+        headers: {
+            'Cache-Control': 'no-cache, no-store, must-revalidate',
+            'Pragma': 'no-cache',
+            'Expires': '0'
+        }
+    };
+
+    try {
+        const response = await fetch(urlWithCache, options);
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return await response.text();
+    } catch (error) {
+        console.error(`Erreur lors du chargement de ${url}:`, error);
+        throw error;
+    }
+}
+
 // Fonction simple de throttle
 function throttle(func, limit) {
     let inThrottle;
@@ -235,6 +297,94 @@ function throttle(func, limit) {
             setTimeout(() => inThrottle = false, limit);
         }
     }
+}
+
+// Ajouter cette fonction pour initialiser l'interface d'introduction
+function initializeIntroductionInterface() {
+    $('#loginForm').hide();
+    
+    // Créer et afficher la page d'introduction
+    const introContainer = $('<div id="introductionContainer" class="container mt-4"></div>');
+    const introCard = $('<div class="card"></div>');
+    const introCardBody = $('<div class="card-body"></div>');
+    
+    // Ajouter le titre du quiz
+    introCardBody.append(`<h1 class="text-center mb-4">${quizConfig.title}</h1>`);
+    
+    // Ajouter le contenu de l'introduction
+    if (quizConfig.introduction) {
+        if (quizConfig.introduction.type === 'html') {
+            introCardBody.append(quizConfig.introduction.content);
+        } else {
+            introCardBody.append(`<p>${quizConfig.introduction.content}</p>`);
+        }
+    }
+    
+    // Options de formatage pour les dates
+    const dateFormatOptions = {
+        day: '2-digit',
+        month: '2-digit',
+        year: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: false
+    };
+    
+    // Ajouter les informations du quiz
+    const quizInfoHtml = `
+        <div class="mt-4 p-3 border rounded bg-light">
+            <h4 class="mb-3">Informations du quiz</h4>
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <h5 class="mb-3">Timing</h5>
+                    <ul class="list-unstyled">
+                        <li><strong>Durée totale :</strong> ${formatTimeRemaining(quizConfig.duration)}</li>
+                        ${quizConfig.enableTimer ? `<li><strong>Temps par question :</strong> ${formatTimeRemaining(quizConfig.questionsTimer)}</li>` : ''}
+                        <li><strong>Date de début :</strong> ${new Date(quizConfig.startDate).toLocaleString(quizConfig.locale, dateFormatOptions)}</li>
+                        <li><strong>Date de fin :</strong> ${new Date(quizConfig.endDate).toLocaleString(quizConfig.locale, dateFormatOptions)}</li>
+                    </ul>
+                </div>
+                
+                <div class="col-md-6">
+                    <h5 class="mb-3">Structure</h5>
+                    <ul class="list-unstyled">
+                        <li><strong>Nombre total de questions :</strong> ${totalQuestionCount}</li>
+                        <li><strong>Nombre de pages :</strong> ${questionGroups.length}</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-3">
+                <h5 class="mb-3">Métadonnées</h5>
+                <ul class="list-unstyled">
+                    <li><strong>Auteur :</strong> ${quizConfig.metadata.author}</li>
+                    <li><strong>Difficulté :</strong> ${quizConfig.metadata.difficulty}</li>
+                    <li><strong>Catégorie :</strong> ${quizConfig.metadata.category}</li>
+                    <li><strong>Version :</strong> ${quizConfig.metadata.version}</li>
+                    <li><strong>Dernière mise à jour :</strong> ${quizConfig.metadata.lastUpdated}</li>
+                </ul>
+            </div>
+        </div>
+    `;
+    
+    introCardBody.append(quizInfoHtml);
+    
+    // Ajouter le bouton Démarrer
+    const startButton = $('<button class="btn btn-primary btn-lg d-block mx-auto mt-4">Démarrer</button>');
+    startButton.click(function() {
+        $('#introductionContainer').remove();
+        initializeQuizInterface();
+        startGlobalTimer();
+    });
+    
+    introCardBody.append(startButton);
+    introCard.append(introCardBody);
+    introContainer.append(introCard);
+    
+    // Insérer le conteneur d'introduction dans le DOM
+    $('#quizContainer').before(introContainer);
+    $('#quizContainer').hide();
 }
 
 // Fonction pour formater le temps restant
@@ -433,7 +583,7 @@ function createQuestionHtml(question, globalIndex) {
                 <div class="choices mt-3">
                     ${choicesHtml}
                 </div>
-                ${question.timer ? `<div class="question-timer mt-2">Temps restant: <span id="questionTimer${globalIndex}">--:--</span></div>` : ''}
+                ${(question.timer && quizConfig.enableTimer)? `<div class="question-timer mt-2">Temps restant: <span id="questionTimer${globalIndex}">--:--</span></div>` : ''}
             </div>
         </div>
     `;
@@ -454,7 +604,8 @@ function updateNavigationButtons() {
     // 1. showPreviousButton est activé dans la config (false) ou n'est pas défini (false)
     // 2. On n'est pas sur le premier groupe de questions
     const showPreviousButton = quizConfig && quizConfig.showPreviousButton === true;
-    $('#prevBtn').toggle(showPreviousButton && currentGroupIndex > 0);
+    //$('#prevBtn').toggle(showPreviousButton && currentGroupIndex > 0);
+    $('#prevBtn').toggle(false);//desactivation permanente du bouton "précédent"
     $('#nextBtn').toggle(currentGroupIndex < questionGroups.length - 1);
     $('#submitBtn').toggle(currentGroupIndex === questionGroups.length - 1);
 }
@@ -492,8 +643,10 @@ function startQuestionTimer(duration, globalIndex) {
     if (questionTimers[globalIndex]) {
         clearInterval(questionTimers[globalIndex].interval);
     }
-
-    let timeLeft = duration;
+    if(!quizConfig.enableTimer) {
+        return;
+    }
+    let timeLeft = quizConfig.questionsTimer || duration;
     const timerElement = $(`#questionTimer${globalIndex}`);
 
     // Créer l'objet timer pour cette question
@@ -822,7 +975,7 @@ function displayResults(totalScore, detailedResults, topicAverages) {
                             <div class="card-body">
                                 <h5>${result.question}</h5>
                                 ${result.topic ? `<div class="text-muted mb-2">Thème: ${result.topic}</div>` : ''}
-                                <p>Score: ${(result.score * 100).toFixed(2)}% (${(result.score * 20).toFixed(2)}/20)</p>
+                                <p>Score: ${(result.score * 100).toFixed(2)}%</p>
                                 <p>Réponses correctes: ${result.correctAnswers.join(', ')}</p>
                                 <p>Vos réponses: ${result.selectedAnswers.length > 0 ? result.selectedAnswers.join(', ') : 'Aucune réponse'}</p>
                                 ${(quizConfig.showFeedbackAfterEachQuestion && result.feedback) ? `

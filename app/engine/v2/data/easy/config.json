@@ -1,10 +1,10 @@
 {
-    "title": "Quiz Easy2",
+    "title": "Quiz Easy",
     "duration": 1800000,
     "locale": "fr-FR",
     "timezone": "Europe/Paris",
-    "startDate": "2025-02-08T15:30:00",
-    "endDate":"2025-07-15T18:00:00",
+    "startDate": "2025-02-10T08:00:00",
+    "endDate": "2025-07-15T18:00:00",
     "showAnswers": true,
     "showFeedbackAfterEachQuestion": false,
     "showPreviousButton": true,
@@ -12,9 +12,6 @@
     "shuffleQuestions": true,
     "shuffleChoices": true,
     "shuffleQuestionGroups": true,
-    "parent":"easy",
-    "enableTimer":false,
-    "questionsTimer": 120,
     "theme": {
         "primary": "#007bff",
         "secondary": "#6c757d",
@@ -25,7 +22,7 @@
     "metadata": {
         "author": "Prof. Martin",
         "difficulty": "intermediate",
-        "category": "culture-generale",
+        "category": "culture-generale", 
         "version": "1.0",
         "lastUpdated": "2025-02-06"
     }
