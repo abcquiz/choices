@@ -492,7 +492,7 @@ function createQuestionHtml(question, globalIndex) {
                 <div class="choices mt-3">
                     ${choicesHtml}
                 </div>
-                ${question.timer ? `<div class="question-timer mt-2">Temps restant: <span id="questionTimer${globalIndex}">--:--</span></div>` : ''}
+                ${(question.timer && quizConfig.enableTimer)? `<div class="question-timer mt-2">Temps restant: <span id="questionTimer${globalIndex}">--:--</span></div>` : ''}
             </div>
         </div>
     `;

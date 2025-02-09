@@ -13,7 +13,7 @@
     "shuffleChoices": true,
     "shuffleQuestionGroups": true,
     "parent":"easy",
-    "enableTimer":false,
+    "enableTimer":true,
     "questionsTimer": 120,
     "theme": {
         "primary": "#007bff",
