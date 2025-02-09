@@ -3,7 +3,7 @@
 ## MVP
 - [x] ne pas du tout afficher le bouton précédent, le masquer définitivement en v2
 - [ ] virer tous les console.log
-- [ ] avoir un texte de présentation du quiz dans la config
+- [x] avoir un texte de présentation du quiz dans la config
 - [x] avoir un config sur config.json de questionsTimer si on veut un meme timer pour toutes les questions
 - [x] avoir une config sur config.json enableTimer : si off, alors aucun timer ne sera affiché ni pris en compte sur les questions
 - [x] pouvoir créer un quiz avec juste un fichier config.json avec champ parentQuiz, pour heriter automatiquement des questions du parents, mais avec ses propres parametres

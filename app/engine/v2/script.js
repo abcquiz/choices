@@ -22,7 +22,6 @@ document.addEventListener('DOMContentLoaded', function () {
     try {
         localStorage.setItem('test', 'test');
         localStorage.removeItem('test');
-        console.log('Accès au stockage local confirmé');
     } catch (e) {
         console.error('Erreur d\'accès au stockage local:', e);
         window.toast.show('error','Votre navigateur bloque l\'accès au stockage local.', 'Veuillez vérifier vos paramètres de confidentialité.');
@@ -99,17 +98,13 @@ async function startQuiz() {
         const timestamp = new Date().getTime();
         // Chargement de la configuration
         const configUrl = `${dataBaseUrl}/${quizcode}/config.json?t=${timestamp}`;
-        console.log("debug: configUrl=", configUrl);
         const configResponse = await fetch(configUrl);
         const configText = await configResponse.text();
         //const configText = await fetchWithCacheControl(configUrl);
-        console.log("debug: config text:\n", configText);
         //ici on part du principe que le text json fourni est sensé être propre
         try {
             quizConfig = JSON.parse(configText);
-            console.log("debug: config object:\n", quizConfig);
         } catch (e) {
-            console.error("Erreur parsing config:", e);
             throw new Error("Format de config.js invalide");
         }
 
@@ -120,7 +115,6 @@ async function startQuiz() {
         // Obtenir la date actuelle dans le timezone du quiz
         const now = new Date().toLocaleString('en-US', { timeZone: timezone });
         const nowDate = new Date(now);
-        console.log('Date actuelle dans le timezone du quiz:', nowDate);
 
         // Fonction pour convertir une date de la config dans le fuseau horaire du quiz
         function getDateInTimezone(dateStr) {
@@ -139,7 +133,6 @@ async function startQuiz() {
         // Si une date de début est définie, vérifier qu'elle n'est pas dans le futur
         if (quizConfig.startDate) {
             const startDate = getDateInTimezone(quizConfig.startDate);
-            console.log('Date de début configurée dans le timezone du quiz:', startDate);
             
             if (startDate && startDate > nowDate) {
                 const formattedDate = startDate.toLocaleString(locale, {
@@ -161,7 +154,6 @@ async function startQuiz() {
         // Si une date de fin est définie, vérifier qu'elle n'est pas dépassée
         if (quizConfig.endDate) {
             const endDate = getDateInTimezone(quizConfig.endDate);
-            console.log('Date de fin configurée dans le timezone du quiz:', endDate);
             
             if (endDate && endDate < nowDate) {
                 const formattedDate = endDate.toLocaleString(locale, {
@@ -183,19 +175,15 @@ async function startQuiz() {
         // Chargement des questions
         const finalQuizcode = quizConfig.parent || quizcode;
         const questionsUrl = `${dataBaseUrl}/${finalQuizcode}/questions.json?t=${timestamp}`;
-        console.log("debug: questions url:", questionsUrl);
         const questionsResponse = await fetch(questionsUrl);
         const questionsText = await questionsResponse.text();
         //const questionsText = await fetchWithCacheControl(questionsUrl);
-        console.log("debug: question text:\n", questionsText);
 
         try {
             //questionsText est sensé être propre
             questions = JSON.parse(questionsText);
-            console.log("debug: question object:\n", questions);
         } catch (e) {
             console.error("Erreur de parsing JSON:", e);
-            console.log("Position de l'erreur:", e.position);
         }
 
         // Organisation des questions en groupes
@@ -218,20 +206,6 @@ async function startQuiz() {
         console.error(error);
     }
 
-    // try {
-    //     // Après le chargement des questions
-    //     console.log("Questions chargées:", questions);
-
-    //     // Organisation des questions en groupes
-    //     organizeQuestionGroups();
-    //     console.log("Groupes organisés:", questionGroups);
-
-    //     // Initialisation de l'interface
-    //     initializeQuizInterface();
-    // } catch (error) {
-    //     alert('Erreur lors du chargement du quiz. Veuillez vérifier le code du quiz.');
-    //     console.error(error);
-    // }
 }
 
 // Fonction pour initialiser les champs du formulaire avec les paramètres d'URL
@@ -442,7 +416,6 @@ function organizeQuestionGroups(shuffleQuestionGroups,shuffleQuestions) {
     // Calculer le nombre total de questions
     totalQuestionCount = questions.length;
 
-    console.log("Questions regroupées:", questionGroups);
 }
 
 // Initialisation de l'interface du quiz
@@ -498,8 +471,6 @@ function calculateTopicScores(questionGroups, userAnswers) {
 
 // Affichage du groupe de questions actuel
 function displayCurrentQuestionGroup() {
-    console.log("Affichage du groupe:", currentGroupIndex);
-    console.log("Groupe actuel:", questionGroups[currentGroupIndex]);
 
     const currentGroup = questionGroups[currentGroupIndex];
     const container = $('#questionsContainer');
@@ -518,11 +489,9 @@ function displayCurrentQuestionGroup() {
     // Si le groupe est valide
     if (currentGroup && Array.isArray(currentGroup)) {
         const baseIndex = calculateBaseIndex(currentGroupIndex);
-        console.log("Base index pour ce groupe:", baseIndex);
 
         currentGroup.forEach((question, groupQuestionIndex) => {
             const globalIndex = baseIndex + groupQuestionIndex;
-            console.log("Création question:", globalIndex, question);
 
             const questionHtml = createQuestionHtml(question, globalIndex);
             container.append(questionHtml);
@@ -612,7 +581,6 @@ function updateNavigationButtons() {
 
 // Mise à jour de la barre de progression
 function updateProgress() {
-    console.log("Mise à jour progression:", currentGroupIndex + 1, "sur", questionGroups.length);
     const progress = ((currentGroupIndex + 1) / questionGroups.length) * 100;
     $('#progressBar').css('width', `${progress}%`);
     $('#progressText').text(`Page ${currentGroupIndex + 1}/${questionGroups.length}`);
@@ -834,11 +802,6 @@ function submitQuiz() {
             topicAverages[topic] = Number(averageScore.toFixed(2));
         }
     });
-
-    // Log de debug pour vérifier les calculs
-    console.log('Topic question counts:', Object.fromEntries(topicQuestionCounts));
-    console.log('Topic total scores:', Object.fromEntries(topicScores));
-    console.log('Topic averages:', topicAverages);
 
     displayResults(totalScore, detailedResults, topicAverages);
 }
