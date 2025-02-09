@@ -320,12 +320,62 @@ function initializeIntroductionInterface() {
         }
     }
     
+    // Options de formatage pour les dates
+    const dateFormatOptions = {
+        day: '2-digit',
+        month: '2-digit',
+        year: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: false
+    };
+    
+    // Ajouter les informations du quiz
+    const quizInfoHtml = `
+        <div class="mt-4 p-3 border rounded bg-light">
+            <h4 class="mb-3">Informations du quiz</h4>
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <h5 class="mb-3">Timing</h5>
+                    <ul class="list-unstyled">
+                        <li><strong>Durée totale :</strong> ${formatTimeRemaining(quizConfig.duration/1000)}</li>
+                        <li><strong>Temps par question :</strong> ${formatTimeRemaining(quizConfig.questionsTimer)}</li>
+                        <li><strong>Date de début :</strong> ${new Date(quizConfig.startDate).toLocaleString(quizConfig.locale, dateFormatOptions)}</li>
+                        <li><strong>Date de fin :</strong> ${new Date(quizConfig.endDate).toLocaleString(quizConfig.locale, dateFormatOptions)}</li>
+                    </ul>
+                </div>
+                
+                <div class="col-md-6">
+                    <h5 class="mb-3">Structure</h5>
+                    <ul class="list-unstyled">
+                        <li><strong>Nombre total de questions :</strong> ${totalQuestionCount}</li>
+                        <li><strong>Nombre de pages :</strong> ${questionGroups.length}</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-3">
+                <h5 class="mb-3">Métadonnées</h5>
+                <ul class="list-unstyled">
+                    <li><strong>Auteur :</strong> ${quizConfig.metadata.author}</li>
+                    <li><strong>Difficulté :</strong> ${quizConfig.metadata.difficulty}</li>
+                    <li><strong>Catégorie :</strong> ${quizConfig.metadata.category}</li>
+                    <li><strong>Version :</strong> ${quizConfig.metadata.version}</li>
+                    <li><strong>Dernière mise à jour :</strong> ${quizConfig.metadata.lastUpdated}</li>
+                </ul>
+            </div>
+        </div>
+    `;
+    
+    introCardBody.append(quizInfoHtml);
+    
     // Ajouter le bouton Démarrer
     const startButton = $('<button class="btn btn-primary btn-lg d-block mx-auto mt-4">Démarrer</button>');
     startButton.click(function() {
         $('#introductionContainer').remove();
         initializeQuizInterface();
-        startGlobalTimer(); // Démarrer le timer global quand l'utilisateur commence le quiz
+        startGlobalTimer();
     });
     
     introCardBody.append(startButton);
