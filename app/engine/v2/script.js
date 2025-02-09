@@ -201,12 +201,15 @@ async function startQuiz() {
         // Organisation des questions en groupes
         organizeQuestionGroups(quizConfig.shuffleQuestionGroups,quizConfig.shuffleQuestions);
 
-        // Initialisation de l'interface
-        initializeQuizInterface();
+        // // Initialisation de l'interface
+        // initializeQuizInterface();
 
-        // Démarrage du chrono global
-        startGlobalTimer();
-        // Cacher le loader une fois tout chargé
+        // // Démarrage du chrono global
+        // startGlobalTimer();
+        // // Cacher le loader une fois tout chargé
+        // $('#quizLoader').addClass('d-none');
+        // Initialiser l'interface d'introduction au lieu de l'interface du quiz
+        initializeIntroductionInterface();
         $('#quizLoader').addClass('d-none');
     } catch (error) {
         // Cacher le loader en cas d'erreur
@@ -294,6 +297,44 @@ function throttle(func, limit) {
             setTimeout(() => inThrottle = false, limit);
         }
     }
+}
+
+// Ajouter cette fonction pour initialiser l'interface d'introduction
+function initializeIntroductionInterface() {
+    $('#loginForm').hide();
+    
+    // Créer et afficher la page d'introduction
+    const introContainer = $('<div id="introductionContainer" class="container mt-4"></div>');
+    const introCard = $('<div class="card"></div>');
+    const introCardBody = $('<div class="card-body"></div>');
+    
+    // Ajouter le titre du quiz
+    introCardBody.append(`<h1 class="text-center mb-4">${quizConfig.title}</h1>`);
+    
+    // Ajouter le contenu de l'introduction
+    if (quizConfig.introduction) {
+        if (quizConfig.introduction.type === 'html') {
+            introCardBody.append(quizConfig.introduction.content);
+        } else {
+            introCardBody.append(`<p>${quizConfig.introduction.content}</p>`);
+        }
+    }
+    
+    // Ajouter le bouton Démarrer
+    const startButton = $('<button class="btn btn-primary btn-lg d-block mx-auto mt-4">Démarrer</button>');
+    startButton.click(function() {
+        $('#introductionContainer').remove();
+        initializeQuizInterface();
+        startGlobalTimer(); // Démarrer le timer global quand l'utilisateur commence le quiz
+    });
+    
+    introCardBody.append(startButton);
+    introCard.append(introCardBody);
+    introContainer.append(introCard);
+    
+    // Insérer le conteneur d'introduction dans le DOM
+    $('#quizContainer').before(introContainer);
+    $('#quizContainer').hide();
 }
 
 // Fonction pour formater le temps restant
@@ -872,7 +913,7 @@ function displayResults(totalScore, detailedResults, topicAverages) {
                 </div>
             </div>`;
     }
-<!-- -->
+
     // Ajout des résultats détaillés
     if (quizConfig.showAnswers) {
         resultsHtml += `
