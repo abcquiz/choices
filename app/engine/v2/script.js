@@ -520,6 +520,12 @@ function displayCurrentQuestionGroup() {
 
     updateNavigationButtons();
     setTimeout(checkQuestionVisibility, 100);
+    // Après l'affichage des questions
+    setTimeout(() => {
+        if (window.MathJax) {
+            MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+        }
+    }, 1000);
 }
 
 // Création du HTML pour une question
@@ -985,4 +991,7 @@ function displayResults(totalScore, detailedResults, topicAverages) {
 
     // Mise à jour du conteneur de résultats
     $('#resultsContainer').html(resultsHtml);
+    if (window.MathJax) {
+        MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+    }
 }

@@ -1,0 +1,157 @@
+[
+    {
+        "groupId": "mathematiques_fractions",
+        "topic": "définition",
+        "content": {
+            "type": "text",
+            "text": "Qu'est-ce qu'une fraction ?<br><br>Une fraction est une expression mathématique qui représente une partie d'un tout en le divisant en parts égales. Par exemple, \\(\\frac{1}{2}\\) signifie une partie sur deux.",
+            "url": null
+        },
+        "choices": [
+            { "text": "Un nombre qui exprime une partie d'un tout", "correct": true },
+            { "text": "Un nombre entier", "correct": false },
+            { "text": "Une opération de multiplication", "correct": false }
+        ],
+        "timer": 15,
+        "feedback": "Une fraction exprime la relation entre une partie et un tout divisé en parts égales."
+    },
+    {
+        "groupId": "mathematiques_fractions",
+        "topic": "définition",
+        "content": {
+            "type": "text",
+            "text": "Dans la fraction \\(\\frac{7}{10}\\), que représente le nombre 10 ? La portion en bleu correspond à $\\frac{1}{3}$",
+            "url": null
+        },
+        "choices": [
+            { "text": "Le dénominateur, qui indique en combien de parts égales le tout est divisé", "correct": true },
+            { "text": "Le numérateur, qui indique le nombre de parts considérées", "correct": false },
+            { "text": "Un multiplicateur du numérateur", "correct": false }
+        ],
+        "timer": 15,
+        "feedback": "Le 10 est le dénominateur, il indique que le tout est divisé en 10 parties égales."
+    },
+    {
+        "groupId": "mathematiques_fractions",
+        "topic": "comparaison",
+        "content": {
+            "type": "text",
+            "text": "La fraction \\(\\frac{1}{2}\\) est-elle plus grande que \\(\\frac{2}{5}\\) ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Oui", "correct": true },
+            { "text": "Non", "correct": false }
+        ],
+        "timer": 15,
+        "feedback": "En comparant \\(0.5\\) et \\(0.4\\), on constate que \\(\\frac{1}{2}\\) est plus grande que \\(\\frac{2}{5}\\)."
+    },
+    {
+        "groupId": "mathematiques_fractions",
+        "topic": "comparaison",
+        "content": {
+            "type": "text",
+            "text": "Entre \\(\\frac{3}{8}\\) et \\(\\frac{5}{8}\\), laquelle est la plus grande ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "\\(\\frac{3}{8}\\)", "correct": false },
+            { "text": "\\(\\frac{5}{8}\\)", "correct": true }
+        ],
+        "timer": 15,
+        "feedback": "Avec un dénominateur commun, la fraction ayant le plus grand numérateur est la plus grande."
+    },
+    {
+        "groupId": "mathematiques_fractions",
+        "topic": "comparaison",
+        "content": {
+            "type": "text",
+            "text": "Regardez le graphique ci-dessous qui représente deux parts de pizza :<br><br>![Graphique des fractions](https://example.com/graph_fractions.png)<br><br>La portion en bleu correspond à \\(\\frac{1}{3}\\) et celle en rouge à \\(\\frac{1}{4}\\). Laquelle est la plus grande ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "La portion bleue (\\(\\frac{1}{3}\\))", "correct": true },
+            { "text": "La portion rouge (\\(\\frac{1}{4}\\))", "correct": false }
+        ],
+        "timer": 20,
+        "feedback": "La fraction \\(\\frac{1}{3}\\) est environ égale à 0.33, ce qui est plus grand que \\(\\frac{1}{4}\\) (0.25). Pour afficher ce graphique, vous pouvez utiliser la librairie JavaScript Chart.js."
+    },
+    {
+        "groupId": "mathematiques_fractions",
+        "topic": "comparaison",
+        "content": {
+            "type": "text",
+            "text": "Entre \\(\\frac{3}{4}\\) et \\(\\frac{2}{3}\\), quelle fraction est la plus grande ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "\\(\\frac{3}{4}\\)", "correct": true },
+            { "text": "\\(\\frac{2}{3}\\)", "correct": false }
+        ],
+        "timer": 15,
+        "feedback": "Calcul numérique : \\(\\frac{3}{4} \\approx 0.75\\) et \\(\\frac{2}{3} \\approx 0.67\\), donc \\(\\frac{3}{4}\\) est plus grande."
+    },
+    {
+        "groupId": "mathematiques_fractions",
+        "topic": "comparaison",
+        "content": {
+            "type": "text",
+            "text": "La fraction \\(\\frac{5}{3}\\) est-elle plus grande que 1 ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Oui", "correct": true },
+            { "text": "Non", "correct": false }
+        ],
+        "timer": 15,
+        "feedback": "La fraction \\(\\frac{5}{3} \\approx 1.67\\) est bien supérieure à 1."
+    },
+    {
+        "groupId": "mathematiques_fractions",
+        "topic": "les fractions dans la vie",
+        "content": {
+            "type": "text",
+            "text": "Une pizza est divisée en 8 parts égales. Si vous mangez 3 parts, quelle fraction de la pizza avez-vous consommée ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "\\(\\frac{3}{8}\\)", "correct": true },
+            { "text": "\\(\\frac{1}{2}\\)", "correct": false },
+            { "text": "\\(\\frac{1}{3}\\)", "correct": false }
+        ],
+        "timer": 15,
+        "feedback": "Manger 3 parts sur 8 revient à consommer \\(\\frac{3}{8}\\) de la pizza."
+    },
+    {
+        "groupId": "mathematiques_fractions",
+        "topic": "les fractions dans la vie",
+        "content": {
+            "type": "text",
+            "text": "Dans une classe de 20 élèves, 5 ont obtenu la note maximale. Quelle fraction représente ces élèves ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "\\(\\frac{1}{4}\\)", "correct": true },
+            { "text": "\\(\\frac{5}{20}\\)", "correct": false },
+            { "text": "\\(\\frac{1}{5}\\)", "correct": false }
+        ],
+        "timer": 15,
+        "feedback": "5 élèves sur 20 représentent \\(\\frac{5}{20}\\), qui se simplifie en \\(\\frac{1}{4}\\)."
+    },
+    {
+        "groupId": "mathematiques_fractions",
+        "topic": "les fractions dans la vie",
+        "content": {
+            "type": "text",
+            "text": "Si un litre d'eau est partagé également entre 4 verres, quelle fraction du litre chaque verre contient-il ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "\\(\\frac{1}{4}\\) litre", "correct": true },
+            { "text": "\\(\\frac{1}{3}\\) litre", "correct": false },
+            { "text": "\\(\\frac{1}{2}\\) litre", "correct": false }
+        ],
+        "timer": 15,
+        "feedback": "Chaque verre reçoit \\(\\frac{1}{4}\\) d'un litre d'eau."
+    }
+]
