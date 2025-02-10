@@ -1,10 +1,10 @@
 {
-    "title": "Quiz Easy",
-    "duration": 1800000,
+    "title": "Quiz Easy1",
+    "duration": 3600,
     "locale": "fr-FR",
     "timezone": "Europe/Paris",
-    "startDate": "2025-02-10T08:00:00",
-    "endDate": "2025-07-15T18:00:00",
+    "startDate": "2025-02-08T15:30:00",
+    "endDate":"2025-07-15T18:00:00",
     "showAnswers": true,
     "showFeedbackAfterEachQuestion": false,
     "showPreviousButton": true,
@@ -12,6 +12,12 @@
     "shuffleQuestions": true,
     "shuffleChoices": true,
     "shuffleQuestionGroups": true,
+    "enableTimer":false,
+    "questionsTimer": 120,
+    "introduction": {
+        "type": "html",
+        "content": "<h2>Bienvenue dans ce quiz</h2><p>Ce quiz va tester vos connaissances générales. Vous aurez 30 minutes pour répondre à toutes les questions.</p><p>Chaque question peut avoir une ou plusieurs bonnes réponses. Lisez attentivement les énoncés avant de répondre.</p><p>Bonne chance !</p>"
+    },
     "theme": {
         "primary": "#007bff",
         "secondary": "#6c757d",
@@ -22,7 +28,7 @@
     "metadata": {
         "author": "Prof. Martin",
         "difficulty": "intermediate",
-        "category": "culture-generale", 
+        "category": "culture-generale",
         "version": "1.0",
         "lastUpdated": "2025-02-06"
     }

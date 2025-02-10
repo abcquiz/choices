@@ -1,8 +1,9 @@
 # TODO
 
 ## MVP
+- [ ] faire en sorte que config.js herite d'aborde des proprietés de son parent, puis override par ses propres propriétés
 - [x] ne pas du tout afficher le bouton précédent, le masquer définitivement en v2
-- [ ] virer tous les console.log
+- [x] virer tous les console.log
 - [x] avoir un texte de présentation du quiz dans la config
 - [x] avoir un config sur config.json de questionsTimer si on veut un meme timer pour toutes les questions
 - [x] avoir une config sur config.json enableTimer : si off, alors aucun timer ne sera affiché ni pris en compte sur les questions
