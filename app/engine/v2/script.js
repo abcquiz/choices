@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
         localStorage.removeItem('test');
     } catch (e) {
         console.error('Erreur d\'accès au stockage local:', e);
-        window.toast.show('error','Votre navigateur bloque l\'accès au stockage local.', 'Veuillez vérifier vos paramètres de confidentialité.');
+        window.toast.show('error', 'Votre navigateur bloque l\'accès au stockage local.', 'Veuillez vérifier vos paramètres de confidentialité.');
     }
 
     initializeFormWithUrlParams();
@@ -46,7 +46,7 @@ $(document).ready(function () {
 
 // Configuration globale
 const dataBaseUrl = getUrlParameter('bu') || 'https://raw.githubusercontent.com/abcquiz/choices/refs/heads/main/app/data/v2';
-const usercodes = ['e5e53c784d5d49de1cabb6e904bf3380026aadcb9769775a268dd304dd9aa2df','bbdb859e6bdfc45f8c37bb1ce8e89498b4326b7686439c926b5353789da5db16', '2fc6607da8bdf7c26d9d8c5697a36935d78c3b4da11b69a72db7852946b179d8', '93823a76576ab3b5030a2b5daca4bf3efff77fee70991d90bc1ef356e8bc4906']; // Codes d'accès autorisés
+const usercodes = ['e5e53c784d5d49de1cabb6e904bf3380026aadcb9769775a268dd304dd9aa2df', 'bbdb859e6bdfc45f8c37bb1ce8e89498b4326b7686439c926b5353789da5db16', '2fc6607da8bdf7c26d9d8c5697a36935d78c3b4da11b69a72db7852946b179d8', '93823a76576ab3b5030a2b5daca4bf3efff77fee70991d90bc1ef356e8bc4906']; // Codes d'accès autorisés
 
 let quizConfig = null;
 let questions = null;
@@ -73,7 +73,7 @@ async function startQuiz() {
     }
 
     if (!usercodes.includes(CryptoJS.SHA256(usercode).toString(CryptoJS.enc.Hex))) {
-        window.toast.show('error','Code d\'accès invalide','Veuillez remplir votre code');
+        window.toast.show('error', 'Code d\'accès invalide', 'Veuillez remplir votre code');
         return;
     }
 
@@ -91,7 +91,7 @@ async function startQuiz() {
                 </div>
             `);
         }
-        
+
         // Afficher le loader
         $('#quizLoader').removeClass('d-none');
 
@@ -108,7 +108,7 @@ async function startQuiz() {
             throw new Error("Format de config.js invalide");
         }
 
-        if(quizConfig.parent){
+        if (quizConfig.parent) {
             const parentConfigUrl = `${dataBaseUrl}/${quizConfig.parent}/config.json?t=${timestamp}`;
             const parentConfigResponse = await fetch(parentConfigUrl);
             const parentConfigText = await parentConfigResponse.text();
@@ -125,7 +125,7 @@ async function startQuiz() {
         // Vérification des dates de démarrage
         const locale = quizConfig.locale || 'fr-FR';
         const timezone = quizConfig.timezone || 'Europe/Paris';
-        
+
         // Obtenir la date actuelle dans le timezone du quiz
         const now = new Date().toLocaleString('en-US', { timeZone: timezone });
         const nowDate = new Date(now);
@@ -134,8 +134,8 @@ async function startQuiz() {
         function getDateInTimezone(dateStr) {
             if (!dateStr) return null;
             try {
-            //Note : On utilise 'en-US' pour les conversions intermédiaires car c'est un format 
-            //que JavaScript peut parser de manière fiable, mais le formatage final pour l'affichage utilise toujours la locale configurée.
+                //Note : On utilise 'en-US' pour les conversions intermédiaires car c'est un format 
+                //que JavaScript peut parser de manière fiable, mais le formatage final pour l'affichage utilise toujours la locale configurée.
                 const date = new Date(dateStr).toLocaleString('en-US', { timeZone: timezone });
                 return new Date(date);
             } catch (e) {
@@ -147,7 +147,7 @@ async function startQuiz() {
         // Si une date de début est définie, vérifier qu'elle n'est pas dans le futur
         if (quizConfig.startDate) {
             const startDate = getDateInTimezone(quizConfig.startDate);
-            
+
             if (startDate && startDate > nowDate) {
                 const formattedDate = startDate.toLocaleString(locale, {
                     day: '2-digit',
@@ -158,7 +158,7 @@ async function startQuiz() {
                     timeZone: timezone,
                     timeZoneName: 'short'
                 });
-                window.toast.show('error',`Le quiz ne peut pas commencer avant le ${formattedDate}`,'Veuillez recommencer plus tard');
+                window.toast.show('error', `Le quiz ne peut pas commencer avant le ${formattedDate}`, 'Veuillez recommencer plus tard');
                 // Cacher le loader en cas d'erreur
                 $('#quizLoader').addClass('d-none');
                 return;
@@ -168,7 +168,7 @@ async function startQuiz() {
         // Si une date de fin est définie, vérifier qu'elle n'est pas dépassée
         if (quizConfig.endDate) {
             const endDate = getDateInTimezone(quizConfig.endDate);
-            
+
             if (endDate && endDate < nowDate) {
                 const formattedDate = endDate.toLocaleString(locale, {
                     day: '2-digit',
@@ -179,7 +179,7 @@ async function startQuiz() {
                     timeZone: timezone,
                     timeZoneName: 'short'
                 });
-                window.toast.show('error',`La date de démarrage du quiz est expirée.`,`depuis le ${formattedDate}`);
+                window.toast.show('error', `La date de démarrage du quiz est expirée.`, `depuis le ${formattedDate}`);
                 // Cacher le loader en cas d'erreur
                 $('#quizLoader').addClass('d-none');
                 return;
@@ -201,7 +201,7 @@ async function startQuiz() {
         }
 
         // Organisation des questions en groupes
-        organizeQuestionGroups(quizConfig.shuffleQuestionGroups,quizConfig.shuffleQuestions);
+        organizeQuestionGroups(quizConfig.shuffleQuestionGroups, quizConfig.shuffleQuestions);
 
         // // Initialisation de l'interface
         // initializeQuizInterface();
@@ -216,7 +216,7 @@ async function startQuiz() {
     } catch (error) {
         // Cacher le loader en cas d'erreur
         $('#quizLoader').addClass('d-none');
-        window.toast.show('error','Erreur lors du chargement du quiz.', 'Veuillez vérifier le code du quiz.');
+        window.toast.show('error', 'Erreur lors du chargement du quiz.', 'Veuillez vérifier le code du quiz.');
         console.error(error);
     }
 
@@ -225,7 +225,7 @@ async function startQuiz() {
 // Fonction pour initialiser les champs du formulaire avec les paramètres d'URL
 function initializeFormWithUrlParams() {
     const params = new URLSearchParams(window.location.search);
-    
+
     // Gestion du code quiz
     const quizcodeInput = document.getElementById('quizcode');
     if (params.get('qn')) {
@@ -233,7 +233,7 @@ function initializeFormWithUrlParams() {
         quizcodeInput.setAttribute('readonly', true);
         quizcodeInput.classList.add('bg-gray-100');
     }
-    
+
     // Gestion du nom d'utilisateur
     const usernameInput = document.getElementById('username');
     if (params.get('u')) {
@@ -254,7 +254,7 @@ async function fetchWithCacheControl(url) {
     const timestamp = new Date().getTime();
     const separator = url.includes('?') ? '&' : '?';
     const urlWithCache = `${url}${separator}tcache=${timestamp}`;
-    
+
     const options = {
         headers: {
             'Cache-Control': 'no-cache, no-store, must-revalidate',
@@ -290,15 +290,15 @@ function throttle(func, limit) {
 // Ajouter cette fonction pour initialiser l'interface d'introduction
 function initializeIntroductionInterface() {
     $('#loginForm').hide();
-    
+
     // Créer et afficher la page d'introduction
     const introContainer = $('<div id="introductionContainer" class="container mt-4"></div>');
     const introCard = $('<div class="card"></div>');
     const introCardBody = $('<div class="card-body"></div>');
-    
+
     // Ajouter le titre du quiz
     introCardBody.append(`<h1 class="text-center mb-4">${quizConfig.title}</h1>`);
-    
+
     // Ajouter le contenu de l'introduction
     if (quizConfig.introduction) {
         if (quizConfig.introduction.type === 'html') {
@@ -307,7 +307,7 @@ function initializeIntroductionInterface() {
             introCardBody.append(`<p>${quizConfig.introduction.content}</p>`);
         }
     }
-    
+
     // Options de formatage pour les dates
     const dateFormatOptions = {
         day: '2-digit',
@@ -317,7 +317,7 @@ function initializeIntroductionInterface() {
         minute: '2-digit',
         hour12: false
     };
-    
+
     // Ajouter les informations du quiz
     const quizInfoHtml = `
         <div class="mt-4 p-3 border rounded bg-light">
@@ -355,21 +355,21 @@ function initializeIntroductionInterface() {
             </div>
         </div>
     `;
-    
+
     introCardBody.append(quizInfoHtml);
-    
+
     // Ajouter le bouton Démarrer
     const startButton = $('<button class="btn btn-primary btn-lg d-block mx-auto mt-4">Démarrer</button>');
-    startButton.click(function() {
+    startButton.click(function () {
         $('#introductionContainer').remove();
         initializeQuizInterface();
         startGlobalTimer();
     });
-    
+
     introCardBody.append(startButton);
     introCard.append(introCardBody);
     introContainer.append(introCard);
-    
+
     // Insérer le conteneur d'introduction dans le DOM
     $('#quizContainer').before(introContainer);
     $('#quizContainer').hide();
@@ -398,7 +398,7 @@ function formatTimeRemaining(seconds) {
 }
 
 // Organisation des questions en groupes
-function organizeQuestionGroups(shuffleQuestionGroups,shuffleQuestions) {
+function organizeQuestionGroups(shuffleQuestionGroups, shuffleQuestions) {
     // Utiliser un Map pour regrouper les questions
     const groupMap = new Map();
 
@@ -521,11 +521,9 @@ function displayCurrentQuestionGroup() {
     updateNavigationButtons();
     setTimeout(checkQuestionVisibility, 100);
     // Après l'affichage des questions
-    setTimeout(() => {
-        if (window.MathJax) {
-            MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
-        }
-    }, 1000);
+    if (window.MathJax) {
+        window.MathJax.Hub.Queue(["Typeset", window.MathJax.Hub, container[0]]);
+    }
 }
 
 // Création du HTML pour une question
@@ -572,7 +570,7 @@ function createQuestionHtml(question, globalIndex) {
                 <div class="choices mt-3">
                     ${choicesHtml}
                 </div>
-                ${(question.timer && quizConfig.enableTimer)? `<div class="question-timer mt-2">Temps restant: <span id="questionTimer${globalIndex}">--:--</span></div>` : ''}
+                ${(question.timer && quizConfig.enableTimer) ? `<div class="question-timer mt-2">Temps restant: <span id="questionTimer${globalIndex}">--:--</span></div>` : ''}
             </div>
         </div>
     `;
@@ -631,7 +629,7 @@ function startQuestionTimer(duration, globalIndex) {
     if (questionTimers[globalIndex]) {
         clearInterval(questionTimers[globalIndex].interval);
     }
-    if(!quizConfig.enableTimer) {
+    if (!quizConfig.enableTimer) {
         return;
     }
     let timeLeft = quizConfig.questionsTimer || duration;
@@ -698,33 +696,6 @@ function checkQuestionVisibility() {
             }
         }
     });
-}
-
-// Modification de la fonction displayCurrentQuestionGroup
-function displayCurrentQuestionGroup() {
-    const currentGroup = questionGroups[currentGroupIndex];
-    const container = $('#questionsContainer');
-    container.empty();
-
-    // Nettoyer les anciens timers
-    questionTimers = {};
-
-    const baseIndex = calculateBaseIndex(currentGroupIndex);
-
-    currentGroup.forEach((question, groupQuestionIndex) => {
-        const globalIndex = baseIndex + groupQuestionIndex;
-        const questionHtml = createQuestionHtml(question, globalIndex);
-        container.append(questionHtml);
-
-        if (question.timer) {
-            startQuestionTimer(question.timer, globalIndex);
-        }
-    });
-
-    updateNavigationButtons();
-
-    // Vérifier la visibilité des questions après leur affichage
-    setTimeout(checkQuestionVisibility, 100);
 }
 
 function showNextQuestion() {
@@ -888,7 +859,7 @@ function displayResults(totalScore, detailedResults, topicAverages) {
     // Fonction pour générer le HTML d'un bloc de résultats
     function generateResultsBlockHtml(title, results, colorClass) {
         if (!results || results.length === 0) return '';
-        
+
         return `
             <div class="card mb-4">
                 <div class="card-header bg-${colorClass}"></div>
@@ -955,8 +926,8 @@ function displayResults(totalScore, detailedResults, topicAverages) {
                     <h4>Scores par thème</h4>
                     <div class="topic-scores mt-3">
                         ${Object.entries(topicAverages).map(([topic, score]) => {
-                            const topicScoreOn20 = (parseFloat(score) * 20 / 100).toFixed(2);
-                            return `
+            const topicScoreOn20 = (parseFloat(score) * 20 / 100).toFixed(2);
+            return `
                                 <div class="topic-score mb-3">
                                     <div class="d-flex justify-content-between mb-1">
                                         <strong>${topic}</strong>
@@ -973,7 +944,7 @@ function displayResults(totalScore, detailedResults, topicAverages) {
                                         </div>
                                     </div>
                                 </div>`;
-                        }).join('')}
+        }).join('')}
                     </div>
                 </div>
             </div>`;
