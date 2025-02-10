@@ -874,9 +874,44 @@ function displayResults(totalScore, detailedResults, topicAverages) {
     const qrCodeData = encodeURIComponent(JSON.stringify(qrData));
     const qrCodeUrl = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${qrCodeData}`;
 
+    // Trier les résultats en trois catégories
+    const perfectResults = detailedResults.filter(result => result.score === 1);
+    const partialResults = detailedResults.filter(result => result.score > 0 && result.score < 1);
+    const wrongResults = detailedResults.filter(result => result.score === 0);
+
+    // Fonction pour générer le HTML d'un bloc de résultats
+    function generateResultsBlockHtml(title, results, colorClass) {
+        if (!results || results.length === 0) return '';
+        
+        return `
+            <div class="card mb-4">
+                <div class="card-header bg-${colorClass}"></div>
+                <div class="card-body">
+                    <h4 class="mb-3">${title}</h4>
+                    ${results.map(result => `
+                        <div class="border rounded p-3 mb-3">
+                            <h5 class="mb-2">${result.question}</h5>
+                            ${result.topic ? `<div class="text-muted mb-2">Thème: ${result.topic}</div>` : ''}
+                            <p>Score: ${(result.score * 100).toFixed(2)}% (${(result.score * 20).toFixed(2)}/20)</p>
+                            <p>Réponses correctes: ${result.correctAnswers.join(', ')}</p>
+                            <p>Vos réponses: ${result.selectedAnswers.length > 0 ? result.selectedAnswers.join(', ') : 'Aucune réponse'}</p>
+                            ${result.feedback ? `
+                                <div class="alert alert-info mt-2">
+                                    <strong>Feedback:</strong> ${result.feedback}
+                                </div>
+                            ` : ''}
+                        </div>
+                    `).join('')}
+                </div>
+            </div>
+        `;
+    }
+
     // Construction du HTML des résultats
     let resultsHtml = `
         <h2 class="text-center mb-4">Résultats</h2>
+        
+        <!-- Carte principale des résultats -->
         <div class="card mb-4">
             <div class="card-body">
                 <div class="row">
@@ -912,58 +947,39 @@ function displayResults(totalScore, detailedResults, topicAverages) {
             <div class="card mb-4">
                 <div class="card-body">
                     <h4>Scores par thème</h4>
-                    <div class="topic-scores mt-3">`;
-
-        for (const [topic, score] of Object.entries(topicAverages)) {
-            const topicScoreOn20 = (parseFloat(score) * 20 / 100).toFixed(2);
-            resultsHtml += `
-                <div class="topic-score mb-3">
-                    <div class="d-flex justify-content-between mb-1">
-                        <strong>${topic}</strong>
-                        <span>${score}% (${topicScoreOn20}/20)</span>
-                    </div>
-                    <div class="progress">
-                        <div class="progress-bar" 
-                             role="progressbar" 
-                             style="width: ${score}%"
-                             aria-valuenow="${score}" 
-                             aria-valuemin="0" 
-                             aria-valuemax="100">
-                            ${score}%
-                        </div>
-                    </div>
-                </div>`;
-        }
-
-        resultsHtml += `
+                    <div class="topic-scores mt-3">
+                        ${Object.entries(topicAverages).map(([topic, score]) => {
+                            const topicScoreOn20 = (parseFloat(score) * 20 / 100).toFixed(2);
+                            return `
+                                <div class="topic-score mb-3">
+                                    <div class="d-flex justify-content-between mb-1">
+                                        <strong>${topic}</strong>
+                                        <span>${score}% (${topicScoreOn20}/20)</span>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar" 
+                                             role="progressbar" 
+                                             style="width: ${score}%"
+                                             aria-valuenow="${score}" 
+                                             aria-valuemin="0" 
+                                             aria-valuemax="100">
+                                            ${score}%
+                                        </div>
+                                    </div>
+                                </div>`;
+                        }).join('')}
                     </div>
                 </div>
             </div>`;
     }
 
-    // Ajout des résultats détaillés
+    // Ajout des blocs de résultats détaillés
     if (quizConfig.showAnswers) {
         resultsHtml += `
-            <div class="card mb-4">
-                <div class="card-body">
-                    <h4>Détail des réponses</h4>
-                    ${detailedResults.map(result => `
-                        <div class="card mb-3">
-                            <div class="card-body">
-                                <h5>${result.question}</h5>
-                                ${result.topic ? `<div class="text-muted mb-2">Thème: ${result.topic}</div>` : ''}
-                                <p>Score: ${(result.score * 100).toFixed(2)}%</p>
-                                <p>Réponses correctes: ${result.correctAnswers.join(', ')}</p>
-                                <p>Vos réponses: ${result.selectedAnswers.length > 0 ? result.selectedAnswers.join(', ') : 'Aucune réponse'}</p>
-                                ${(quizConfig.showFeedbackAfterEachQuestion && result.feedback) ? `
-                                    <div class="feedback mt-3">
-                                        <strong>Feedback:</strong> ${result.feedback}
-                                    </div>
-                                ` : ''}
-                            </div>
-                        </div>
-                    `).join('')}
-                </div>
+            <div class="results-blocks">
+                ${generateResultsBlockHtml('Réponses correctes', perfectResults, 'success')}
+                ${generateResultsBlockHtml('Réponses partiellement correctes', partialResults, 'warning')}
+                ${generateResultsBlockHtml('Réponses incorrectes', wrongResults, 'danger')}
             </div>`;
     }
 
