@@ -108,6 +108,21 @@ async function startQuiz() {
             throw new Error("Format de config.js invalide");
         }
 
+        if(quizConfig.parent){
+            const parentConfigUrl = `${dataBaseUrl}/${quizConfig.parent}/config.json?t=${timestamp}`;
+            const parentConfigResponse = await fetch(parentConfigUrl);
+            const parentConfigText = await parentConfigResponse.text();
+            //const configText = await fetchWithCacheControl(configUrl);
+            //ici on part du principe que le text json fourni est sensé être propre
+            try {
+                parentQuizConfig = JSON.parse(parentConfigText);
+                // Fusionner avec l'opérateur de déstructuration
+                quizConfig = { ...parentQuizConfig, ...quizConfig };
+            } catch (e) {
+                throw new Error("Format de config.js invalide");
+            }
+        }
+
         // Vérification des dates de démarrage
         const locale = quizConfig.locale || 'fr-FR';
         const timezone = quizConfig.timezone || 'Europe/Paris';
