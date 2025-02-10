@@ -2,7 +2,7 @@
     "title": "Quiz Easy2",
     "duration": 7200,
     "parent":"easy",
-    "enableTimer":false,
+    "enableTimer":true,
     "questionsTimer": 45,
     "introduction": {
         "type": "html",

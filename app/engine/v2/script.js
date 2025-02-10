@@ -122,7 +122,7 @@ async function startQuiz() {
                 throw new Error("Format de config.js invalide");
             }
         }
-
+        console.log("quizConfig:",quizConfig);
         // Vérification des dates de démarrage
         const locale = quizConfig.locale || 'fr-FR';
         const timezone = quizConfig.timezone || 'Europe/Paris';
