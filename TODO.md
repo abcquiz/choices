@@ -1,7 +1,7 @@
 # TODO
 
 ## MVP
-- [ ] faire en sorte que config.js herite d'aborde des proprietés de son parent, puis override par ses propres propriétés
+- [x] faire en sorte que config.js herite d'aborde des proprietés de son parent, puis override par ses propres propriétés
 - [x] ne pas du tout afficher le bouton précédent, le masquer définitivement en v2
 - [x] virer tous les console.log
 - [x] avoir un texte de présentation du quiz dans la config
