@@ -1,11 +1,12 @@
 {
     # Options globales (tu peux activer le debug si besoin en décommentant la ligne suivante)
     # debug
+    auto_https off
 }
 
-# Bloc production – remplace "mondomaine.com" par ton domaine
-mondomaine.com {
-    root * /usr/share/caddy
+# Bloc production – domaine quiz.hachim.fr (HTTPS automatique)
+quiz.hachim.fr {
+    root * /usr/share/caddy/engine/v2
     file_server
 
     # Ajout des headers CORS pour la compatibilité avec les navigateurs et extensions Chrome
@@ -19,8 +20,8 @@ mondomaine.com {
     }
 }
 
-# Bloc local – accès via localhost
-localhost {
+# Bloc local – accès via localhost (HTTP seulement)
+:8080 {
     root * /usr/share/caddy/engine/v2
     file_server
 

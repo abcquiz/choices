@@ -1,0 +1,14 @@
+{
+	auto_https off
+}
+
+:8080 {
+	root * /usr/share/caddy/engine/v2
+	file_server
+
+	header {
+		Access-Control-Allow-Origin *
+		Access-Control-Allow-Methods "GET, POST, OPTIONS"
+		Access-Control-Allow-Headers "Content-Type, Authorization"
+	}
+}

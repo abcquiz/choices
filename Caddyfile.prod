@@ -1,0 +1,20 @@
+{
+	# Options globales pour la production
+	# debug
+}
+
+# Bloc production – domaine quiz.hachim.fr (HTTPS automatique)
+quiz.hachim.fr {
+	root * /usr/share/caddy/engine/v2
+	file_server
+
+	# Ajout des headers CORS pour la compatibilité avec les navigateurs et extensions Chrome
+	header {
+		# Permettre l'accès depuis n'importe quelle origine
+		Access-Control-Allow-Origin *
+		# Méthodes HTTP autorisées
+		Access-Control-Allow-Methods "GET, POST, OPTIONS"
+		# Headers autorisés
+		Access-Control-Allow-Headers "Content-Type, Authorization"
+	}
+}

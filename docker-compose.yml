@@ -4,11 +4,11 @@ services:
   web:
     image: caddy:2-alpine
     ports:
-      - "${PORT:-80}:80"
-      - "${SSL_PORT:-443}:443"
+      - "${PORT:-8080}:${CONTAINER_PORT:-8080}"
+      - "${SSL_PORT:-8443}:${CONTAINER_SSL_PORT:-8443}"
     volumes:
       - ./app:/usr/share/caddy # Dossier contenant vos fichiers statiques
-      - ./Caddyfile:/etc/caddy/Caddyfile
+      - ${CADDYFILE:-./Caddyfile}:/etc/caddy/Caddyfile
       - caddy_data:/data
       - caddy_config:/config
     environment:

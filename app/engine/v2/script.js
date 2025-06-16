@@ -47,7 +47,7 @@ $(document).ready(function () {
 // Configuration globale
 const dataBaseUrl = getUrlParameter('bu') || 'https://raw.githubusercontent.com/abcquiz/choices/refs/heads/main/app/data/v2';
 const usercodes = ['e5e53c784d5d49de1cabb6e904bf3380026aadcb9769775a268dd304dd9aa2df', 'bbdb859e6bdfc45f8c37bb1ce8e89498b4326b7686439c926b5353789da5db16', '2fc6607da8bdf7c26d9d8c5697a36935d78c3b4da11b69a72db7852946b179d8', '93823a76576ab3b5030a2b5daca4bf3efff77fee70991d90bc1ef356e8bc4906']; // Codes d'accès autorisés
-
+console.log ("databaseUrl:",dataBaseUrl);
 let quizConfig = null;
 let questions = null;
 let currentGroupIndex = 0;
@@ -98,6 +98,7 @@ async function startQuiz() {
         const timestamp = new Date().getTime();
         // Chargement de la configuration
         const configUrl = `${dataBaseUrl}/${quizcode}/config.json?t=${timestamp}`;
+        console.log("Chargement du quiz:",configUrl);
         const configResponse = await fetch(configUrl);
         const configText = await configResponse.text();
         //const configText = await fetchWithCacheControl(configUrl);
