@@ -1,0 +1,152 @@
+[
+    {
+        "topic": "Le Misanthrope",
+        "content": {
+            "type": "text",
+            "text": "Qu'est-ce qu'un misanthrope ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Quelqu'un qui n'aime pas les hommes", "correct": true },
+            { "text": "Quelqu'un qui aime la solitude", "correct": false },
+            { "text": "Quelqu'un qui est très riche", "correct": false },
+            { "text": "Quelqu'un qui est très cultivé", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Le Misanthrope",
+        "content": {
+            "type": "text",
+            "text": "Que réclame Alceste dans les relations humaines ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "La sincérité absolue", "correct": true },
+            { "text": "La richesse", "correct": false },
+            { "text": "Le respect", "correct": false },
+            { "text": "L'admiration", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Le Misanthrope",
+        "content": {
+            "type": "text",
+            "text": "Comment s'appelle l'ami d'Alceste qui est plus tolérant ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Philinte", "correct": true },
+            { "text": "Oronte", "correct": false },
+            { "text": "Clitandre", "correct": false },
+            { "text": "Acaste", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Le Misanthrope",
+        "content": {
+            "type": "text",
+            "text": "Que critique principalement Molière dans cette pièce ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "L'hypocrisie de la société de cour", "correct": true },
+            { "text": "La pauvreté du peuple", "correct": false },
+            { "text": "Les guerres du roi", "correct": false },
+            { "text": "L'éducation des enfants", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Le Misanthrope",
+        "content": {
+            "type": "text",
+            "text": "Complétez la citation d'Alceste : \"Non, je ne puis souffrir cette _____ méthode\"",
+            "url": null
+        },
+        "choices": [
+            { "text": "lâche", "correct": true },
+            { "text": "mauvaise", "correct": false },
+            { "text": "cruelle", "correct": false },
+            { "text": "fausse", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Le Misanthrope",
+        "content": {
+            "type": "text",
+            "text": "Qu'est-ce qu'Alceste hait selon le texte ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Les grands faiseurs de grimaces et les embrassades frivoles", "correct": true },
+            { "text": "Les gens pauvres", "correct": false },
+            { "text": "Les femmes en général", "correct": false },
+            { "text": "Les artistes", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Le Misanthrope",
+        "content": {
+            "type": "text",
+            "text": "Que répond Philinte à Alceste pour justifier la politesse sociale ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "\"Quand on est du monde, il faut bien que l'on rende quelques dehors civils\"", "correct": true },
+            { "text": "\"Il faut être sincère en toutes circonstances\"", "correct": false },
+            { "text": "\"La vérité est toujours bonne à dire\"", "correct": false },
+            { "text": "\"Il ne faut jamais mentir\"", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Le Misanthrope",
+        "content": {
+            "type": "text",
+            "text": "Que signifient les \"dehors civils\" selon Philinte ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "De la politesse extérieure que les règles sociales demandent", "correct": true },
+            { "text": "Des vêtements élégants", "correct": false },
+            { "text": "Des manières aristocratiques", "correct": false },
+            { "text": "Des règles de duel", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Le Misanthrope",
+        "content": {
+            "type": "text",
+            "text": "Quel est le conflit principal entre Alceste et Philinte ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Alceste veut la sincérité absolue, Philinte accepte les conventions sociales", "correct": true },
+            { "text": "Ils aiment la même femme", "correct": false },
+            { "text": "Ils se disputent de l'argent", "correct": false },
+            { "text": "Ils ont des opinions politiques opposées", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Le Misanthrope",
+        "content": {
+            "type": "text",
+            "text": "À quelle époque cette pièce a-t-elle été écrite ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "1666 (17ème siècle)", "correct": true },
+            { "text": "18ème siècle", "correct": false },
+            { "text": "16ème siècle", "correct": false },
+            { "text": "19ème siècle", "correct": false }
+        ],
+        "timer": 60
+    }
+]

@@ -1,0 +1,152 @@
+[
+    {
+        "topic": "Le Dormeur du val",
+        "content": {
+            "type": "text",
+            "text": "Quel âge avait Rimbaud quand il a écrit \"Le Dormeur du val\" ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "16 ans", "correct": true },
+            { "text": "18 ans", "correct": false },
+            { "text": "20 ans", "correct": false },
+            { "text": "14 ans", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Le Dormeur du val",
+        "content": {
+            "type": "text",
+            "text": "Que révèlent les \"deux trous rouges au côté droit\" ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Que le soldat est mort", "correct": true },
+            { "text": "Qu'il est blessé mais vivant", "correct": false },
+            { "text": "Qu'il a des taches de sang", "correct": false },
+            { "text": "Qu'il s'est sali", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Le Dormeur du val",
+        "content": {
+            "type": "text",
+            "text": "Comment commence le poème ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "\"C'est un trou de verdure où chante une rivière\"", "correct": true },
+            { "text": "\"Un soldat jeune, bouche ouverte, tête nue\"", "correct": false },
+            { "text": "\"Les pieds dans les glaïeuls, il dort\"", "correct": false },
+            { "text": "\"Il a deux trous rouges au côté droit\"", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Le Dormeur du val",
+        "content": {
+            "type": "text",
+            "text": "Quelle est la chute du poème ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "On comprend qu'il ne dort pas, il est mort à la guerre", "correct": true },
+            { "text": "Le soldat se réveille", "correct": false },
+            { "text": "Il fait très froid", "correct": false },
+            { "text": "La nature est belle", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Le Dormeur du val",
+        "content": {
+            "type": "text",
+            "text": "Que signifie \"c'est un petit val qui mousse de rayons\" ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "La vallée est pleine de lumière (comme de la mousse)", "correct": true },
+            { "text": "Il y a de la vraie mousse partout", "correct": false },
+            { "text": "La vallée est humide", "correct": false },
+            { "text": "Il y a des nuages", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Le Dormeur du val",
+        "content": {
+            "type": "text",
+            "text": "Pourquoi Rimbaud dit-il \"Nature, berce-le chaudement : il a froid\" ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "C'est le premier indice qu'il y a un problème", "correct": true },
+            { "text": "Il fait vraiment froid dehors", "correct": false },
+            { "text": "Le soldat a perdu ses vêtements", "correct": false },
+            { "text": "C'est l'hiver", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Le Dormeur du val",
+        "content": {
+            "type": "text",
+            "text": "Que montre le fait que \"Les parfums ne font pas frissonner sa narine\" ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Les odeurs ne le font pas réagir (c'est bizarre !)", "correct": true },
+            { "text": "Il a un rhume", "correct": false },
+            { "text": "Il n'y a pas d'odeurs", "correct": false },
+            { "text": "Il dort profondément", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Le Dormeur du val",
+        "content": {
+            "type": "text",
+            "text": "Comment le soldat sourit-il ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Comme sourirait un enfant malade", "correct": true },
+            { "text": "Comme un enfant heureux", "correct": false },
+            { "text": "Comme un homme en colère", "correct": false },
+            { "text": "Il ne sourit pas", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Le Dormeur du val",
+        "content": {
+            "type": "text",
+            "text": "Que sont les \"glaïeuls\" mentionnés dans le poème ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Des fleurs", "correct": true },
+            { "text": "Des pierres", "correct": false },
+            { "text": "Des herbes", "correct": false },
+            { "text": "Des arbres", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Le Dormeur du val",
+        "content": {
+            "type": "text",
+            "text": "Quel contraste Rimbaud crée-t-il dans ce poème ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Entre la beauté de la nature et l'horreur de la guerre", "correct": true },
+            { "text": "Entre le jour et la nuit", "correct": false },
+            { "text": "Entre l'été et l'hiver", "correct": false },
+            { "text": "Entre la ville et la campagne", "correct": false }
+        ],
+        "timer": 60
+    }
+]

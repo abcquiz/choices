@@ -1,0 +1,152 @@
+[
+    {
+        "topic": "Le Rouge et le Noir",
+        "content": {
+            "type": "text",
+            "text": "Que symbolise le \"Rouge\" dans le titre ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "L'armée", "correct": true },
+            { "text": "L'amour", "correct": false },
+            { "text": "Le sang", "correct": false },
+            { "text": "La révolution", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Le Rouge et le Noir",
+        "content": {
+            "type": "text",
+            "text": "Que symbolise le \"Noir\" dans le titre ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "L'église", "correct": true },
+            { "text": "La mort", "correct": false },
+            { "text": "La noblesse", "correct": false },
+            { "text": "La tristesse", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Le Rouge et le Noir",
+        "content": {
+            "type": "text",
+            "text": "Comment s'appelle le héros du roman ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Julien Sorel", "correct": true },
+            { "text": "Julien Moreau", "correct": false },
+            { "text": "Julien Dubois", "correct": false },
+            { "text": "Julien Martin", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Le Rouge et le Noir",
+        "content": {
+            "type": "text",
+            "text": "Quelle est l'origine sociale de Julien Sorel ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Modeste (fils de charpentier)", "correct": true },
+            { "text": "Noble", "correct": false },
+            { "text": "Bourgeoise", "correct": false },
+            { "text": "Aristocratique", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Le Rouge et le Noir",
+        "content": {
+            "type": "text",
+            "text": "Comment Stendhal définit-il le roman ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "\"Un miroir qu'on promène le long d'un chemin\"", "correct": true },
+            { "text": "\"Une fenêtre sur le monde\"", "correct": false },
+            { "text": "\"Un livre de la vie\"", "correct": false },
+            { "text": "\"Une photographie de la société\"", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Le Rouge et le Noir",
+        "content": {
+            "type": "text",
+            "text": "À quel mouvement littéraire Stendhal appartient-il ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Le réalisme", "correct": true },
+            { "text": "Le romantisme", "correct": false },
+            { "text": "Le classicisme", "correct": false },
+            { "text": "Le naturalisme", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Le Rouge et le Noir",
+        "content": {
+            "type": "text",
+            "text": "Dans quel cadre géographique commence le roman ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "La petite ville de Verrières en Franche-Comté", "correct": true },
+            { "text": "Paris", "correct": false },
+            { "text": "Lyon", "correct": false },
+            { "text": "Marseille", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Le Rouge et le Noir",
+        "content": {
+            "type": "text",
+            "text": "Comment sont décrites les maisons de Verrières ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Maisons blanches avec leurs toits pointus de tuiles rouges", "correct": true },
+            { "text": "Maisons grises aux toits d'ardoise", "correct": false },
+            { "text": "Maisons de pierre aux toits de chaume", "correct": false },
+            { "text": "Maisons colorées aux toits plats", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Le Rouge et le Noir",
+        "content": {
+            "type": "text",
+            "text": "Comment Julien apparaît-il au début du chapitre 4 ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Un homme jeune qui paraissait fort, avec l'air triste et mécontent", "correct": true },
+            { "text": "Un homme âgé et fatigué", "correct": false },
+            { "text": "Un jeune homme joyeux et insouciant", "correct": false },
+            { "text": "Un homme élégant et satisfait", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Le Rouge et le Noir",
+        "content": {
+            "type": "text",
+            "text": "Quel est le thème principal du roman ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "L'ascension sociale et l'ambition", "correct": true },
+            { "text": "L'amour éternel", "correct": false },
+            { "text": "La guerre et la paix", "correct": false },
+            { "text": "La religion et la foi", "correct": false }
+        ],
+        "timer": 60
+    }
+]

@@ -1,0 +1,152 @@
+[
+    {
+        "topic": "Le Dormeur du val",
+        "content": {
+            "type": "text",
+            "text": "Pourquoi Rimbaud est-il surnommé le poète \"voyant\" ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Car il voulait réinventer la poésie", "correct": true },
+            { "text": "Car il prédisait l'avenir", "correct": false },
+            { "text": "Car il avait des visions mystiques", "correct": false },
+            { "text": "Car il voyageait beaucoup", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Le Dormeur du val",
+        "content": {
+            "type": "text",
+            "text": "Quel est le message principal du poème ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Une dénonciation de la guerre et de ses victimes", "correct": true },
+            { "text": "Un éloge de la nature", "correct": false },
+            { "text": "Une méditation sur le sommeil", "correct": false },
+            { "text": "Une description de la campagne", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Le Dormeur du val",
+        "content": {
+            "type": "text",
+            "text": "Quel type de sonnet est \"Le Dormeur du val\" ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Un sonnet régulier", "correct": true },
+            { "text": "Un sonnet libre", "correct": false },
+            { "text": "Un sonnet en prose", "correct": false },
+            { "text": "Ce n'est pas un sonnet", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Le Dormeur du val",
+        "content": {
+            "type": "text",
+            "text": "Dans quel recueil ce poème se trouve-t-il ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Les Cahiers de Douai", "correct": true },
+            { "text": "Une Saison en Enfer", "correct": false },
+            { "text": "Les Illuminations", "correct": false },
+            { "text": "Poésies", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Le Dormeur du val",
+        "content": {
+            "type": "text",
+            "text": "Quelle guerre inspire probablement ce poème ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "La guerre franco-prussienne de 1870", "correct": true },
+            { "text": "La Première Guerre mondiale", "correct": false },
+            { "text": "Les guerres napoléoniennes", "correct": false },
+            { "text": "La guerre de Crimée", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Le Dormeur du val",
+        "content": {
+            "type": "text",
+            "text": "Quelle technique utilise Rimbaud pour la révélation finale ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "La chute dramatique", "correct": true },
+            { "text": "La métaphore filée", "correct": false },
+            { "text": "L'allitération", "correct": false },
+            { "text": "L'analepse", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Le Dormeur du val",
+        "content": {
+            "type": "text",
+            "text": "Combien de strophes compte le poème ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "4 strophes", "correct": true },
+            { "text": "3 strophes", "correct": false },
+            { "text": "5 strophes", "correct": false },
+            { "text": "6 strophes", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Le Dormeur du val",
+        "content": {
+            "type": "text",
+            "text": "Quel est l'effet de l'expression \"il a froid\" dans un paysage ensoleillé ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Créer un contraste troublant qui annonce la mort", "correct": true },
+            { "text": "Montrer qu'il fait vraiment froid", "correct": false },
+            { "text": "Évoquer la maladie du soldat", "correct": false },
+            { "text": "Décrire la saison", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Le Dormeur du val",
+        "content": {
+            "type": "text",
+            "text": "Quelle couleur domine dans la description du paysage ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Le vert", "correct": true },
+            { "text": "Le bleu", "correct": false },
+            { "text": "Le rouge", "correct": false },
+            { "text": "Le jaune", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Le Dormeur du val",
+        "content": {
+            "type": "text",
+            "text": "Pourquoi ce poème reste-t-il moderne ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Car il dénonce l'absurdité de la guerre et touche toutes les générations", "correct": true },
+            { "text": "Car il utilise des mots modernes", "correct": false },
+            { "text": "Car il parle de technologie", "correct": false },
+            { "text": "Car il évoque des problèmes actuels", "correct": false }
+        ],
+        "timer": 60
+    }
+]

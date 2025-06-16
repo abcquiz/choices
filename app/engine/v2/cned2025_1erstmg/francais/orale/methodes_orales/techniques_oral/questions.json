@@ -1,0 +1,152 @@
+[
+    {
+        "topic": "Techniques d'oral",
+        "content": {
+            "type": "text",
+            "text": "Combien de temps avez-vous pour préparer votre explication de texte ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "30 minutes", "correct": true },
+            { "text": "20 minutes", "correct": false },
+            { "text": "25 minutes", "correct": false },
+            { "text": "15 minutes", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Techniques d'oral",
+        "content": {
+            "type": "text",
+            "text": "Quelle est la répartition du temps de passage oral ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "12 min d'explication + 8 min d'entretien", "correct": true },
+            { "text": "15 min d'explication + 5 min d'entretien", "correct": false },
+            { "text": "10 min d'explication + 10 min d'entretien", "correct": false },
+            { "text": "20 min d'explication seulement", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Techniques d'oral",
+        "content": {
+            "type": "text",
+            "text": "Dans les 5 premières minutes de préparation, que faut-il faire ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Première lecture : identifier auteur, œuvre, passage et sens global", "correct": true },
+            { "text": "Faire le plan détaillé", "correct": false },
+            { "text": "Surligner toutes les figures de style", "correct": false },
+            { "text": "Préparer la conclusion", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Techniques d'oral",
+        "content": {
+            "type": "text",
+            "text": "Comment doit-on construire le plan d'une explication de texte ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Plan simple en 2 parties avec chacune une idée principale", "correct": true },
+            { "text": "Plan en 3 parties obligatoirement", "correct": false },
+            { "text": "Plan chronologique uniquement", "correct": false },
+            { "text": "Pas de plan, suivre l'ordre du texte", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Techniques d'oral",
+        "content": {
+            "type": "text",
+            "text": "Pour la lecture à voix haute, que faut-il adapter selon le texte ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Le ton : triste = voix basse, comique = légèreté, tragique = gravité", "correct": true },
+            { "text": "Lire toujours sur le même ton", "correct": false },
+            { "text": "Lire le plus vite possible", "correct": false },
+            { "text": "Ne pas faire attention au ton", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Techniques d'oral",
+        "content": {
+            "type": "text",
+            "text": "Quelle est la structure gagnante pour l'introduction ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Présenter l'œuvre, résumer le passage, annoncer la problématique et le plan", "correct": true },
+            { "text": "Commencer directement par l'analyse", "correct": false },
+            { "text": "Dire seulement le titre de l'œuvre", "correct": false },
+            { "text": "Lire d'abord le texte", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Techniques d'oral",
+        "content": {
+            "type": "text",
+            "text": "Comment bien analyser dans le développement ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Annoncer, prouver avec une citation, analyser l'effet, conclure", "correct": true },
+            { "text": "Donner seulement son opinion", "correct": false },
+            { "text": "Paraphraser le texte", "correct": false },
+            { "text": "Réciter le cours par cœur", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Techniques d'oral",
+        "content": {
+            "type": "text",
+            "text": "Quelle question êtes-vous sûr qu'on vous posera pendant l'entretien ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "\"Pourquoi avoir choisi cette œuvre ?\"", "correct": true },
+            { "text": "\"Quel est votre film préféré ?\"", "correct": false },
+            { "text": "\"Que pensez-vous de l'auteur ?\"", "correct": false },
+            { "text": "\"Connaissez-vous d'autres œuvres ?\"", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Techniques d'oral",
+        "content": {
+            "type": "text",
+            "text": "Quelle est la structure parfaite pour répondre aux questions d'entretien ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Répondre directement, justifier, donner un exemple, conclure", "correct": true },
+            { "text": "Donner seulement un exemple", "correct": false },
+            { "text": "Répondre par oui ou non", "correct": false },
+            { "text": "Poser une question en retour", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Techniques d'oral",
+        "content": {
+            "type": "text",
+            "text": "Si vous bloquez sur une question, quelle phrase de secours utiliser ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "\"C'est une question intéressante. Je pense que...\"", "correct": true },
+            { "text": "\"Je ne sais pas\"", "correct": false },
+            { "text": "Ne rien dire et attendre", "correct": false },
+            { "text": "\"Je n'ai pas compris\"", "correct": false }
+        ],
+        "timer": 60
+    }
+]

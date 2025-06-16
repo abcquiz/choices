@@ -1,0 +1,152 @@
+[
+    {
+        "topic": "Candide - Le nègre de Surinam",
+        "content": {
+            "type": "text",
+            "text": "Pourquoi ce passage est-il particulièrement efficace ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Il établit un lien direct entre le luxe européen et la souffrance des esclaves", "correct": true },
+            { "text": "Il utilise beaucoup d'adjectifs", "correct": false },
+            { "text": "Il est très long", "correct": false },
+            { "text": "Il raconte une histoire touchante", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Candide - Le nègre de Surinam",
+        "content": {
+            "type": "text",
+            "text": "Quel mouvement littéraire représente Voltaire ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Les Lumières", "correct": true },
+            { "text": "Le romantisme", "correct": false },
+            { "text": "Le réalisme", "correct": false },
+            { "text": "Le classicisme", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Candide - Le nègre de Surinam",
+        "content": {
+            "type": "text",
+            "text": "Quel principe philosophique Voltaire critique-t-il dans Candide ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "L'optimisme de Leibniz (\"tout est pour le mieux\")", "correct": true },
+            { "text": "Le pessimisme de Schopenhauer", "correct": false },
+            { "text": "Le scepticisme de Montaigne", "correct": false },
+            { "text": "Le rationalisme de Descartes", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Candide - Le nègre de Surinam",
+        "content": {
+            "type": "text",
+            "text": "Dans quel chapitre de Candide se trouve l'épisode du nègre de Surinam ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Chapitre 19", "correct": true },
+            { "text": "Chapitre 15", "correct": false },
+            { "text": "Chapitre 20", "correct": false },
+            { "text": "Chapitre 18", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Candide - Le nègre de Surinam",
+        "content": {
+            "type": "text",
+            "text": "Quel est le ton utilisé par Voltaire dans ce passage ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Ironique et détaché", "correct": true },
+            { "text": "Pathétique et émouvant", "correct": false },
+            { "text": "Coléreux et violent", "correct": false },
+            { "text": "Lyrique et poétique", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Candide - Le nègre de Surinam",
+        "content": {
+            "type": "text",
+            "text": "Quelle est la portée universelle de ce passage ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Il dénonce toutes les formes d'exploitation et d'injustice", "correct": true },
+            { "text": "Il ne concerne que l'esclavage colonial", "correct": false },
+            { "text": "Il critique seulement son époque", "correct": false },
+            { "text": "Il vise uniquement les Européens", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Candide - Le nègre de Surinam",
+        "content": {
+            "type": "text",
+            "text": "Quelle technique narrative utilise Voltaire ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Le témoignage direct de la victime", "correct": true },
+            { "text": "La description extérieure", "correct": false },
+            { "text": "Le monologue intérieur", "correct": false },
+            { "text": "Le récit à la troisième personne omnisciente", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Candide - Le nègre de Surinam",
+        "content": {
+            "type": "text",
+            "text": "Quel est l'effet de la simplicité du langage de l'esclave ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Rendre son témoignage plus authentique et bouleversant", "correct": true },
+            { "text": "Montrer son manque d'éducation", "correct": false },
+            { "text": "Faciliter la compréhension", "correct": false },
+            { "text": "Accélérer le récit", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Candide - Le nègre de Surinam",
+        "content": {
+            "type": "text",
+            "text": "En quoi ce passage illustre-t-il l'engagement des philosophes des Lumières ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Il utilise la littérature pour défendre des causes humanitaires", "correct": true },
+            { "text": "Il montre leur érudition", "correct": false },
+            { "text": "Il révèle leurs voyages", "correct": false },
+            { "text": "Il prouve leur richesse", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Candide - Le nègre de Surinam",
+        "content": {
+            "type": "text",
+            "text": "Pourquoi ce passage reste-t-il moderne ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Il dénonce des mécanismes d'exploitation qui existent encore aujourd'hui", "correct": true },
+            { "text": "Il utilise un vocabulaire contemporain", "correct": false },
+            { "text": "Il parle de technologies modernes", "correct": false },
+            { "text": "Il évoque des problèmes récents", "correct": false }
+        ],
+        "timer": 60
+    }
+]

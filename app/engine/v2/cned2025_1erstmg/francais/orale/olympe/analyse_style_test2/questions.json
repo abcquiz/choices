@@ -1,0 +1,32 @@
+[
+    {
+        "topic": "Analyse du style",
+        "content": {
+            "type": "text",
+            "text": "Quel est l'effet de l'usage des impératifs dans le postambule ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Créer un appel à l'action direct et urgent", "correct": true },
+            { "text": "Donner des ordres autoritaires", "correct": false },
+            { "text": "Exprimer des souhaits polis", "correct": false },
+            { "text": "Formuler des hypothèses", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Analyse du style",
+        "content": {
+            "type": "text",
+            "text": "Pourquoi peut-on dire que le style d'Olympe de Gouges est une force de son texte ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Il est accessible et direct, permettant de toucher toutes les femmes", "correct": true },
+            { "text": "Il est très savant et impressionnant", "correct": false },
+            { "text": "Il respecte toutes les règles classiques", "correct": false },
+            { "text": "Il imite parfaitement les grands auteurs", "correct": false }
+        ],
+        "timer": 60
+    }
+]

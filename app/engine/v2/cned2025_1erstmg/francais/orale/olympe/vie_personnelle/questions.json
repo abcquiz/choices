@@ -1,0 +1,152 @@
+[
+    {
+        "topic": "Vie personnelle",
+        "content": {
+            "type": "text",
+            "text": "Quel était le vrai nom d'Olympe de Gouges ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Marie Gouze", "correct": true },
+            { "text": "Marie-Olympe Aubry", "correct": false },
+            { "text": "Olympe Mousset", "correct": false },
+            { "text": "Marie de Montauban", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Vie personnelle",
+        "content": {
+            "type": "text",
+            "text": "Qu'est-ce qu'Olympe de Gouges a refusé de faire pour rester libre et indépendante ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Se remarier", "correct": true },
+            { "text": "Avoir des enfants", "correct": false },
+            { "text": "Travailler", "correct": false },
+            { "text": "Écrire", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Vie personnelle",
+        "content": {
+            "type": "text",
+            "text": "En plus des droits des femmes, pour qui d'autre Olympe de Gouges se battait-elle ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Les esclaves noirs", "correct": true },
+            { "text": "Les enfants", "correct": false },
+            { "text": "Les pauvres seulement", "correct": false },
+            { "text": "Les nobles", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Vie personnelle",
+        "content": {
+            "type": "text",
+            "text": "Comment Olympe de Gouges a-t-elle appris à lire et à écrire ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Toute seule", "correct": true },
+            { "text": "Avec un précepteur", "correct": false },
+            { "text": "À l'école", "correct": false },
+            { "text": "Avec son mari", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Vie personnelle",
+        "content": {
+            "type": "text",
+            "text": "Quels étaient les métiers d'Olympe de Gouges ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Écrivaine, dramaturge et femme politique", "correct": true },
+            { "text": "Institutrice et écrivaine", "correct": false },
+            { "text": "Comédienne et poétesse", "correct": false },
+            { "text": "Journaliste et militante", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Vie personnelle",
+        "content": {
+            "type": "text",
+            "text": "Quel était le métier de son père Pierre Gouze ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Boucher", "correct": true },
+            { "text": "Boulanger", "correct": false },
+            { "text": "Marchand", "correct": false },
+            { "text": "Artisan", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Vie personnelle",
+        "content": {
+            "type": "text",
+            "text": "À quel âge Olympe de Gouges s'est-elle mariée ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "17 ans", "correct": true },
+            { "text": "19 ans", "correct": false },
+            { "text": "21 ans", "correct": false },
+            { "text": "15 ans", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Vie personnelle",
+        "content": {
+            "type": "text",
+            "text": "Avec qui s'est-elle mariée ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Louis Aubry", "correct": true },
+            { "text": "Pierre Aubry", "correct": false },
+            { "text": "Jean Aubry", "correct": false },
+            { "text": "Louis Gouze", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Vie personnelle",
+        "content": {
+            "type": "text",
+            "text": "Quand a-t-elle choisi le nom d'Olympe de Gouges ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Après la mort de son mari", "correct": true },
+            { "text": "À sa naissance", "correct": false },
+            { "text": "Quand elle a commencé à écrire", "correct": false },
+            { "text": "Pendant la Révolution", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Vie personnelle",
+        "content": {
+            "type": "text",
+            "text": "Quelle caractéristique personnelle définit le mieux Olympe de Gouges ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Courageuse et indépendante", "correct": true },
+            { "text": "Timide et réservée", "correct": false },
+            { "text": "Conformiste et docile", "correct": false },
+            { "text": "Riche et privilégiée", "correct": false }
+        ],
+        "timer": 60
+    }
+]

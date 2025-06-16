@@ -1,0 +1,152 @@
+[
+    {
+        "topic": "Analyse du style",
+        "content": {
+            "type": "text",
+            "text": "Sur quelle forme Olympe de Gouges a-t-elle calqué exactement sa Déclaration ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "La Déclaration des droits de l'homme", "correct": true },
+            { "text": "Les lettres de Voltaire", "correct": false },
+            { "text": "Les constitutions américaines", "correct": false },
+            { "text": "Les écrits de Rousseau", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Analyse du style",
+        "content": {
+            "type": "text",
+            "text": "Quelle technique rhétorique principale utilise Olympe de Gouges pour montrer l'absurdité de l'exclusion des femmes ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "L'ironie", "correct": true },
+            { "text": "La métaphore", "correct": false },
+            { "text": "L'allitération", "correct": false },
+            { "text": "L'hyperbole", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Analyse du style",
+        "content": {
+            "type": "text",
+            "text": "Dans le postambule, quels types de verbes utilise-t-elle pour créer un appel à l'action ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Des verbes à l'impératif", "correct": true },
+            { "text": "Des verbes au futur", "correct": false },
+            { "text": "Des verbes au conditionnel", "correct": false },
+            { "text": "Des verbes au passé", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Analyse du style",
+        "content": {
+            "type": "text",
+            "text": "Comment peut-on qualifier le style d'écriture d'Olympe de Gouges ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Volontairement accessible et direct", "correct": true },
+            { "text": "Complexe et alambiqué", "correct": false },
+            { "text": "Poétique et métaphorique", "correct": false },
+            { "text": "Technique et juridique", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Analyse du style",
+        "content": {
+            "type": "text",
+            "text": "Quel est le ton du préambule ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Solennel, comme un texte de loi officiel", "correct": true },
+            { "text": "Enjoué et léger", "correct": false },
+            { "text": "Agressif et violent", "correct": false },
+            { "text": "Mélancolique et triste", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Analyse du style",
+        "content": {
+            "type": "text",
+            "text": "Pourquoi Olympe de Gouges a-t-elle choisi un style accessible plutôt que complexe ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Pour toucher toutes les femmes, pas seulement les intellectuelles", "correct": true },
+            { "text": "Parce qu'elle ne savait pas écrire autrement", "correct": false },
+            { "text": "Pour respecter les conventions de l'époque", "correct": false },
+            { "text": "Parce que c'était plus rapide à écrire", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Analyse du style",
+        "content": {
+            "type": "text",
+            "text": "Quelles sont les trois stratégies principales qu'utilise Olympe de Gouges pour convaincre ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Reprendre la forme officielle, utiliser l'ironie, s'adresser directement aux femmes", "correct": true },
+            { "text": "Citer les philosophes, utiliser des métaphores, faire appel aux émotions", "correct": false },
+            { "text": "Critiquer les hommes, promettre l'égalité, menacer de révolte", "correct": false },
+            { "text": "Utiliser des statistiques, donner des exemples, proposer des solutions", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Analyse du style",
+        "content": {
+            "type": "text",
+            "text": "Quel registre utilise-t-elle dans le postambule ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Le registre polémique (qui pousse à agir)", "correct": true },
+            { "text": "Le registre lyrique", "correct": false },
+            { "text": "Le registre épique", "correct": false },
+            { "text": "Le registre comique", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Analyse du style",
+        "content": {
+            "type": "text",
+            "text": "Comment Olympe de Gouges rend-elle son texte officiel et sérieux ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "En reprenant exactement la forme de la Déclaration des droits de l'homme", "correct": true },
+            { "text": "En utilisant un vocabulaire compliqué", "correct": false },
+            { "text": "En citant des lois existantes", "correct": false },
+            { "text": "En mentionnant des personnalités importantes", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Analyse du style",
+        "content": {
+            "type": "text",
+            "text": "Avec quel auteur peut-on comparer Olympe de Gouges dans l'usage de l'ironie pour dénoncer ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Voltaire", "correct": true },
+            { "text": "Rousseau", "correct": false },
+            { "text": "Diderot", "correct": false },
+            { "text": "Montesquieu", "correct": false }
+        ],
+        "timer": 60
+    }
+]

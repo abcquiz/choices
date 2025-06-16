@@ -1,0 +1,182 @@
+[
+    {
+        "topic": "Révolution française",
+        "content": {
+            "type": "text",
+            "text": "Qui était Maximilien Robespierre ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Un leader révolutionnaire et membre du Comité de salut public", "correct": true },
+            { "text": "Un général royaliste", "correct": false },
+            { "text": "Un écrivain opposé à la Révolution", "correct": false },
+            { "text": "Un membre du clergé", "correct": false }
+        ],
+        "timer": 30
+    },
+    {
+        "topic": "Révolution française",
+        "content": {
+            "type": "text",
+            "text": "Quel événement a marqué le début de la Révolution française ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "La prise de la Bastille", "correct": true },
+            { "text": "La fuite du roi Louis XVI", "correct": false },
+            { "text": "Le serment du Jeu de Paume", "correct": false },
+            { "text": "L'exécution de Louis XVI", "correct": false }
+        ],
+        "timer": 30
+    },
+    {
+        "topic": "Révolution française",
+        "content": {
+            "type": "text",
+            "text": "Qui était Marie-Antoinette, la reine de France ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "La femme de Louis XVI et reine de France", "correct": true },
+            { "text": "Une révolutionnaire française", "correct": false },
+            { "text": "Une militante pour les droits des femmes", "correct": false },
+            { "text": "La sœur de Robespierre", "correct": false }
+        ],
+        "timer": 30
+    },
+    {
+        "topic": "Révolution française",
+        "content": {
+            "type": "text",
+            "text": "Quel rôle a joué Louis XVI dans la Révolution française ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Il a été roi pendant la Révolution et a été exécuté", "correct": true },
+            { "text": "Il a soutenu les révolutions populaires", "correct": false },
+            { "text": "Il a fui en Angleterre", "correct": false },
+            { "text": "Il a réformé la monarchie absolue", "correct": false }
+        ],
+        "timer": 30
+    },
+    {
+        "topic": "Révolution française",
+        "content": {
+            "type": "text",
+            "text": "Qui étaient les sans-culottes pendant la Révolution ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Des révolutionnaires issus des classes populaires", "correct": true },
+            { "text": "Des aristocrates opposés à la Révolution", "correct": false },
+            { "text": "Des prêtres catholiques", "correct": false },
+            { "text": "Des soldats royalistes", "correct": false }
+        ],
+        "timer": 30
+    },
+    {
+        "topic": "Révolution française",
+        "content": {
+            "type": "text",
+            "text": "Quel était le rôle du Comité de salut public pendant la Révolution ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Il a dirigé la France pendant la Terreur", "correct": true },
+            { "text": "Il a organisé la fuite du roi Louis XVI", "correct": false },
+            { "text": "Il a proposé des réformes sociales", "correct": false },
+            { "text": "Il a mis fin aux guerres de la Révolution", "correct": false }
+        ],
+        "timer": 30
+    },
+    {
+        "topic": "Révolution française",
+        "content": {
+            "type": "text",
+            "text": "Qui était Jean-Paul Marat ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Un révolutionnaire et journaliste radical", "correct": true },
+            { "text": "Un général royaliste", "correct": false },
+            { "text": "Un philosophe des Lumières", "correct": false },
+            { "text": "Un poète proche de Robespierre", "correct": false }
+        ],
+        "timer": 30
+    },
+    {
+        "topic": "Révolution française",
+        "content": {
+            "type": "text",
+            "text": "Quel était le rôle de la guillotine pendant la Révolution française ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Elle a été utilisée pour exécuter les ennemis de la Révolution", "correct": true },
+            { "text": "Elle a été utilisée pour exécuter les aristocrates uniquement", "correct": false },
+            { "text": "Elle était un symbole de la fin des réformes sociales", "correct": false },
+            { "text": "Elle n'a été utilisée que pour les révoltes populaires", "correct": false }
+        ],
+        "timer": 30
+    },
+    {
+        "topic": "Révolution française",
+        "content": {
+            "type": "text",
+            "text": "Qui était Georges Danton ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Un orateur révolutionnaire et ministre de la Justice", "correct": true },
+            { "text": "Un membre du Comité de salut public", "correct": true },
+            { "text": "Un leader royaliste", "correct": false },
+            { "text": "Un scientifique de la Révolution", "correct": false }
+        ],
+        "timer": 30
+    },
+    {
+        "topic": "Révolution française",
+        "content": {
+            "type": "text",
+            "text": "Quel événement a marqué la fin de la monarchie en France ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "L'exécution de Louis XVI", "correct": true },
+            { "text": "Le serment du Jeu de Paume", "correct": false },
+            { "text": "La prise de la Bastille", "correct": false },
+            { "text": "La guerre avec l'Angleterre", "correct": false }
+        ],
+        "timer": 30
+    },
+    {
+        "topic": "Révolution française",
+        "content": {
+            "type": "text",
+            "text": "Quel est le nom de l'assemblée révolutionnaire qui a adopté la Constitution de 1791 ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "L'Assemblée nationale", "correct": true },
+            { "text": "Le Conseil des Cinq-Cents", "correct": false },
+            { "text": "La Convention nationale", "correct": false },
+            { "text": "Le Comité de salut public", "correct": false }
+        ],
+        "timer": 30
+    },
+    {
+        "topic": "Révolution française",
+        "content": {
+            "type": "text",
+            "text": "Quel fut l'impact de la Révolution française sur la monarchie en France ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "La monarchie fut abolie", "correct": true },
+            { "text": "La monarchie fut réformée", "correct": false },
+            { "text": "La monarchie reprit le pouvoir après la guerre", "correct": false },
+            { "text": "Le roi Louis XVI revint au pouvoir", "correct": false }
+        ],
+        "timer": 30
+    }
+]

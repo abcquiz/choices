@@ -1,0 +1,152 @@
+[
+    {
+        "topic": "Si tu t'imagines",
+        "content": {
+            "type": "text",
+            "text": "Qui a mis en musique et chanté \"Si tu t'imagines\" ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Juliette Gréco", "correct": true },
+            { "text": "Édith Piaf", "correct": false },
+            { "text": "Barbara", "correct": false },
+            { "text": "Brigitte Bardot", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Si tu t'imagines",
+        "content": {
+            "type": "text",
+            "text": "Que signifie le refrain \"xa va xa va\" ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "\"ça va\" en langage familier", "correct": true },
+            { "text": "Un cri de joie", "correct": false },
+            { "text": "Une onomatopée", "correct": false },
+            { "text": "Un mot inventé", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Si tu t'imagines",
+        "content": {
+            "type": "text",
+            "text": "Quel est le thème principal du poème ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Le temps qui passe et la jeunesse qui ne dure pas", "correct": true },
+            { "text": "L'amour éternel", "correct": false },
+            { "text": "La beauté de la nature", "correct": false },
+            { "text": "La critique sociale", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Si tu t'imagines",
+        "content": {
+            "type": "text",
+            "text": "De quel groupe littéraire Queneau faisait-il partie ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "L'Oulipo", "correct": true },
+            { "text": "Le surréalisme", "correct": false },
+            { "text": "L'existentialisme", "correct": false },
+            { "text": "Le nouveau roman", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Si tu t'imagines",
+        "content": {
+            "type": "text",
+            "text": "Que signifie \"la saison des za\" dans le poème ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "\"la saison des a...\" = des amours", "correct": true },
+            { "text": "La saison des vacances", "correct": false },
+            { "text": "La saison des fleurs", "correct": false },
+            { "text": "Une saison inventée", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Si tu t'imagines",
+        "content": {
+            "type": "text",
+            "text": "Que signifie \"ce que tu te goures\" ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Tu te trompes beaucoup !", "correct": true },
+            { "text": "Tu es très belle", "correct": false },
+            { "text": "Tu es intelligente", "correct": false },
+            { "text": "Tu es courageuse", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Si tu t'imagines",
+        "content": {
+            "type": "text",
+            "text": "Qu'est-ce qui \"s'approche très sournois\" selon le poème ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "La ride véloce, la pesante graisse, le menton triplé, le muscle avachi", "correct": true },
+            { "text": "L'amour et le bonheur", "correct": false },
+            { "text": "La sagesse et l'expérience", "correct": false },
+            { "text": "Les saisons qui changent", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Si tu t'imagines",
+        "content": {
+            "type": "text",
+            "text": "Que signifie \"la ride véloce\" ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Les rides rapides", "correct": true },
+            { "text": "Les rides profondes", "correct": false },
+            { "text": "Les rides lentes", "correct": false },
+            { "text": "Les rides invisibles", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Si tu t'imagines",
+        "content": {
+            "type": "text",
+            "text": "Quel message Queneau transmet-il à la jeune fille ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Si tu crois que tu seras toujours jeune et belle, tu te trompes !", "correct": true },
+            { "text": "Profite de ta beauté éternelle", "correct": false },
+            { "text": "Ne t'inquiète pas, tout ira bien", "correct": false },
+            { "text": "L'amour durera toujours", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Si tu t'imagines",
+        "content": {
+            "type": "text",
+            "text": "Quelle expression latine correspond au thème du poème ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Carpe diem (profite du jour)", "correct": true },
+            { "text": "Veni, vidi, vici", "correct": false },
+            { "text": "Alea jacta est", "correct": false },
+            { "text": "Memento mori", "correct": false }
+        ],
+        "timer": 60
+    }
+]

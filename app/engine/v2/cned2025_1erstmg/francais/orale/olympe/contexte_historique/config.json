@@ -1,0 +1,35 @@
+{
+    "title": "Contexte historique - Olympe de Gouges",
+    "duration": 1800,
+    "locale": "fr-FR",
+    "timezone": "Europe/Paris",
+    "startDate": "2025-02-08T15:30:00",
+    "endDate":"2025-07-15T18:00:00",
+    "showAnswers": true,
+    "showFeedbackAfterEachQuestion": false,
+    "showPreviousButton": true,
+    "minScore": 60,
+    "shuffleQuestions": true,
+    "shuffleChoices": true,
+    "shuffleQuestionGroups": true,
+    "enableTimer":false,
+    "questionsTimer": 60,
+    "introduction": {
+        "type": "html",
+        "content": "<h2>Contexte historique - Olympe de Gouges</h2><p>Testez vos connaissances sur le contexte historique dans lequel Olympe de Gouges a vécu et écrit. Cette section couvre la Révolution française, les dates importantes et les événements politiques de l'époque.</p><p>Bonne chance !</p>"
+    },
+    "theme": {
+        "primary": "#007bff",
+        "secondary": "#6c757d",
+        "success": "#28a745",
+        "danger": "#dc3545",
+        "background": "#f8f9fa"
+    },
+    "metadata": {
+        "author": "Prof. Martin",
+        "difficulty": "intermediate",
+        "category": "culture-generale",
+        "version": "1.0",
+        "lastUpdated": "2025-02-06"
+    }
+}

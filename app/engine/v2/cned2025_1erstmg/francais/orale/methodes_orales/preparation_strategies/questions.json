@@ -1,0 +1,152 @@
+[
+    {
+        "topic": "Stratégies de préparation",
+        "content": {
+            "type": "text",
+            "text": "Comment optimiser les minutes 5-10 de votre préparation ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Faire une analyse rapide : surligner champs lexicaux, figures de style et mots importants", "correct": true },
+            { "text": "Rédiger l'introduction complète", "correct": false },
+            { "text": "Apprendre le texte par cœur", "correct": false },
+            { "text": "Chercher la biographie de l'auteur", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Stratégies de préparation",
+        "content": {
+            "type": "text",
+            "text": "Que faire pendant les minutes 10-15 de préparation ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Construire un plan simple en 2 parties avec aspects complémentaires", "correct": true },
+            { "text": "Relire le texte plusieurs fois", "correct": false },
+            { "text": "Écrire des phrases complètes", "correct": false },
+            { "text": "Réviser ses connaissances générales", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Stratégies de préparation",
+        "content": {
+            "type": "text",
+            "text": "Pendant les minutes 15-25, sur quoi se concentrer ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Détailler chaque partie : idée principale, 2-3 citations courtes, effet produit", "correct": true },
+            { "text": "Rédiger l'explication complète", "correct": false },
+            { "text": "Préparer des questions à poser", "correct": false },
+            { "text": "Dessiner un schéma du texte", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Stratégies de préparation",
+        "content": {
+            "type": "text",
+            "text": "Comment bien utiliser les 5 dernières minutes (25-30) ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Préparer la lecture : marquer pauses, souligner mots à accentuer, s'entraîner mentalement", "correct": true },
+            { "text": "Refaire tout le plan", "correct": false },
+            { "text": "Mémoriser des citations longues", "correct": false },
+            { "text": "Stresser sur ce qu'on a oublié", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Stratégies de préparation",
+        "content": {
+            "type": "text",
+            "text": "Pour lire Rimbaud \"Le Dormeur du val\", quel ton adopter ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Ton neutre qui rend la chute finale plus forte", "correct": true },
+            { "text": "Ton dramatique dès le début", "correct": false },
+            { "text": "Ton joyeux et léger", "correct": false },
+            { "text": "Ton monotone sans expression", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Stratégies de préparation",
+        "content": {
+            "type": "text",
+            "text": "Pour lire Queneau \"Si tu t'imagines\", quelle approche choisir ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Lecture rythmée, presque chantée pour faire ressortir la musicalité", "correct": true },
+            { "text": "Lecture très lente et solennelle", "correct": false },
+            { "text": "Lecture rapide pour gagner du temps", "correct": false },
+            { "text": "Lecture sans aucun rythme", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Stratégies de préparation",
+        "content": {
+            "type": "text",
+            "text": "Pour l'entretien sur une œuvre, comment préparer \"Pourquoi avoir choisi cette œuvre ?\"",
+            "url": null
+        },
+        "choices": [
+            { "text": "Réfléchir à un aspect personnel + exemple précis + lien avec l'actualité", "correct": true },
+            { "text": "Dire qu'elle était au programme", "correct": false },
+            { "text": "Expliquer qu'on n'avait pas le choix", "correct": false },
+            { "text": "Réciter la biographie de l'auteur", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Stratégies de préparation",
+        "content": {
+            "type": "text",
+            "text": "Comment gérer le stress pendant les 30 minutes de préparation ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Suivre un chrono précis et respirer profondément entre chaque étape", "correct": true },
+            { "text": "Essayer de tout faire en même temps", "correct": false },
+            { "text": "Paniquer sur ce qu'on ne sait pas", "correct": false },
+            { "text": "Regarder ce que font les autres", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Stratégies de préparation",
+        "content": {
+            "type": "text",
+            "text": "Que signifie \"plan type : I. Un texte qui dénonce... II. ...à travers une stratégie efficace\" ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Partie 1 = le QUOI (ce qui est dénoncé), Partie 2 = le COMMENT (les procédés)", "correct": true },
+            { "text": "Il faut toujours parler de dénonciation", "correct": false },
+            { "text": "C'est le seul plan possible", "correct": false },
+            { "text": "Il faut critiquer l'auteur", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Stratégies de préparation",
+        "content": {
+            "type": "text",
+            "text": "Quelle est la clé pour réussir l'analyse d'un passage ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Toujours lier les procédés stylistiques aux effets qu'ils produisent", "correct": true },
+            { "text": "Connaître tous les noms des figures de style", "correct": false },
+            { "text": "Faire de longues citations", "correct": false },
+            { "text": "Parler de la vie de l'auteur", "correct": false }
+        ],
+        "timer": 60
+    }
+]

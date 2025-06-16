@@ -1,0 +1,152 @@
+[
+    {
+        "topic": "Citations clés",
+        "content": {
+            "type": "text",
+            "text": "Complétez l'Article 1 : \"La femme naît _____ et demeure _____ à l'homme en _____\"",
+            "url": null
+        },
+        "choices": [
+            { "text": "libre, égale, droits", "correct": true },
+            { "text": "libre, semblable, devoirs", "correct": false },
+            { "text": "égale, libre, lois", "correct": false },
+            { "text": "indépendante, égale, droits", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Citations clés",
+        "content": {
+            "type": "text",
+            "text": "Article 10 : \"La femme a le droit de monter sur l'_____ ; elle doit avoir également celui de monter à la _____\"",
+            "url": null
+        },
+        "choices": [
+            { "text": "échafaud, Tribune", "correct": true },
+            { "text": "tribunal, scène", "correct": false },
+            { "text": "podium, assemblée", "correct": false },
+            { "text": "estrade, tribune", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Citations clés",
+        "content": {
+            "type": "text",
+            "text": "Complétez cette citation du postambule : \"_____ réveille-toi ; le tocsin de la _____ se fait entendre dans tout l'_____\"",
+            "url": null
+        },
+        "choices": [
+            { "text": "Femme, raison, univers", "correct": true },
+            { "text": "Citoyenne, liberté, monde", "correct": false },
+            { "text": "Sœur, justice, pays", "correct": false },
+            { "text": "Mère, vérité, royaume", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Citations clés",
+        "content": {
+            "type": "text",
+            "text": "Comment se termine l'appel aux femmes dans le postambule ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "\"Reconnais tes droits\"", "correct": true },
+            { "text": "\"Prends ton destin en main\"", "correct": false },
+            { "text": "\"Libère-toi des chaînes\"", "correct": false },
+            { "text": "\"Unis-toi à tes sœurs\"", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Citations clés",
+        "content": {
+            "type": "text",
+            "text": "Comment commence le préambule ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "\"Les mères, les filles, les sœurs, représentantes de la nation\"", "correct": true },
+            { "text": "\"Les femmes de France, citoyennes de la République\"", "correct": false },
+            { "text": "\"Nous, femmes libres et égales\"", "correct": false },
+            { "text": "\"Au nom des droits naturels des femmes\"", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Citations clés",
+        "content": {
+            "type": "text",
+            "text": "Quel est le sens de la citation \"La femme a le droit de monter sur l'échafaud\" ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "C'est ironique : si on peut tuer les femmes, on doit aussi les écouter", "correct": true },
+            { "text": "Les femmes doivent accepter la peine de mort", "correct": false },
+            { "text": "Les femmes sont courageuses face à la mort", "correct": false },
+            { "text": "C'est une menace contre les opposants", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Citations clés",
+        "content": {
+            "type": "text",
+            "text": "Pourquoi la citation sur l'échafaud est-elle qualifiée de \"prophétique\" ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Parce que c'est exactement ce qui est arrivé à Olympe de Gouges", "correct": true },
+            { "text": "Parce qu'elle prédit l'avenir des femmes", "correct": false },
+            { "text": "Parce qu'elle annonce la fin de la Révolution", "correct": false },
+            { "text": "Parce qu'elle prédit la guerre", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Citations clés",
+        "content": {
+            "type": "text",
+            "text": "Quelle citation montre le mieux l'ironie utilisée par Olympe de Gouges ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "\"La femme a le droit de monter sur l'échafaud ; elle doit avoir également celui de monter à la Tribune\"", "correct": true },
+            { "text": "\"Femme, réveille-toi\"", "correct": false },
+            { "text": "\"La femme naît libre et demeure égale à l'homme en droits\"", "correct": false },
+            { "text": "\"Reconnais tes droits\"", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Citations clés",
+        "content": {
+            "type": "text",
+            "text": "Quel article réclame que les femmes participent à la formation des lois ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "L'Article 6", "correct": true },
+            { "text": "L'Article 1", "correct": false },
+            { "text": "L'Article 10", "correct": false },
+            { "text": "L'Article 17", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Citations clés",
+        "content": {
+            "type": "text",
+            "text": "Quelle métaphore utilise Olympe de Gouges pour évoquer l'urgence du réveil des femmes ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Le tocsin de la raison", "correct": true },
+            { "text": "L'aube de la liberté", "correct": false },
+            { "text": "Le feu de la révolution", "correct": false },
+            { "text": "La lumière de la vérité", "correct": false }
+        ],
+        "timer": 60
+    }
+]

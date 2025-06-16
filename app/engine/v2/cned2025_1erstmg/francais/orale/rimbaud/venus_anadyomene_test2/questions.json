@@ -1,0 +1,32 @@
+[
+    {
+        "topic": "Vénus Anadyomène",
+        "content": {
+            "type": "text",
+            "text": "En quoi ce poème annonce-t-il le futur \"poète voyant\" ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Il montre déjà sa volonté de créer une poésie nouvelle et provocante", "correct": true },
+            { "text": "Il respecte toutes les règles classiques", "correct": false },
+            { "text": "Il imite parfaitement les maîtres", "correct": false },
+            { "text": "Il évite toute originalité", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Vénus Anadyomène",
+        "content": {
+            "type": "text",
+            "text": "Quel est l'effet produit par l'expression \"lente et bête\" ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Elle détruit complètement l'image divine de Vénus", "correct": true },
+            { "text": "Elle renforce la beauté du personnage", "correct": false },
+            { "text": "Elle crée un effet de mystère", "correct": false },
+            { "text": "Elle ajoute de la poésie", "correct": false }
+        ],
+        "timer": 60
+    }
+]

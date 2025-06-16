@@ -1,0 +1,273 @@
+[
+    {
+        "topic": "Olympe de Gouges",
+        "content": {
+            "type": "text",
+            "text": "En quelle année Olympe de Gouges a-t-elle écrit la Déclaration des droits de la femme et de la citoyenne ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "1791", "correct": true },
+            { "text": "1789", "correct": false },
+            { "text": "1793", "correct": false },
+            { "text": "1800", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Olympe de Gouges",
+        "content": {
+            "type": "text",
+            "text": "En quelle année Olympe de Gouges est-elle née ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "1748", "correct": true },
+            { "text": "1750", "correct": false },
+            { "text": "1760", "correct": false },
+            { "text": "1775", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Olympe de Gouges",
+        "content": {
+            "type": "text",
+            "text": "En quelle année Olympe de Gouges a-t-elle été guillotinée ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "1793", "correct": true },
+            { "text": "1794", "correct": false },
+            { "text": "1795", "correct": false },
+            { "text": "1796", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Olympe de Gouges",
+        "content": {
+            "type": "text",
+            "text": "En quelle année la Révolution française a-t-elle débuté ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "1789", "correct": true },
+            { "text": "1791", "correct": false },
+            { "text": "1793", "correct": false },
+            { "text": "1795", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Olympe de Gouges",
+        "content": {
+            "type": "text",
+            "text": "En quelle année Olympe de Gouges a-t-elle publié son pamphlet Le Mariage ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "1791", "correct": true },
+            { "text": "1790", "correct": false },
+            { "text": "1792", "correct": false },
+            { "text": "1794", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Olympe de Gouges",
+        "content": {
+            "type": "text",
+            "text": "En quelle année Olympe de Gouges a-t-elle quitté son mari pour Paris ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "1770", "correct": true },
+            { "text": "1765", "correct": false },
+            { "text": "1775", "correct": false },
+            { "text": "1780", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Olympe de Gouges",
+        "content": {
+            "type": "text",
+            "text": "En quelle année Olympe de Gouges a-t-elle écrit sa première pièce de théâtre, 'Le Fils naturel' ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "1780", "correct": true },
+            { "text": "1775", "correct": false },
+            { "text": "1785", "correct": false },
+            { "text": "1790", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Olympe de Gouges",
+        "content": {
+            "type": "text",
+            "text": "En quelle année Olympe de Gouges a-t-elle écrit 'La Déclaration des droits de la femme et de la citoyenne' ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "1791", "correct": true },
+            { "text": "1792", "correct": false },
+            { "text": "1793", "correct": false },
+            { "text": "1794", "correct": false }
+        ],
+        "timer": 60
+    }
+,
+    {
+        "topic": "Olympe de Gouges",
+        "content": {
+            "type": "text",
+            "text": "En quelle année Olympe de Gouges est-elle née à Montauban ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "1748", "correct": true },
+            { "text": "1750", "correct": false },
+            { "text": "1760", "correct": false },
+            { "text": "1775", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Olympe de Gouges",
+        "content": {
+            "type": "text",
+            "text": "En quelle année Olympe de Gouges se marie-t-elle à 17 ans ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "1765", "correct": true },
+            { "text": "1770", "correct": false },
+            { "text": "1775", "correct": false },
+            { "text": "1780", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Olympe de Gouges",
+        "content": {
+            "type": "text",
+            "text": "En quelle année Olympe de Gouges s'installe-t-elle à Paris ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "1768", "correct": true },
+            { "text": "1770", "correct": false },
+            { "text": "1775", "correct": false },
+            { "text": "1780", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Olympe de Gouges",
+        "content": {
+            "type": "text",
+            "text": "En quelle année Olympe de Gouges publie-t-elle sa pièce L'Esclavage des Noirs ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "1784", "correct": true },
+            { "text": "1789", "correct": false },
+            { "text": "1790", "correct": false },
+            { "text": "1791", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Olympe de Gouges",
+        "content": {
+            "type": "text",
+            "text": "En quelle année commence la Révolution française ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "1789", "correct": true },
+            { "text": "1790", "correct": false },
+            { "text": "1791", "correct": false },
+            { "text": "1793", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Olympe de Gouges",
+        "content": {
+            "type": "text",
+            "text": "En quelle année Olympe de Gouges publie-t-elle la Déclaration des droits de la femme et de la citoyenne ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "1791", "correct": true },
+            { "text": "1790", "correct": false },
+            { "text": "1792", "correct": false },
+            { "text": "1793", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Olympe de Gouges",
+        "content": {
+            "type": "text",
+            "text": "En quelle année Olympe de Gouges critique-t-elle la Constitution de 1791 ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "1791", "correct": true },
+            { "text": "1792", "correct": false },
+            { "text": "1793", "correct": false },
+            { "text": "1794", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Olympe de Gouges",
+        "content": {
+            "type": "text",
+            "text": "En quelle année Olympe de Gouges est-elle accusée de contre-révolutionnaire ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "1793", "correct": true },
+            { "text": "1792", "correct": false },
+            { "text": "1794", "correct": false },
+            { "text": "1795", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Olympe de Gouges",
+        "content": {
+            "type": "text",
+            "text": "En quelle année Olympe de Gouges est-elle condamnée à mort par le Tribunal révolutionnaire ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "3 novembre 1793", "correct": true },
+            { "text": "5 novembre 1793", "correct": false },
+            { "text": "1er novembre 1793", "correct": false },
+            { "text": "10 novembre 1793", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Olympe de Gouges",
+        "content": {
+            "type": "text",
+            "text": "En quelle année son nom est-il inscrit au Panthéon pour honorer sa contribution aux droits des femmes ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "2018", "correct": true },
+            { "text": "2015", "correct": false },
+            { "text": "2000", "correct": false },
+            { "text": "2020", "correct": false }
+        ],
+        "timer": 60
+    }
+]

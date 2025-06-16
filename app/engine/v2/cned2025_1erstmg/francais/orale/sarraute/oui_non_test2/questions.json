@@ -1,0 +1,32 @@
+[
+    {
+        "topic": "Pour un oui ou pour un non",
+        "content": {
+            "type": "text",
+            "text": "Que révèle cette pièce sur les relations humaines ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Que les malentendus naissent souvent de détails imperceptibles", "correct": true },
+            { "text": "Que les gens ne savent pas s'exprimer", "correct": false },
+            { "text": "Que l'amitié est impossible", "correct": false },
+            { "text": "Que les mots n'ont pas d'importance", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Pour un oui ou pour un non",
+        "content": {
+            "type": "text",
+            "text": "Quel aspect novateur cette pièce apporte-t-elle au théâtre ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Elle montre l'importance des micro-agressions et des non-dits", "correct": true },
+            { "text": "Elle utilise un langage très soutenu", "correct": false },
+            { "text": "Elle raconte une grande histoire épique", "correct": false },
+            { "text": "Elle met en scène des personnages historiques", "correct": false }
+        ],
+        "timer": 60
+    }
+]

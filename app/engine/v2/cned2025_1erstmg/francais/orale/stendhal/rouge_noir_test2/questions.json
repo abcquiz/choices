@@ -1,0 +1,32 @@
+[
+    {
+        "topic": "Le Rouge et le Noir",
+        "content": {
+            "type": "text",
+            "text": "Que critique Stendhal dans ce roman ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "La société de la Restauration et ses blocages sociaux", "correct": true },
+            { "text": "Seulement l'église", "correct": false },
+            { "text": "Seulement l'armée", "correct": false },
+            { "text": "La révolution française", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Le Rouge et le Noir",
+        "content": {
+            "type": "text",
+            "text": "Quelle époque historique le roman décrit-il ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "La Restauration (retour de la monarchie après Napoléon)", "correct": true },
+            { "text": "La Révolution française", "correct": false },
+            { "text": "L'Empire napoléonien", "correct": false },
+            { "text": "La République", "correct": false }
+        ],
+        "timer": 60
+    }
+]

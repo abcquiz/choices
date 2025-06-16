@@ -1,0 +1,35 @@
+{
+    "title": "Qui est Olympe de Gouges",
+    "duration": 3600,
+    "locale": "fr-FR",
+    "timezone": "Europe/Paris",
+    "startDate": "2025-02-08T15:30:00",
+    "endDate":"2025-07-15T18:00:00",
+    "showAnswers": true,
+    "showFeedbackAfterEachQuestion": false,
+    "showPreviousButton": true,
+    "minScore": 60,
+    "shuffleQuestions": true,
+    "shuffleChoices": true,
+    "shuffleQuestionGroups": true,
+    "enableTimer":false,
+    "questionsTimer": 120,
+    "introduction": {
+        "type": "html",
+        "content": "<h2>Qui est Olympe de Gouges?</h2><p>Bienvenue dans ce quiz dédié à Olympe de Gouges, une figure emblématique de la Révolution française et de la lutte pour les droits des femmes. Ce quiz vous permettra de tester vos connaissances sur sa vie, son œuvre et son engagement pour l'égalité des sexes.</p><p>Attention, certaines questions peuvent avoir plusieurs bonnes réponses. Soyez donc attentif(ve) et réfléchissez bien avant de répondre !</p><p>Bonne chance et amusez-vous bien !</p>"
+    },
+    "theme": {
+        "primary": "#007bff",
+        "secondary": "#6c757d",
+        "success": "#28a745",
+        "danger": "#dc3545",
+        "background": "#f8f9fa"
+    },
+    "metadata": {
+        "author": "Prof. Martin",
+        "difficulty": "intermediate",
+        "category": "culture-generale",
+        "version": "1.0",
+        "lastUpdated": "2025-02-06"
+    }
+}

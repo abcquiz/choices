@@ -1,0 +1,152 @@
+[
+    {
+        "topic": "Contexte historique",
+        "content": {
+            "type": "text",
+            "text": "En quelle année Olympe de Gouges a-t-elle écrit la Déclaration des droits de la femme ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "1791", "correct": true },
+            { "text": "1789", "correct": false },
+            { "text": "1792", "correct": false },
+            { "text": "1793", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Contexte historique",
+        "content": {
+            "type": "text",
+            "text": "Combien d'années après la Déclaration des droits de l'homme Olympe de Gouges a-t-elle écrit son texte ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "2 ans", "correct": true },
+            { "text": "1 an", "correct": false },
+            { "text": "3 ans", "correct": false },
+            { "text": "4 ans", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Contexte historique",
+        "content": {
+            "type": "text",
+            "text": "En quelle année Olympe de Gouges a-t-elle été guillotinée ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "1793", "correct": true },
+            { "text": "1794", "correct": false },
+            { "text": "1792", "correct": false },
+            { "text": "1795", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Contexte historique",
+        "content": {
+            "type": "text",
+            "text": "Quel âge avait Olympe de Gouges quand elle a été exécutée ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "45 ans", "correct": true },
+            { "text": "42 ans", "correct": false },
+            { "text": "48 ans", "correct": false },
+            { "text": "50 ans", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Contexte historique",
+        "content": {
+            "type": "text",
+            "text": "En quelle année a commencé la Révolution française ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "1789", "correct": true },
+            { "text": "1790", "correct": false },
+            { "text": "1788", "correct": false },
+            { "text": "1791", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Contexte historique",
+        "content": {
+            "type": "text",
+            "text": "À qui Olympe de Gouges s'opposait-elle, ce qui a causé sa mort ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Robespierre", "correct": true },
+            { "text": "Danton", "correct": false },
+            { "text": "Marat", "correct": false },
+            { "text": "Louis XVI", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Contexte historique",
+        "content": {
+            "type": "text",
+            "text": "Quelle est la phrase qui résume le mieux le contexte de l'époque d'Olympe de Gouges ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "La Révolution parlait de liberté et d'égalité, mais oubliait la moitié de la population : les femmes", "correct": true },
+            { "text": "La Révolution donnait tous les droits aux femmes", "correct": false },
+            { "text": "Les femmes étaient déjà libres avant la Révolution", "correct": false },
+            { "text": "La Révolution ne s'intéressait qu'aux nobles", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Contexte historique",
+        "content": {
+            "type": "text",
+            "text": "Quel événement majeur s'est produit en 1789 qui a influencé le travail d'Olympe de Gouges ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "La Déclaration des droits de l'homme et du citoyen", "correct": true },
+            { "text": "L'exécution de Louis XVI", "correct": false },
+            { "text": "La prise de la Bastille seulement", "correct": false },
+            { "text": "La fin de la monarchie", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Contexte historique",
+        "content": {
+            "type": "text",
+            "text": "Pourquoi Olympe de Gouges a-t-elle écrit sa Déclaration des droits de la femme ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Parce qu'elle a remarqué que la Révolution oubliait les femmes", "correct": true },
+            { "text": "Pour soutenir le roi", "correct": false },
+            { "text": "Pour critiquer la Révolution", "correct": false },
+            { "text": "Pour devenir célèbre", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Contexte historique",
+        "content": {
+            "type": "text",
+            "text": "Quel était le climat politique quand Olympe de Gouges a écrit son texte ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Révolutionnaire et dangereux pour ceux qui s'opposaient au pouvoir", "correct": true },
+            { "text": "Calme et pacifique", "correct": false },
+            { "text": "Favorable aux femmes", "correct": false },
+            { "text": "Monarchiste", "correct": false }
+        ],
+        "timer": 60
+    }
+]

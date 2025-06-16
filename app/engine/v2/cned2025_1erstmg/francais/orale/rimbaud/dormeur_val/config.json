@@ -1,0 +1,35 @@
+{
+    "title": "Le Dormeur du val - Test 1",
+    "duration": 3600,
+    "locale": "fr-FR",
+    "timezone": "Europe/Paris",
+    "startDate": "2025-02-08T15:30:00",
+    "endDate":"2025-07-15T18:00:00",
+    "showAnswers": true,
+    "showFeedbackAfterEachQuestion": false,
+    "showPreviousButton": true,
+    "minScore": 60,
+    "shuffleQuestions": true,
+    "shuffleChoices": true,
+    "shuffleQuestionGroups": true,
+    "enableTimer":false,
+    "questionsTimer": 120,
+    "introduction": {
+        "type": "html",
+        "content": "<h2>Rimbaud - Le Dormeur du val - Test 1</h2><p>Explorez l'un des poèmes les plus célèbres de Rimbaud : analyse, techniques poétiques et message sur la guerre. Première série de questions pour découvrir l'œuvre.</p><p>Bonne chance et amusez-vous bien !</p>"
+    },
+    "theme": {
+        "primary": "#007bff",
+        "secondary": "#6c757d",
+        "success": "#28a745",
+        "danger": "#dc3545",
+        "background": "#f8f9fa"
+    },
+    "metadata": {
+        "author": "Prof. Martin",
+        "difficulty": "intermediate",
+        "category": "culture-generale",
+        "version": "1.0",
+        "lastUpdated": "2025-02-06"
+    }
+}

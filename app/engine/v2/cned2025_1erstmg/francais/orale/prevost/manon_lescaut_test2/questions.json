@@ -1,0 +1,32 @@
+[
+    {
+        "topic": "Manon Lescaut",
+        "content": {
+            "type": "text",
+            "text": "À quel siècle ce roman a-t-il été écrit ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "18ème siècle (1731)", "correct": true },
+            { "text": "17ème siècle", "correct": false },
+            { "text": "19ème siècle", "correct": false },
+            { "text": "16ème siècle", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Manon Lescaut",
+        "content": {
+            "type": "text",
+            "text": "Quel est le message principal du roman ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "La passion amoureuse peut détruire ceux qu'elle possède", "correct": true },
+            { "text": "L'amour triomphe toujours", "correct": false },
+            { "text": "Il faut obéir à ses parents", "correct": false },
+            { "text": "L'argent ne fait pas le bonheur", "correct": false }
+        ],
+        "timer": 60
+    }
+]

@@ -1,0 +1,152 @@
+[
+    {
+        "topic": "Thèmes et messages",
+        "content": {
+            "type": "text",
+            "text": "Quel est le thème principal de la Déclaration d'Olympe de Gouges ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "L'égalité entre les hommes et les femmes", "correct": true },
+            { "text": "La critique de la monarchie", "correct": false },
+            { "text": "La défense de la religion", "correct": false },
+            { "text": "L'abolition de l'esclavage seulement", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Thèmes et messages",
+        "content": {
+            "type": "text",
+            "text": "Que dénonce principalement Olympe de Gouges ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Le despotisme masculin sur les femmes", "correct": true },
+            { "text": "La pauvreté du peuple", "correct": false },
+            { "text": "Les guerres européennes", "correct": false },
+            { "text": "L'ignorance en général", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Thèmes et messages",
+        "content": {
+            "type": "text",
+            "text": "Quels types de droits Olympe de Gouges réclame-t-elle pour les femmes ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Des droits politiques (vote, parole publique)", "correct": true },
+            { "text": "Seulement des droits familiaux", "correct": false },
+            { "text": "Uniquement des droits économiques", "correct": false },
+            { "text": "Des privilèges aristocratiques", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Thèmes et messages",
+        "content": {
+            "type": "text",
+            "text": "Que critique Olympe de Gouges concernant la Révolution ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "L'hypocrisie de la Révolution qui oublie les femmes", "correct": true },
+            { "text": "Sa violence excessive", "correct": false },
+            { "text": "Sa lenteur à agir", "correct": false },
+            { "text": "Son manque d'organisation", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Thèmes et messages",
+        "content": {
+            "type": "text",
+            "text": "En quoi le texte d'Olympe de Gouges reste-t-il d'actualité aujourd'hui ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "L'égalité complète n'existe pas encore (salaires, politique, violences)", "correct": true },
+            { "text": "Les femmes n'ont toujours pas le droit de vote", "correct": false },
+            { "text": "La situation est identique à 1791", "correct": false },
+            { "text": "Il n'est plus du tout d'actualité", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Thèmes et messages",
+        "content": {
+            "type": "text",
+            "text": "Quel mouvement moderne rappelle le combat d'Olympe de Gouges ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Le mouvement #MeToo", "correct": true },
+            { "text": "Le mouvement écologiste", "correct": false },
+            { "text": "Le mouvement anti-guerre", "correct": false },
+            { "text": "Le mouvement ouvrier", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Thèmes et messages",
+        "content": {
+            "type": "text",
+            "text": "Quelle inégalité actuelle montre que le combat d'Olympe continue ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "L'inégalité salariale", "correct": true },
+            { "text": "L'interdiction de voter", "correct": false },
+            { "text": "L'interdiction de travailler", "correct": false },
+            { "text": "L'interdiction d'écrire", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Thèmes et messages",
+        "content": {
+            "type": "text",
+            "text": "En quoi Olympe de Gouges était-elle en avance sur son temps ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Ce qui semblait radical en 1791 nous paraît normal aujourd'hui", "correct": true },
+            { "text": "Elle prédisait l'avenir avec précision", "correct": false },
+            { "text": "Elle utilisait des technologies modernes", "correct": false },
+            { "text": "Elle avait des idées conformes à son époque", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Thèmes et messages",
+        "content": {
+            "type": "text",
+            "text": "Quel message principal Olympe de Gouges veut-elle transmettre ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Les droits naturels des femmes sont identiques à ceux des hommes", "correct": true },
+            { "text": "Les femmes doivent remplacer les hommes au pouvoir", "correct": false },
+            { "text": "La société doit revenir aux traditions", "correct": false },
+            { "text": "Il faut abolir toutes les lois", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Thèmes et messages",
+        "content": {
+            "type": "text",
+            "text": "Pourquoi peut-on dire qu'Olympe de Gouges est courageuse ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Elle savait qu'elle risquait sa vie en écrivant ce texte", "correct": true },
+            { "text": "Elle était la première femme à savoir écrire", "correct": false },
+            { "text": "Elle était très riche et puissante", "correct": false },
+            { "text": "Elle avait le soutien de tous", "correct": false }
+        ],
+        "timer": 60
+    }
+]

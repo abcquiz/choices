@@ -1,0 +1,152 @@
+[
+    {
+        "topic": "Structure de l'œuvre",
+        "content": {
+            "type": "text",
+            "text": "De combien de parties la Déclaration d'Olympe de Gouges est-elle composée ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Trois parties", "correct": true },
+            { "text": "Deux parties", "correct": false },
+            { "text": "Quatre parties", "correct": false },
+            { "text": "Cinq parties", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Structure de l'œuvre",
+        "content": {
+            "type": "text",
+            "text": "Quelles sont les trois parties de la Déclaration ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Le préambule, les 17 articles, et le postambule", "correct": true },
+            { "text": "L'introduction, le développement, et la conclusion", "correct": false },
+            { "text": "Le préambule, les articles, et l'épilogue", "correct": false },
+            { "text": "L'avant-propos, les droits, et l'appel", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Structure de l'œuvre",
+        "content": {
+            "type": "text",
+            "text": "Comment commence le préambule de la Déclaration ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "\"Les mères, les filles, les sœurs, représentantes de la nation\"", "correct": true },
+            { "text": "\"Les femmes naissent libres et égales\"", "correct": false },
+            { "text": "\"Femmes, réveillez-vous\"", "correct": false },
+            { "text": "\"La liberté des femmes est un droit naturel\"", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Structure de l'œuvre",
+        "content": {
+            "type": "text",
+            "text": "Comment commence le postambule ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "\"Femme, réveille-toi !\"", "correct": true },
+            { "text": "\"Citoyennes, unissez-vous !\"", "correct": false },
+            { "text": "\"Mères de la nation, levez-vous !\"", "correct": false },
+            { "text": "\"L'heure est venue de réclamer vos droits !\"", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Structure de l'œuvre",
+        "content": {
+            "type": "text",
+            "text": "Que représente la métaphore du \"tocsin de la raison\" ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Une cloche d'alarme qui appelle au réveil", "correct": true },
+            { "text": "Le bruit de la révolution", "correct": false },
+            { "text": "La voix de la sagesse", "correct": false },
+            { "text": "L'appel de la liberté", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Structure de l'œuvre",
+        "content": {
+            "type": "text",
+            "text": "Combien d'articles contient la Déclaration des droits de la femme ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "17 articles", "correct": true },
+            { "text": "15 articles", "correct": false },
+            { "text": "20 articles", "correct": false },
+            { "text": "12 articles", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Structure de l'œuvre",
+        "content": {
+            "type": "text",
+            "text": "Quel est le rôle du préambule dans la Déclaration ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Introduire et expliquer pourquoi les femmes réclament leurs droits", "correct": true },
+            { "text": "Présenter la biographie d'Olympe de Gouges", "correct": false },
+            { "text": "Critiquer directement les hommes", "correct": false },
+            { "text": "Raconter l'histoire de la Révolution", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Structure de l'œuvre",
+        "content": {
+            "type": "text",
+            "text": "Quel est le rôle du postambule ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Faire un appel direct aux femmes pour qu'elles se révoltent", "correct": true },
+            { "text": "Résumer les articles principaux", "correct": false },
+            { "text": "Remercier les lecteurs", "correct": false },
+            { "text": "Expliquer les conséquences légales", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Structure de l'œuvre",
+        "content": {
+            "type": "text",
+            "text": "Sur quel modèle Olympe de Gouges a-t-elle structuré sa Déclaration ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "La Déclaration des droits de l'homme et du citoyen", "correct": true },
+            { "text": "Les Évangiles", "correct": false },
+            { "text": "Les lettres de Voltaire", "correct": false },
+            { "text": "Les constitutions américaines", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Structure de l'œuvre",
+        "content": {
+            "type": "text",
+            "text": "Pourquoi Olympe de Gouges a-t-elle repris exactement la structure de la Déclaration des droits de l'homme ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Pour rendre son texte officiel et sérieux, et montrer l'ironie de l'exclusion des femmes", "correct": true },
+            { "text": "Parce qu'elle manquait d'originalité", "correct": false },
+            { "text": "Pour respecter la loi", "correct": false },
+            { "text": "Parce que c'était obligatoire", "correct": false }
+        ],
+        "timer": 60
+    }
+]

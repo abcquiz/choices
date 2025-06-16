@@ -1,0 +1,152 @@
+[
+    {
+        "topic": "Analyse littéraire générale",
+        "content": {
+            "type": "text",
+            "text": "Dans \"Le Dormeur du val\", que signifie \"accrochant follement aux herbes des haillons d'argent\" ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "L'eau brille et s'accroche aux herbes comme des morceaux de tissu argenté", "correct": true },
+            { "text": "Il y a des vrais tissus accrochés aux herbes", "correct": false },
+            { "text": "Le soldat a perdu ses vêtements", "correct": false },
+            { "text": "Les herbes sont de couleur argentée", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Analyse littéraire générale",
+        "content": {
+            "type": "text",
+            "text": "Pourquoi dit-on que \"Vénus Anadyomène\" de Rimbaud est parodique ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Il montre une femme laide au lieu de la déesse de la beauté", "correct": true },
+            { "text": "Il décrit vraiment la déesse Vénus", "correct": false },
+            { "text": "Il parle de la mer", "correct": false },
+            { "text": "Il utilise un vocabulaire soutenu", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Analyse littéraire générale",
+        "content": {
+            "type": "text",
+            "text": "Dans Manon Lescaut, que signifie \"Hélas ! que ne le marquais-je un jour plus tôt !\" ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Si seulement j'étais parti un jour plus tôt !", "correct": true },
+            { "text": "J'aurais dû marquer cette date", "correct": false },
+            { "text": "Je regrette d'être arrivé trop tard", "correct": false },
+            { "text": "J'ai oublié de noter la date", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Analyse littéraire générale",
+        "content": {
+            "type": "text",
+            "text": "Que révèle la phrase \"Manon, Manon, infidèle et parjure Manon !\" ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "L'obsession de Des Grieux et sa douleur", "correct": true },
+            { "text": "Sa joie de revoir Manon", "correct": false },
+            { "text": "Son indifférence", "correct": false },
+            { "text": "Sa première rencontre avec elle", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Analyse littéraire générale",
+        "content": {
+            "type": "text",
+            "text": "Pourquoi Stendhal décrit-il si précisément la ville de Verrières ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Pour créer un cadre réaliste typique de la province française", "correct": true },
+            { "text": "Parce qu'il y a vécu", "correct": false },
+            { "text": "Pour faire du tourisme", "correct": false },
+            { "text": "Pour montrer sa richesse", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Analyse littéraire générale",
+        "content": {
+            "type": "text",
+            "text": "Dans Sarraute, pourquoi la phrase \"C'est bien... ça\" devient-elle blessante ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "C'est le ton et l'intonation qui changent tout", "correct": true },
+            { "text": "Les mots sont insultants", "correct": false },
+            { "text": "Elle est dite trop fort", "correct": false },
+            { "text": "Elle arrive au mauvais moment", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Analyse littéraire générale",
+        "content": {
+            "type": "text",
+            "text": "Que dénonce Alceste avec \"ces affables donneurs d'embrassades frivoles\" ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "L'hypocrisie des gens qui font semblant d'être gentils", "correct": true },
+            { "text": "Les gens qui ne se font pas de câlins", "correct": false },
+            { "text": "Les embrassades trop longues", "correct": false },
+            { "text": "Les gens trop affectueux", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Analyse littéraire générale",
+        "content": {
+            "type": "text",
+            "text": "Que signifie \"le tocsin de la raison\" dans le texte d'Olympe de Gouges ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "La cloche d'alarme de l'intelligence qui appelle à l'éveil", "correct": true },
+            { "text": "Un vrai tocsin qui sonne", "correct": false },
+            { "text": "Le bruit de la révolution", "correct": false },
+            { "text": "La voix d'Olympe de Gouges", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Analyse littéraire générale",
+        "content": {
+            "type": "text",
+            "text": "Pourquoi la phrase \"C'est à ce prix que vous mangez du sucre en Europe\" est-elle si forte ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Elle établit un lien direct entre le luxe européen et la souffrance des esclaves", "correct": true },
+            { "text": "Elle explique le commerce du sucre", "correct": false },
+            { "text": "Elle décrit les plantations", "correct": false },
+            { "text": "Elle parle du prix du sucre", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Analyse littéraire générale",
+        "content": {
+            "type": "text",
+            "text": "Quelle est la technique commune à tous ces auteurs pour émouvoir le lecteur ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Ils utilisent des contrastes frappants (beauté/laideur, joie/douleur)", "correct": true },
+            { "text": "Ils écrivent toujours en vers", "correct": false },
+            { "text": "Ils utilisent un vocabulaire compliqué", "correct": false },
+            { "text": "Ils racontent toujours la même histoire", "correct": false }
+        ],
+        "timer": 60
+    }
+]

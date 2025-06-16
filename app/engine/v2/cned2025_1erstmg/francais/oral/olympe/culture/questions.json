@@ -1,0 +1,167 @@
+[
+    {
+        "topic": "Culture générale",
+        "content": {
+            "type": "text",
+            "text": "Qu'est-ce que le théâtre ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Un genre littéraire qui se joue devant un public", "correct": true },
+            { "text": "Un type de danse traditionnelle", "correct": false },
+            { "text": "Un événement politique", "correct": false },
+            { "text": "Une forme de peinture", "correct": false }
+        ],
+        "timer": 30
+    },
+    {
+        "topic": "Culture générale",
+        "content": {
+            "type": "text",
+            "text": "Que veut dire 'sans-culottes' pendant la Révolution française ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Des révolutionnaires issus des classes populaires", "correct": true },
+            { "text": "Des membres du clergé", "correct": false },
+            { "text": "Des aristocrates", "correct": false },
+            { "text": "Des intellectuels de la Révolution", "correct": false }
+        ],
+        "timer": 30
+    },
+    {
+        "topic": "Culture générale",
+        "content": {
+            "type": "text",
+            "text": "Qui étaient les philosophes des Lumières ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Des intellectuels qui prônaient la raison et les réformes sociales", "correct": true },
+            { "text": "Des religieux qui défendaient la monarchie divine", "correct": false },
+            { "text": "Des militaires soutenant l'ordre monarchique", "correct": false },
+            { "text": "Des aristocrates opposés à la Révolution", "correct": false }
+        ],
+        "timer": 30
+    },
+    {
+        "topic": "Culture générale",
+        "content": {
+            "type": "text",
+            "text": "C'est quoi le clergé ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "L'ensemble des personnes qui exercent des fonctions religieuses", "correct": true },
+            { "text": "L'ensemble des militaires dans un pays", "correct": false },
+            { "text": "L'ensemble des aristocrates", "correct": false },
+            { "text": "Les révolutionnaires", "correct": false }
+        ],
+        "timer": 30
+    },
+    {
+        "topic": "Culture générale",
+        "content": {
+            "type": "text",
+            "text": "C'est quoi un militant ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Une personne engagée activement pour une cause", "correct": true },
+            { "text": "Une personne contre la révolution", "correct": false },
+            { "text": "Une personne qui suit aveuglément les autorités", "correct": false },
+            { "text": "Une personne qui ne prend pas de décisions", "correct": false }
+        ],
+        "timer": 30
+    },
+    {
+        "topic": "Culture générale",
+        "content": {
+            "type": "text",
+            "text": "Qu'est-ce qu'un aristocrate ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Un membre de la noblesse", "correct": true },
+            { "text": "Un soldat de l'armée", "correct": false },
+            { "text": "Un paysan", "correct": false },
+            { "text": "Un membre du clergé", "correct": false }
+        ],
+        "timer": 30
+    },
+    {
+        "topic": "Culture générale",
+        "content": {
+            "type": "text",
+            "text": "C'est quoi une réforme ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Un changement pour améliorer un système", "correct": true },
+            { "text": "Un rejet d'un système en place", "correct": false },
+            { "text": "Un retour aux traditions anciennes", "correct": false },
+            { "text": "Une guerre", "correct": false }
+        ],
+        "timer": 30
+    },
+    {
+        "topic": "Culture générale",
+        "content": {
+            "type": "text",
+            "text": "Que veut dire 'républicain' durant la Révolution ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Une personne qui soutient un gouvernement sans roi", "correct": true },
+            { "text": "Une personne qui soutient la monarchie", "correct": false },
+            { "text": "Une personne opposée à la Révolution", "correct": false },
+            { "text": "Une personne qui défend la noblesse", "correct": false }
+        ],
+        "timer": 30
+    },
+    {
+        "topic": "Culture générale",
+        "content": {
+            "type": "text",
+            "text": "Que désigne le terme 'Révolution' ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Un changement radical dans un système politique ou social", "correct": true },
+            { "text": "Un changement dans le système économique uniquement", "correct": false },
+            { "text": "Une guerre civile", "correct": false },
+            { "text": "Un retour à l'ordre ancien", "correct": false }
+        ],
+        "timer": 30
+    },
+    {
+        "topic": "Culture générale",
+        "content": {
+            "type": "text",
+            "text": "Qu'est-ce qu'une 'constitution' ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Un ensemble de règles qui organisent le fonctionnement d'un État", "correct": true },
+            { "text": "Une déclaration de guerre", "correct": false },
+            { "text": "Un texte religieux", "correct": false },
+            { "text": "Un acte de propriété", "correct": false }
+        ],
+        "timer": 30
+    },
+    {
+        "topic": "Culture générale",
+        "content": {
+            "type": "text",
+            "text": "Que signifie 'terrorisme' pendant la Révolution ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Des actions violentes pour éliminer les ennemis de la Révolution", "correct": true },
+            { "text": "Une guerre contre l'extérieur", "correct": false },
+            { "text": "Des protestations pacifiques", "correct": false },
+            { "text": "Des actes de corruption au sein du gouvernement", "correct": false }
+        ],
+        "timer": 30
+    }
+]

@@ -1,0 +1,152 @@
+[
+    {
+        "topic": "Pour un oui ou pour un non",
+        "content": {
+            "type": "text",
+            "text": "Que montre principalement cette pièce de Sarraute ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Comment une simple intonation peut détruire une amitié", "correct": true },
+            { "text": "Une histoire d'amour impossible", "correct": false },
+            { "text": "Un conflit politique", "correct": false },
+            { "text": "Une querelle d'argent", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Pour un oui ou pour un non",
+        "content": {
+            "type": "text",
+            "text": "Quelle phrase banale devient blessante dans la pièce ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "\"C'est bien... ça\"", "correct": true },
+            { "text": "\"Comment allez-vous ?\"", "correct": false },
+            { "text": "\"Il fait beau aujourd'hui\"", "correct": false },
+            { "text": "\"À bientôt\"", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Pour un oui ou pour un non",
+        "content": {
+            "type": "text",
+            "text": "Selon la pièce, qu'est-ce qui rend cette phrase blessante ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "L'intonation", "correct": true },
+            { "text": "Le contexte", "correct": false },
+            { "text": "Le moment", "correct": false },
+            { "text": "La personne qui la dit", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Pour un oui ou pour un non",
+        "content": {
+            "type": "text",
+            "text": "Qu'explore Sarraute dans cette pièce selon les exercices ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Les \"sous-conversations\", ce qu'on ne dit pas vraiment", "correct": true },
+            { "text": "Les grandes déclarations", "correct": false },
+            { "text": "Les discours politiques", "correct": false },
+            { "text": "Les monologues intérieurs", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Pour un oui ou pour un non",
+        "content": {
+            "type": "text",
+            "text": "À quel type de théâtre cette pièce appartient-elle ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Le théâtre contemporain", "correct": true },
+            { "text": "Le théâtre classique", "correct": false },
+            { "text": "Le théâtre romantique", "correct": false },
+            { "text": "Le théâtre baroque", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Pour un oui ou pour un non",
+        "content": {
+            "type": "text",
+            "text": "Que répond H2 quand H1 lui rappelle ce qu'il a dit ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "\"Et alors ? J'ai dit 'C'est bien, ça' ? Et alors ?\"", "correct": true },
+            { "text": "\"Je ne me souviens pas\"", "correct": false },
+            { "text": "\"Ce n'est pas ce que j'ai voulu dire\"", "correct": false },
+            { "text": "\"Tu as mal compris\"", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Pour un oui ou pour un non",
+        "content": {
+            "type": "text",
+            "text": "Que répond H1 pour expliquer le problème ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "\"C'est le ton... Tu avais un ton...\"", "correct": true },
+            { "text": "\"Ce sont les mots que tu as utilisés\"", "correct": false },
+            { "text": "\"C'est le moment que tu as choisi\"", "correct": false },
+            { "text": "\"C'est ta façon de me regarder\"", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Pour un oui ou pour un non",
+        "content": {
+            "type": "text",
+            "text": "Quel est le message principal de cette pièce ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Ce n'est pas les mots mais le TON qui blesse", "correct": true },
+            { "text": "Il faut toujours dire ce qu'on pense", "correct": false },
+            { "text": "Les mots sont plus importants que l'intonation", "correct": false },
+            { "text": "Il faut éviter de parler", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Pour un oui ou pour un non",
+        "content": {
+            "type": "text",
+            "text": "Combien de personnages principaux y a-t-il dans cette pièce ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Deux hommes (H1 et H2)", "correct": true },
+            { "text": "Un homme et une femme", "correct": false },
+            { "text": "Trois personnages", "correct": false },
+            { "text": "Un seul personnage", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Pour un oui ou pour un non",
+        "content": {
+            "type": "text",
+            "text": "En quelle année cette pièce a-t-elle été écrite ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "1981", "correct": true },
+            { "text": "1971", "correct": false },
+            { "text": "1991", "correct": false },
+            { "text": "1961", "correct": false }
+        ],
+        "timer": 60
+    }
+]

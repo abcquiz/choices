@@ -1,0 +1,152 @@
+[
+    {
+        "topic": "Entretien oral",
+        "content": {
+            "type": "text",
+            "text": "Complétez cette phrase d'entretien : \"J'ai choisi cette œuvre car Olympe était une femme _____\"",
+            "url": null
+        },
+        "choices": [
+            { "text": "courageuse", "correct": true },
+            { "text": "célèbre", "correct": false },
+            { "text": "riche", "correct": false },
+            { "text": "noble", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Entretien oral",
+        "content": {
+            "type": "text",
+            "text": "\"Son texte reste d'_____ car l'égalité n'est pas encore totale.\"",
+            "url": null
+        },
+        "choices": [
+            { "text": "actualité", "correct": true },
+            { "text": "importance", "correct": false },
+            { "text": "intérêt", "correct": false },
+            { "text": "utilité", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Entretien oral",
+        "content": {
+            "type": "text",
+            "text": "\"Le passage 'Femme, _____-toi' m'a marqué car c'est un appel direct.\"",
+            "url": null
+        },
+        "choices": [
+            { "text": "réveille", "correct": true },
+            { "text": "libère", "correct": false },
+            { "text": "bats", "correct": false },
+            { "text": "lève", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Entretien oral",
+        "content": {
+            "type": "text",
+            "text": "\"Elle a préféré _____ plutôt que de se taire.\"",
+            "url": null
+        },
+        "choices": [
+            { "text": "mourir", "correct": true },
+            { "text": "fuir", "correct": false },
+            { "text": "se cacher", "correct": false },
+            { "text": "partir", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Entretien oral",
+        "content": {
+            "type": "text",
+            "text": "\"Ce qui m'impressionne, c'est qu'elle savait qu'elle _____ sa vie.\"",
+            "url": null
+        },
+        "choices": [
+            { "text": "risquait", "correct": true },
+            { "text": "perdrait", "correct": false },
+            { "text": "gâchait", "correct": false },
+            { "text": "changeait", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Entretien oral",
+        "content": {
+            "type": "text",
+            "text": "Quelle phrase résume bien pourquoi choisir Olympe de Gouges ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "\"J'ai choisi Olympe de Gouges car c'est une femme qui a eu le courage de ses opinions jusqu'à la mort\"", "correct": true },
+            { "text": "\"J'ai choisi cette œuvre car elle est facile à lire\"", "correct": false },
+            { "text": "\"J'ai choisi ce texte car il est court\"", "correct": false },
+            { "text": "\"J'ai choisi cette auteure car elle est célèbre\"", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Entretien oral",
+        "content": {
+            "type": "text",
+            "text": "Pour expliquer l'actualité du texte, quelle phrase est la plus pertinente ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "\"Olympe de Gouges reste moderne car elle nous rappelle que les droits ne sont jamais définitivement acquis\"", "correct": true },
+            { "text": "\"Son texte est identique à notre époque\"", "correct": false },
+            { "text": "\"Rien n'a changé depuis 1791\"", "correct": false },
+            { "text": "\"Les femmes ont les mêmes problèmes qu'avant\"", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Entretien oral",
+        "content": {
+            "type": "text",
+            "text": "Comment expliquer l'ironie de l'article 10 ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "\"Cette phrase montre son ironie : si on peut tuer les femmes, on doit aussi les écouter\"", "correct": true },
+            { "text": "\"Elle veut vraiment monter sur l'échafaud\"", "correct": false },
+            { "text": "\"Elle compare deux lieux différents\"", "correct": false },
+            { "text": "\"Elle fait une métaphore\"", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Entretien oral",
+        "content": {
+            "type": "text",
+            "text": "Quel exemple moderne peut-on donner pour montrer l'actualité du combat d'Olympe ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Les inégalités salariales, la sous-représentation politique, #MeToo", "correct": true },
+            { "text": "Le droit de vote seulement", "correct": false },
+            { "text": "Les problèmes de transport", "correct": false },
+            { "text": "Les questions écologiques", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Entretien oral",
+        "content": {
+            "type": "text",
+            "text": "Pour conclure un entretien sur Olympe de Gouges, quelle phrase est la plus efficace ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "\"Ce que je retiens, c'est qu'Olympe de Gouges nous enseigne qu'il faut parfois du courage pour faire avancer la société\"", "correct": true },
+            { "text": "\"En conclusion, c'était une femme intéressante\"", "correct": false },
+            { "text": "\"Pour finir, j'ai bien aimé ce texte\"", "correct": false },
+            { "text": "\"Voilà, c'est tout ce que j'avais à dire\"", "correct": false }
+        ],
+        "timer": 60
+    }
+]

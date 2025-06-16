@@ -1,0 +1,167 @@
+[
+    {
+        "topic": "Vénus Anadyomène",
+        "content": {
+            "type": "text",
+            "text": "Que signifie \"Vénus anadyomène\" ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Vénus qui sort de l'eau", "correct": true },
+            { "text": "Vénus qui se maquille", "correct": false },
+            { "text": "Vénus qui danse", "correct": false },
+            { "text": "Vénus qui chante", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Vénus Anadyomène",
+        "content": {
+            "type": "text",
+            "text": "À quoi Rimbaud compare-t-il la baignoire dans le premier vers ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "\"Comme d'un cercueil vert en fer-blanc\"", "correct": true },
+            { "text": "Comme un lac bleu", "correct": false },
+            { "text": "Comme un palais doré", "correct": false },
+            { "text": "Comme une fontaine de marbre", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Vénus Anadyomène",
+        "content": {
+            "type": "text",
+            "text": "Comment sont décrits les cheveux de cette \"Vénus\" ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "\"Cheveux bruns fortement pommadés\"", "correct": true },
+            { "text": "Cheveux blonds et soyeux", "correct": false },
+            { "text": "Cheveux dorés et brillants", "correct": false },
+            { "text": "Cheveux roux et bouclés", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Vénus Anadyomène",
+        "content": {
+            "type": "text",
+            "text": "Comment la femme émerge-t-elle de la baignoire ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "\"Lente et bête\"", "correct": true },
+            { "text": "Gracieuse et divine", "correct": false },
+            { "text": "Rapide et joyeuse", "correct": false },
+            { "text": "Majestueuse et fière", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Vénus Anadyomène",
+        "content": {
+            "type": "text",
+            "text": "Que signifient les \"déficits assez mal ravaudés\" ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Elle a des trous/manques mal réparés dans les cheveux", "correct": true },
+            { "text": "Elle a des bijoux cassés", "correct": false },
+            { "text": "Elle a des vêtements troués", "correct": false },
+            { "text": "Elle a des dents manquantes", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Vénus Anadyomène",
+        "content": {
+            "type": "text",
+            "text": "Quel contraste Rimbaud crée-t-il dans ce poème ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Entre le mythe de la déesse de beauté et une femme laide et vulgaire", "correct": true },
+            { "text": "Entre le jour et la nuit", "correct": false },
+            { "text": "Entre la jeunesse et la vieillesse", "correct": false },
+            { "text": "Entre la richesse et la pauvreté", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Vénus Anadyomène",
+        "content": {
+            "type": "text",
+            "text": "Que critique Rimbaud à travers ce portrait ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Les idéaux de beauté classique et la poésie traditionnelle", "correct": true },
+            { "text": "Seulement l'hygiène de l'époque", "correct": false },
+            { "text": "Les femmes en général", "correct": false },
+            { "text": "La mythologie grecque", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Vénus Anadyomène",
+        "content": {
+            "type": "text",
+            "text": "D'où sort cette \"Vénus\" selon Rimbaud ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "D'une vieille baignoire", "correct": true },
+            { "text": "De l'écume de la mer", "correct": false },
+            { "text": "D'un lac sacré", "correct": false },
+            { "text": "D'une fontaine de marbre", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Vénus Anadyomène",
+        "content": {
+            "type": "text",
+            "text": "Quel procédé littéraire principal utilise Rimbaud ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "La parodie et l'anti-portrait", "correct": true },
+            { "text": "L'éloge et l'idéalisation", "correct": false },
+            { "text": "La description réaliste", "correct": false },
+            { "text": "L'allégorie", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Vénus Anadyomène",
+        "content": {
+            "type": "text",
+            "text": "Que révèle ce poème sur l'état d'esprit du jeune Rimbaud ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Sa volonté de choquer et de renouveler la poésie", "correct": true },
+            { "text": "Son respect pour la tradition", "correct": false },
+            { "text": "Sa timidité de débutant", "correct": false },
+            { "text": "Son admiration pour la beauté classique", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Vénus Anadyomène",
+        "content": {
+            "type": "text",
+            "text": "En quoi ce poème annonce-t-il le futur \"poète voyant\" ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Il montre déjà sa volonté de créer une poésie nouvelle et provocante", "correct": true },
+            { "text": "Il respecte toutes les règles classiques", "correct": false },
+            { "text": "Il imite parfaitement les maîtres", "correct": false },
+            { "text": "Il évite toute originalité", "correct": false }
+        ],
+        "timer": 60
+    }
+]

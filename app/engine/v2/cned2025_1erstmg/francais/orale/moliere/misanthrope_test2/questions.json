@@ -1,0 +1,32 @@
+[
+    {
+        "topic": "Le Misanthrope",
+        "content": {
+            "type": "text",
+            "text": "Que dénonce Alceste quand il parle d'\"embrassades frivoles\" ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Les marques d'affection fausses et sans sincérité", "correct": true },
+            { "text": "Les baisers entre amoureux", "correct": false },
+            { "text": "Les salutations entre nobles", "correct": false },
+            { "text": "Les gestes de politesse", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Le Misanthrope",
+        "content": {
+            "type": "text",
+            "text": "Quel est le message principal de Molière dans cette pièce ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Critique de l'hypocrisie sociale tout en montrant les limites de l'intransigeance", "correct": true },
+            { "text": "Il faut toujours dire la vérité", "correct": false },
+            { "text": "Il faut accepter toutes les conventions", "correct": false },
+            { "text": "Il faut fuir la société", "correct": false }
+        ],
+        "timer": 60
+    }
+]

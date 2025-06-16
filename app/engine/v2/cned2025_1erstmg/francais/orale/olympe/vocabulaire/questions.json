@@ -1,0 +1,152 @@
+[
+    {
+        "topic": "Vocabulaire spécifique",
+        "content": {
+            "type": "text",
+            "text": "Que signifie \"échafaud\" ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Lieu d'exécution (guillotine)", "correct": true },
+            { "text": "Tribune politique", "correct": false },
+            { "text": "Scène de théâtre", "correct": false },
+            { "text": "Palais de justice", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Vocabulaire spécifique",
+        "content": {
+            "type": "text",
+            "text": "Que signifie \"Tribune\" ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Lieu où on fait des discours politiques", "correct": true },
+            { "text": "Lieu d'exécution", "correct": false },
+            { "text": "Tribunal", "correct": false },
+            { "text": "Église", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Vocabulaire spécifique",
+        "content": {
+            "type": "text",
+            "text": "Que signifie \"tocsin\" ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Cloche d'alarme", "correct": true },
+            { "text": "Voix de la sagesse", "correct": false },
+            { "text": "Bruit de la guerre", "correct": false },
+            { "text": "Chant révolutionnaire", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Vocabulaire spécifique",
+        "content": {
+            "type": "text",
+            "text": "Quelle est la différence entre préambule et postambule ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Introduction et conclusion", "correct": true },
+            { "text": "Début et milieu", "correct": false },
+            { "text": "Titre et sous-titre", "correct": false },
+            { "text": "Cause et conséquence", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Vocabulaire spécifique",
+        "content": {
+            "type": "text",
+            "text": "Que signifie \"citoyenne\" dans le contexte du texte ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Femme ayant des droits politiques", "correct": true },
+            { "text": "Femme vivant en ville", "correct": false },
+            { "text": "Femme mariée", "correct": false },
+            { "text": "Femme noble", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Vocabulaire spécifique",
+        "content": {
+            "type": "text",
+            "text": "Que signifie \"despotisme\" ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Pouvoir absolu et tyrannique", "correct": true },
+            { "text": "Système démocratique", "correct": false },
+            { "text": "Égalité parfaite", "correct": false },
+            { "text": "Liberté totale", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Vocabulaire spécifique",
+        "content": {
+            "type": "text",
+            "text": "Que signifie \"représentantes\" dans \"représentantes de la nation\" ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Des femmes qui représentent la nation", "correct": true },
+            { "text": "Des femmes qui imitent la nation", "correct": false },
+            { "text": "Des femmes qui dirigent la nation", "correct": false },
+            { "text": "Des femmes qui critiquent la nation", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Vocabulaire spécifique",
+        "content": {
+            "type": "text",
+            "text": "Que désigne \"volonté générale\" ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "La volonté du peuple", "correct": true },
+            { "text": "La volonté du roi", "correct": false },
+            { "text": "La volonté de Dieu", "correct": false },
+            { "text": "La volonté des nobles", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Vocabulaire spécifique",
+        "content": {
+            "type": "text",
+            "text": "Dans le contexte de l'époque, que signifie \"droits naturels\" ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Droits que l'on a dès la naissance", "correct": true },
+            { "text": "Droits liés à la nature", "correct": false },
+            { "text": "Droits des animaux", "correct": false },
+            { "text": "Droits écologiques", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Vocabulaire spécifique",
+        "content": {
+            "type": "text",
+            "text": "Que signifie l'expression \"monter à la Tribune\" ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Faire des discours politiques publics", "correct": true },
+            { "text": "Gravir une montagne", "correct": false },
+            { "text": "Monter sur un échafaud", "correct": false },
+            { "text": "Entrer dans un tribunal", "correct": false }
+        ],
+        "timer": 60
+    }
+]

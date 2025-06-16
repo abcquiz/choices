@@ -1,0 +1,152 @@
+[
+    {
+        "topic": "Analyse phrase par phrase",
+        "content": {
+            "type": "text",
+            "text": "\"C'est un trou de verdure où chante une rivière\" - Que fait Rimbaud dans cette première phrase ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Il plante un décor idyllique et paisible avec une personnification (rivière qui chante)", "correct": true },
+            { "text": "Il décrit un vrai trou dans le sol", "correct": false },
+            { "text": "Il annonce directement la mort du soldat", "correct": false },
+            { "text": "Il critique la guerre", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Analyse phrase par phrase",
+        "content": {
+            "type": "text",
+            "text": "\"Si tu t'imagines fillette fillette\" - Pourquoi Queneau répète-t-il ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Pour créer un effet de chanson et insister sur le message", "correct": true },
+            { "text": "Parce qu'il n'a pas d'autres mots", "correct": false },
+            { "text": "Pour faire plus moderne", "correct": false },
+            { "text": "C'est une erreur de frappe", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Analyse phrase par phrase",
+        "content": {
+            "type": "text",
+            "text": "\"J'avais marqué le temps de mon départ d'Amiens\" - Quel temps utilise Des Grieux et pourquoi ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Plus-que-parfait pour montrer que tout était prévu avant la catastrophe", "correct": true },
+            { "text": "Présent pour l'actualité", "correct": false },
+            { "text": "Futur pour l'espoir", "correct": false },
+            { "text": "Passé simple pour l'action", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Analyse phrase par phrase",
+        "content": {
+            "type": "text",
+            "text": "\"La petite ville de Verrières peut passer pour l'une des plus jolies\" - Que révèle cette phrase sur Stendhal ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Il adopte un ton objectif et réaliste, sans lyrisme excessif", "correct": true },
+            { "text": "Il déteste cette ville", "correct": false },
+            { "text": "Il exagère toujours", "correct": false },
+            { "text": "Il ne sait pas décrire", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Analyse phrase par phrase",
+        "content": {
+            "type": "text",
+            "text": "\"Tu te souviens, l'autre jour, tu m'as dit...\" - Comment Sarraute commence-t-elle sa pièce ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "In medias res, au cœur d'un conflit déjà commencé", "correct": true },
+            { "text": "Par une longue présentation des personnages", "correct": false },
+            { "text": "Par une description du décor", "correct": false },
+            { "text": "Par un monologue philosophique", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Analyse phrase par phrase",
+        "content": {
+            "type": "text",
+            "text": "\"Non, je ne puis souffrir cette lâche méthode\" - Que révèle cette première réplique d'Alceste ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Sa nature absolue et intransigeante dès les premiers mots", "correct": true },
+            { "text": "Qu'il est timide", "correct": false },
+            { "text": "Qu'il aime tout le monde", "correct": false },
+            { "text": "Qu'il n'a pas d'opinion", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Analyse phrase par phrase",
+        "content": {
+            "type": "text",
+            "text": "\"Les mères, les filles, les sœurs, représentantes de la nation\" - Quel procédé utilise Olympe de Gouges ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Énumération pour englober toutes les femmes + terme juridique officiel", "correct": true },
+            { "text": "Simple liste sans effet particulier", "correct": false },
+            { "text": "Métaphore poétique", "correct": false },
+            { "text": "Ironie subtile", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Analyse phrase par phrase",
+        "content": {
+            "type": "text",
+            "text": "\"En approchant de la ville, ils rencontrèrent un nègre étendu par terre\" - Comment Voltaire présente-t-il la scène ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Description neutre et froide qui rend la situation plus choquante", "correct": true },
+            { "text": "Description émotionnelle et pathétique", "correct": false },
+            { "text": "Description comique", "correct": false },
+            { "text": "Description romantique", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Analyse phrase par phrase",
+        "content": {
+            "type": "text",
+            "text": "\"Il a deux trous rouges au côté droit\" - Pourquoi cette phrase finale est-elle si efficace ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Chute brutale qui révèle la vérité après avoir entretenu l'illusion", "correct": true },
+            { "text": "Elle décrit bien les blessures", "correct": false },
+            { "text": "Elle est très poétique", "correct": false },
+            { "text": "Elle rime avec le vers précédent", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Analyse phrase par phrase",
+        "content": {
+            "type": "text",
+            "text": "Comment analyser efficacement une phrase à l'oral ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "1) Citer la phrase 2) Expliquer le sens 3) Identifier le procédé 4) Analyser l'effet produit", "correct": true },
+            { "text": "Juste lire la phrase et passer à la suivante", "correct": false },
+            { "text": "Paraphraser avec d'autres mots", "correct": false },
+            { "text": "Donner son opinion personnelle", "correct": false }
+        ],
+        "timer": 60
+    }
+]

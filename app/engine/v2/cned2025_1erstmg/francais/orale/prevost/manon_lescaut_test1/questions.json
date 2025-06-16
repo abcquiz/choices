@@ -1,0 +1,152 @@
+[
+    {
+        "topic": "Manon Lescaut",
+        "content": {
+            "type": "text",
+            "text": "Complétez la phrase de Des Grieux : \"Je demeurai _____ à sa vue\"",
+            "url": null
+        },
+        "choices": [
+            { "text": "interdit", "correct": true },
+            { "text": "charmé", "correct": false },
+            { "text": "troublé", "correct": false },
+            { "text": "ému", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Manon Lescaut",
+        "content": {
+            "type": "text",
+            "text": "Que montre l'expression \"Je demeurai interdit à sa vue\" ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Le coup de foudre", "correct": true },
+            { "text": "La peur", "correct": false },
+            { "text": "La colère", "correct": false },
+            { "text": "La surprise", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Manon Lescaut",
+        "content": {
+            "type": "text",
+            "text": "Pourquoi Manon est-elle qualifiée d'\"infidèle\" ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Car elle trompe Des Grieux plusieurs fois", "correct": true },
+            { "text": "Car elle ne croit pas en Dieu", "correct": false },
+            { "text": "Car elle ment sur son nom", "correct": false },
+            { "text": "Car elle refuse de se marier", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Manon Lescaut",
+        "content": {
+            "type": "text",
+            "text": "Quel type de passion ce roman illustre-t-il ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "La passion destructrice qui mène les personnages à leur perte", "correct": true },
+            { "text": "L'amour heureux et épanouissant", "correct": false },
+            { "text": "L'amour platonique et pur", "correct": false },
+            { "text": "La passion raisonnée et mesurée", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Manon Lescaut",
+        "content": {
+            "type": "text",
+            "text": "Comment l'histoire se termine-t-elle ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Par la mort de Manon en Amérique", "correct": true },
+            { "text": "Par le mariage des amoureux", "correct": false },
+            { "text": "Par la séparation définitive", "correct": false },
+            { "text": "Par leur retour en France", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Manon Lescaut",
+        "content": {
+            "type": "text",
+            "text": "Dans quel contexte Des Grieux rencontre-t-il Manon ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "À l'arrivée d'une diligence à Amiens", "correct": true },
+            { "text": "Dans un bal à Paris", "correct": false },
+            { "text": "Dans un couvent", "correct": false },
+            { "text": "Chez des amis communs", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Manon Lescaut",
+        "content": {
+            "type": "text",
+            "text": "Que regrette Des Grieux au début du récit ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "De ne pas être parti un jour plus tôt d'Amiens", "correct": true },
+            { "text": "D'avoir quitté ses études", "correct": false },
+            { "text": "D'avoir désobéi à son père", "correct": false },
+            { "text": "D'être venu à Amiens", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Manon Lescaut",
+        "content": {
+            "type": "text",
+            "text": "Qui accompagne Des Grieux quand il voit Manon pour la première fois ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Son ami Tiberge", "correct": true },
+            { "text": "Son père", "correct": false },
+            { "text": "Son frère", "correct": false },
+            { "text": "Un domestique", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Manon Lescaut",
+        "content": {
+            "type": "text",
+            "text": "Quel était le motif de Des Grieux pour suivre la diligence ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "La simple curiosité", "correct": true },
+            { "text": "Il attendait quelqu'un", "correct": false },
+            { "text": "Il cherchait du travail", "correct": false },
+            { "text": "Il voulait partir en voyage", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Manon Lescaut",
+        "content": {
+            "type": "text",
+            "text": "Que symbolise Manon dans le roman ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "La femme fatale qui entraîne l'homme vers sa perte", "correct": true },
+            { "text": "La femme parfaite et fidèle", "correct": false },
+            { "text": "La femme indépendante et libre", "correct": false },
+            { "text": "La femme vertueuse et pieuse", "correct": false }
+        ],
+        "timer": 60
+    }
+]

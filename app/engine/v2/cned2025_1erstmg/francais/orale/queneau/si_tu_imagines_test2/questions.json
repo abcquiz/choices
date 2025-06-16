@@ -1,0 +1,32 @@
+[
+    {
+        "topic": "Si tu t'imagines",
+        "content": {
+            "type": "text",
+            "text": "Pourquoi Queneau utilise-t-il un langage familier ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Pour imiter le langage des jeunes et rendre le message plus direct", "correct": true },
+            { "text": "Parce qu'il ne sait pas écrire correctement", "correct": false },
+            { "text": "Pour faire rire seulement", "correct": false },
+            { "text": "Par manque d'inspiration", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Si tu t'imagines",
+        "content": {
+            "type": "text",
+            "text": "Quel effet produit la répétition de \"fillette fillette\" ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Un effet de chanson et d'insistance", "correct": true },
+            { "text": "Une impression de colère", "correct": false },
+            { "text": "Un sentiment de tristesse", "correct": false },
+            { "text": "Une sensation de mystère", "correct": false }
+        ],
+        "timer": 60
+    }
+]

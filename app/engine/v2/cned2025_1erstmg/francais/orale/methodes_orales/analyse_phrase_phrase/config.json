@@ -1,0 +1,35 @@
+{
+    "title": "Analyse phrase par phrase",
+    "duration": 3600,
+    "locale": "fr-FR",
+    "timezone": "Europe/Paris",
+    "startDate": "2025-02-08T15:30:00",
+    "endDate":"2025-07-15T18:00:00",
+    "showAnswers": true,
+    "showFeedbackAfterEachQuestion": false,
+    "showPreviousButton": true,
+    "minScore": 60,
+    "shuffleQuestions": true,
+    "shuffleChoices": true,
+    "shuffleQuestionGroups": true,
+    "enableTimer":false,
+    "questionsTimer": 120,
+    "introduction": {
+        "type": "html",
+        "content": "<h2>Analyse phrase par phrase</h2><p>Apprenez la méthode d'analyse détaillée : comment décrypter chaque phrase, identifier les procédés et analyser leurs effets. Entraînez-vous sur des exemples concrets !</p><p>Bonne chance et amusez-vous bien !</p>"
+    },
+    "theme": {
+        "primary": "#007bff",
+        "secondary": "#6c757d",
+        "success": "#28a745",
+        "danger": "#dc3545",
+        "background": "#f8f9fa"
+    },
+    "metadata": {
+        "author": "Prof. Martin",
+        "difficulty": "intermediate",
+        "category": "culture-generale",
+        "version": "1.0",
+        "lastUpdated": "2025-02-06"
+    }
+}

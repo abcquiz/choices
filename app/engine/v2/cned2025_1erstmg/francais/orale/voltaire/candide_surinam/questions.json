@@ -1,0 +1,152 @@
+[
+    {
+        "topic": "Candide - Le nègre de Surinam",
+        "content": {
+            "type": "text",
+            "text": "Complétez la célèbre phrase de l'esclave : \"C'est à ce _____ que vous mangez du _____ en Europe.\"",
+            "url": null
+        },
+        "choices": [
+            { "text": "prix, sucre", "correct": true },
+            { "text": "coût, café", "correct": false },
+            { "text": "tarif, chocolat", "correct": false },
+            { "text": "sacrifice, thé", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Candide - Le nègre de Surinam",
+        "content": {
+            "type": "text",
+            "text": "Qu'a perdu le nègre de Surinam à cause du travail ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Une main et une jambe", "correct": true },
+            { "text": "Deux mains", "correct": false },
+            { "text": "Deux jambes", "correct": false },
+            { "text": "Un œil et une oreille", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Candide - Le nègre de Surinam",
+        "content": {
+            "type": "text",
+            "text": "Quelle technique principale Voltaire utilise-t-il pour dénoncer l'esclavage ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "L'ironie", "correct": true },
+            { "text": "La métaphore", "correct": false },
+            { "text": "L'hyperbole", "correct": false },
+            { "text": "L'allégorie", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Candide - Le nègre de Surinam",
+        "content": {
+            "type": "text",
+            "text": "Quel type de conte est Candide ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Un conte philosophique", "correct": true },
+            { "text": "Un conte merveilleux", "correct": false },
+            { "text": "Un conte fantastique", "correct": false },
+            { "text": "Un conte réaliste", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Candide - Le nègre de Surinam",
+        "content": {
+            "type": "text",
+            "text": "Comment l'esclave explique-t-il ses mutilations ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "De façon horrible et froide", "correct": true },
+            { "text": "Avec émotion et colère", "correct": false },
+            { "text": "En pleurant", "correct": false },
+            { "text": "Avec philosophie", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Candide - Le nègre de Surinam",
+        "content": {
+            "type": "text",
+            "text": "Que se passe-t-il quand les esclaves veulent s'enfuir ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "On leur coupe la jambe", "correct": true },
+            { "text": "On les fouette", "correct": false },
+            { "text": "On les enferme", "correct": false },
+            { "text": "On les tue", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Candide - Le nègre de Surinam",
+        "content": {
+            "type": "text",
+            "text": "Que se passe-t-il quand la machine attrape un doigt d'esclave ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "On coupe la main", "correct": true },
+            { "text": "On soigne le doigt", "correct": false },
+            { "text": "On arrête le travail", "correct": false },
+            { "text": "On change d'esclave", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Candide - Le nègre de Surinam",
+        "content": {
+            "type": "text",
+            "text": "Dans quel état Candide et son compagnon trouvent-ils l'esclave ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Étendu par terre, presque nu", "correct": true },
+            { "text": "Debout en train de travailler", "correct": false },
+            { "text": "Assis en train de manger", "correct": false },
+            { "text": "En train de dormir", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Candide - Le nègre de Surinam",
+        "content": {
+            "type": "text",
+            "text": "Que critique Voltaire à travers ce passage ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "L'optimisme naïf et l'esclavage", "correct": true },
+            { "text": "Seulement la religion", "correct": false },
+            { "text": "Seulement la monarchie", "correct": false },
+            { "text": "La guerre uniquement", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Candide - Le nègre de Surinam",
+        "content": {
+            "type": "text",
+            "text": "Quel est l'effet de la phrase \"C'est à ce prix que vous mangez du sucre en Europe\" ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Voltaire accuse directement les Européens", "correct": true },
+            { "text": "Il explique le commerce du sucre", "correct": false },
+            { "text": "Il décrit les plantations", "correct": false },
+            { "text": "Il raconte l'histoire de l'esclave", "correct": false }
+        ],
+        "timer": 60
+    }
+]

@@ -1,0 +1,32 @@
+[
+    {
+        "topic": "Structure de l'œuvre",
+        "content": {
+            "type": "text",
+            "text": "Que signifie la fin du postambule : \"Reconnais tes droits\" ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "C'est la fin de l'appel aux femmes pour qu'elles prennent conscience de leurs droits", "correct": true },
+            { "text": "C'est un ordre donné aux hommes", "correct": false },
+            { "text": "C'est une référence religieuse", "correct": false },
+            { "text": "C'est une conclusion juridique", "correct": false }
+        ],
+        "timer": 60
+    },
+    {
+        "topic": "Structure de l'œuvre",
+        "content": {
+            "type": "text",
+            "text": "Quel est l'effet de cette structure en trois parties ?",
+            "url": null
+        },
+        "choices": [
+            { "text": "Elle suit une progression logique : explication, énonciation des droits, appel à l'action", "correct": true },
+            { "text": "Elle permet de faire plus long", "correct": false },
+            { "text": "Elle respecte les conventions littéraires", "correct": false },
+            { "text": "Elle imite les sermons religieux", "correct": false }
+        ],
+        "timer": 60
+    }
+]
